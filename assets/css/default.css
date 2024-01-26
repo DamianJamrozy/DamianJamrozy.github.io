@@ -199,57 +199,71 @@
 }
 
 /* Social media */
-.social-menu ul{
-  position: absolute;
-  /* top: 50%;
-  left: 50%; */
-  padding: 0;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  display: flex;
+.socialm{
+    padding:10px;
 }
 
-.social-menu ul li{
-  list-style: none;
-  margin: 0 15px;
+
+.fab {
+    font-size: 2rem;
 }
 
-.social-menu ul li .fab{
-  font-size: 25px;
-  line-height: 40px;
-  transition: .3s;
-  color: #000;
+/* transition for social icon hover animation */
+.fa-facebook,
+.fa-codepen,
+.fa-youtube,
+.fa-instagram,
+.fa-github,
+.fa-pinterest {
+    transition: 0.4s;
+    cursor: pointer;
+    color:white;
 }
 
-.social-menu ul li .fab:hover{
-  color: #fff;
+    /* social media icons hover color */
+    .fa-facebook:hover,
+    .fa-facebook:focus {
+        color: #1877f2;
+        transform: scale(1.1);
+    }
+
+.fa-twitter:hover,
+.fa-twitter:focus {
+    color: #1da1f2;
+    transform: scale(1.1);
 }
 
-.social-menu ul li a{
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #fff;
-  text-align: center;
-  transition: .6s;
-  box-shadow: 0 5px 4px rgba(0,0,0,.5);
+.fa-youtube:hover,
+.fa-youtube:focus {
+    color: #df2426;
+    transform: scale(1.1);
 }
 
-.social-menu ul li a:hover{
-  transform: translate(0, -10%);
+.fa-instagram:hover,
+.fa-instagram:focus {
+    color: #bd22a2;
+    transform: scale(1.1);
 }
 
-.social-menu ul li:nth-child(1) a:hover{
-  background-color: rgba(0, 0, 0, 0.829);
+.fa-github:hover,
+.fa-github:focus {
+    color: #000;
+    transform: scale(1.1);
 }
-.social-menu ul li:nth-child(2) a:hover{
-  background-color: #E4405F;
+
+.fa-github:hover,
+.fa-github:focus {
+    color: #000;
+    transform: scale(1.1);
 }
-.social-menu ul li:nth-child(3) a:hover{
-  background-color: #0077b5;
+
+.fa-codepen:hover,
+.fa-codepen:focus {
+    color: #000;
+    transform: scale(1.1);
 }
-.social-menu ul li:nth-child(4) a:hover{
-  background-color: #000;
+
+.fa-pinterest:hover,
+.fa-pinterest:focus {
+    color: #b3001b;
 }
