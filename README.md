@@ -1,3 +1,2 @@
 # DamianJamrozy.github.io
-Personal website
-Website: https://damianjamrozy.github.io/
+Personal website: https://damianjamrozy.github.io/
