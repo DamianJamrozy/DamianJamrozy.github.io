@@ -1,564 +1,498 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Strona wizytówka (wirtualne CV).">
-    <meta name="author" content="Damian Jamroży">
-    <meta name="keywords" content="Damian Jamroży, djamrozy, CV, portfolio, wizytówka, strony internetowe, programowanie, grafika komputerowa, usługi, Rzeszów, Baz Danych">
-    <meta name="google-site-verification" content="1IodjaEG19TQIGmd4Z5kyg4nfTS7YCuBj1K3Z-4GvEE" />
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <title>Damian Jamroży</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/default.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Damian Jamroży — Portfolio / CV</title>
+  <meta name="description" content="Damian Jamroży — wirtualna wizytówka / CV. Junior IT Specialist (UR), wykładowca, U3W, programista PHP/JS/Python, projektant UX/UI. Magister inż." />
+  <meta name="theme-color" content="#0a0c10">
+  <link rel="icon" href="content/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="content/css/style.css">
 </head>
-
 <body>
+  <!-- progress bar -->
+  <div id="progress" aria-hidden="true"></div>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <header class="nav" role="banner">
+    <div class="container wrap">
+      <a class="brand" href="#home">DAMIAN&nbsp;JAMROŻY <small>PORTFOLIO</small></a>
+
+      <!-- desktop nav -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#work" data-i18n="nav.work">WORK</a></li>
+          <li><a href="#services" data-i18n="nav.services">SERVICES</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">EXPERIENCE</a></li>
+          <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- hamburger (mobile only) -->
+      <button class="nav-toggle" id="hamburger" aria-label="Otwórz menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-    <!-- ***** Preloader End ***** -->
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png" alt="Chain App Dev">
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#services">Usługi</a></li>
-                            <li class="scroll-to-section"><a href="#about">O mnie</a></li>
-                            <li class="scroll-to-section"><a href="#pricing">Współpraca</a></li>
-                            <li class="scroll-to-section"><a href="#newsletter">Kontakt</a></li>
+  </header>
 
-                            <!-- START Login form button in building... -->
-                            <!-- <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>  -->
-                            <!-- END Login form button in building... -->
+  <!-- mobile offcanvas -->
+  <div class="mobile-backdrop" id="backdrop"></div>
+  <aside class="mobile-panel" id="mobile-menu" aria-hidden="true">
+    <a href="#work" data-i18n="nav.work">WORK</a>
+    <a href="#services" data-i18n="nav.services">SERVICES</a>
+    <a href="#skills" data-i18n="nav.skills">SKILLS</a>
+    <a href="#experience" data-i18n="nav.experience">EXPERIENCE</a>
+    <a href="#about" data-i18n="nav.about">ABOUT</a>
+    <a href="#contact" data-i18n="nav.contact">CONTACT</a>
+  </aside>
 
+  <!-- language toggle (fixed) -->
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <span class="lang-sr-only" id="lang-label">Language</span>
+    <button type="button" id="btn-pl" aria-pressed="true" aria-labelledby="lang-label">PL</button>
+    <button type="button" id="btn-en" aria-pressed="false" aria-labelledby="lang-label">EN</button>
+  </div>
 
-                            <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Kontakt</a></div></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-    <!-- START In building login form... Updated soon -->
+  <span class="side-label" data-i18n="side.portfolio">PORTFOLIO</span>
 
-    <div id="modal" class="popupContainer" style="display: none; width: auto;">
-        <div class="popupHeader">
-        <span class="header_title">Formularz kontaktowy</span>
-        <span class="modal_close"><i class="fa fa-times"></i></span>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-media"><img src="content/images/personal/1.png" alt=""></div>
+	<div class="hero-overlay"></div>
+    <div class="social-rail rail">
+      <span class="rail-line"></span>
+	  <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank">FB</a>
+      <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank">IG</a>
+	  <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank">YT</a>
+      <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank">IN</a>
     </div>
-
-        <section class="popupBody">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFgLiwN8UMHkhkzORCZAntqyztYJRIrDLnRz6zJVsAlDO8jw/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe>
-
-            <!-- Social Login -->
-            <!--<div class="social_login">
-        <div class="">
-            <a href="#" class="social_box fb">
-                <span class="icon"><i class="fab fa-facebook"></i></span>
-                <span class="icon_title">Connect with Facebook</span>
-
-            </a>
-
-            <a href="#" class="social_box google">
-                <span class="icon"><i class="fab fa-google-plus"></i></span>
-                <span class="icon_title">Connect with Google</span>
-            </a>
-        </div>
-
-        <div class="centeredText">
-            <span>Or use your Email address</span>
-        </div>
-
-        <div class="action_btns">
-            <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-            <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-        </div>
-    </div>-->
-            <!-- Username & Password Login form -->
-            <!--<div class="user_login">
-        <form>
-            <label>Email / Username</label>
-            <input type="text" />
-            <br />
-
-            <label>Password</label>
-            <input type="password" />
-            <br />
-
-            <div class="checkbox">
-                <input id="remember" type="checkbox" />
-                <label for="remember">Remember me on this computer</label>
-            </div>
-
-            <div class="action_btns">
-                <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
-            </div>
-        </form>
-
-        <a href="#" class="forgot_password">Forgot password?</a>
-    </div>-->
-            <!-- Register Form -->
-            <!--<div class="user_register">
-            <form>
-                <label>Full Name</label>
-                <input type="text" />
-                <br />
-
-                <label>Email Address</label>
-                <input type="email" />
-                <br />
-
-                <label>Password</label>
-                <input type="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="send_updates" type="checkbox" />
-                    <label for="send_updates">Send me occasional email updates</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
-                </div>
-            </form>
-        </div>-->
-    </section>
-
-</div>
-
-    <!-- END In building... -->
-
-    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-6 align-self-center">
-                            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h1>Cześć! Nazywam się</h1>
-                                        <h2>DAMIAN JAMROŻY</h2>
-                                        <h4>
-                                            Ciężko jest mnie opisać w kilku zdaniach.<br>
-                                            Właściwie to jestem trochę jak człowiek orkiestra.<br>
-                                            Stale angażuję się w nowe, ciekawe i skrajnie zróżnicowane projekty.<br> <br>
-
-                                            Jestem
-                                            <span class="typewrite" data-period="2000" data-type='[ "grafikem komputerowym.", "programistą.", "web-developerem.", "architektem baz danych.", "administratorem baz danych." ]'>
-                                                <span class="wrap"></span>
-                                            </span>
-
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <div class="image_circle">
-                                    <img class="image_circle2" src="assets/images/me6.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container hero-content">
+      <div class="hero-topline" data-i18n="hero.topline">Software Engineer & Visual Thinker</div>
+      <span class="hero-name">DAMIAN&nbsp;JAMROŻY</span>
+      <p class="hero-sub" data-i18n="hero.sub">Pomagam organizacjom wejść w świat cyfryzacji danych oraz sztucznej inteligencji, łącząc najnowsze technologie ze spersonalizowanym wyglądem.</p>
     </div>
+  </section>
 
-    <div id="services" class="services section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <h4>Niezwyłke <em>usługi</em> dla <em>niezwykłych</em> klientów</h4>
-                        <img src="assets/images/heading-line-dec.png" alt="">
-                        <p>Moja praca opiera się nie tylko na wdażaniu rozwiązań ale również na ich kreatywnym opracowaniu. Przedstaw mi swój pomysł, a ja zaplanuję cały proces od utworzenia wizualizacji graficznej, zaprogramowania aplikacji po jej administrację. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="service-item first-service">
-                        <div class="icon"></div>
-                        <h4>Projekt managment</h4>
-                        <p>Potrzebujesz osoby, która zadba o Twój projekt? <br />Zaprojektuję oraz przeprowadzę nadzór nad każdym procesem.</p>
-                        <div class="text-button">
-                            <a href="#">Zobacz więcej <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="service-item second-service">
-                        <div class="icon"></div>
-                        <h4>Projekty graficzne</h4>
-                        <p>Brakuje Ci wizualizacji projektu? Opracuję dla Ciebie UX/UI, ulotki, banery, grafiki na social media i wiele innych.</p>
-                        <div class="text-button">
-                            <a href="#">Zobacz więcej <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="service-item third-service">
-                        <div class="icon"></div>
-                        <h4>Programowanie</h4>
-                        <p>Masz pomysł na aplikację? <br />Z przyjemnością zajmę się jej utworzeniem i skonfigurowaniem do Twoich potrzeb!</p>
-                        <div class="text-button">
-                            <a href="#">Zobacz więcej <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="service-item fourth-service">
-                        <div class="icon"></div>
-                        <h4>Administracja / Support</h4>
-                        <p>Posiadasz aplikację do której potrzebujesz administratora? <br /> Spokojnie, dla mnie zarządzanie to codzienność.</p>
-                        <div class="text-button">
-                            <a href="#">Zobacz więcej <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div id="about">
-
-        <div class="timeline">
-            <section id="nayma-timeline" class="nayma-container">
-                <div class="section-heading">
-                    <h4> Linia czasu</h4>
-                    <img src="assets/images/heading-line-dec.png" alt="">
-                    <p>Skrót ścieżki kariery oraz zdobytych osiągnięć. <br />Chcesz wiedzieć więcej? <a href="#">Klknij tutaj</a>.</p>
-                </div>
-                <div class="nayma-timeline-block">
-                    <div class="nayma-timeline-img">
-                    </div>
-                    <div class="nayma-timeline-content">
-                        <h2>2024/2025</h2>
-                        <p><b>Niebawem</b> ...</p>
-                    </div>
-                </div>
-                <div class="nayma-timeline-block">
-                    <div class="nayma-timeline-img">
-                    </div>
-                    <div class="nayma-timeline-content">
-                        <h2>2022/2023</h2>
-                        <p><b>Listopad 2023:</b> Rozpoczęcie pracy na stanowisku Nauczyciel Akademicki <a href="https://www.ur.edu.pl/pl/uniwersytet/utw">U3W Uniwersytetu Rzeszowskiego</a> {Grafika komputerowa} (Umowa Zlecenie).</p>
-                        <p><b>Kwiecień 2023:</b> Zmiana wymiaru godzin pracy na stanowisku Informatyk Referent <a href="https://www.ur.edu.pl">Uniwersyteckiego Centrum Informatyzacji Uniwersytetu Rzeszowskiego</a> (pełen etat - Umowa o Pracę).</p>
-                        <p><b>Luty 2023:</b> Uzyskanie tytułu Inżyniera nauk o informatyce oraz rozpoczęcie studiów magisterskich na  <a href="https://www.ur.edu.pl">Uniwersytecie Rzeszowskim</a> (Temat pracy inż. "Aplikacja internetowa z graficznym interfejsem użytkownika opartym na technologii typu eye-tracking oraz speech recognition.").</p>
-                        <p><b>Styczeń 2022:</b> Rozpoczęcie pracy na stanowisku Informatyk Referent <a href="https://www.ur.edu.pl">Uniwersyteckiego Centrum Informatyzacji Uniwersytetu Rzeszowskiego</a> (3/4 etatu - Umowa o Pracę).</p>
-                    </div>
-                </div>
-                <div class="nayma-timeline-block">
-                    <div class="nayma-timeline-img">
-                    </div>
-                    <div class="nayma-timeline-content">
-                        <h2>2020/2021</h2>
-                        <p><b>Grudzień 2021:</b> Zakończenie pracy na stanowisku Informatyk <a href="https://www.ur.edu.pl/pl/kolegia/kolegium-nauk-spolecznych/jednostki-naukowe/ins">Instytutu Nauk Socjologicznych Uniwersytetu Rzeszowskiego</a> (1/2 etatu - Umowa Zlecenie) (2 lata).</p>
-                        <p><b>Styczeń 2020:</b> Rozpoczęcie pracy na stanowisku Informatyk <a href="https://www.ur.edu.pl/pl/kolegia/kolegium-nauk-spolecznych/jednostki-naukowe/ins">Instytutu Nauk Socjologicznych Uniwersytetu Rzeszowskiego</a> (1/2 etatu - Umowa Zlecenie).</p>
-                    </div>
-                </div>
-                <div class="nayma-timeline-block">
-                    <div class="nayma-timeline-img">
-                    </div>
-                    <div class="nayma-timeline-content">
-                        <h2>Przed 2020</h2>
-                        <p><b>Październik 2019:</b> Rozpoczęcie studiów na kierunku Informatyka (3,5 letnich) na <a href="https://www.ur.edu.pl/pl/">Uniwersytecie Rzeszowskim</a> o specjalności Aplikacje Internetowe.</p>
-                        <p><b>Maj 2019:</b> Uzyskanie tytułu technika informatyka oraz ukończenie <a href="https://zsstaszow.pl/">Zespółu Szkół im. Stanisława Staszica w Staszowie</a>.</p>
-                        <p><b>Grudzień 2018:</b> Ukończenie praktyk zawodowych w firmie <a href="https://arkonsoft.pl/">ArkonSoft</a>.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <div id="pricing" class="pricing-tables">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <h4>Podejmowałem <em>współpracę</em> z</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="logos">
-                <div class="logo_items">
-                    <img src="assets/images/logo-client/UR.png" alt="Uniwersytet Rzeszowski">
-                    <img src="assets/images/logo-client/ssur.png" alt="Samorząd Studentów UR">
-                    <img src="assets/images/logo-client/KNI UR.png" alt="Koło Naukowe Informatyków UR">
-                    <img src="assets/images/logo-client/feniks.fm.png" alt="feniks.fm">
-                    <img src="assets/images/logo-client/xchallenge.png" alt="xchallenge">
-                </div>
-                <div class="logo_items">
-                    <img src="assets/images/logo-client/UR.png" alt="Uniwersytet Rzeszowski">
-                    <img src="assets/images/logo-client/ssur.png" alt="Samorząd Studentów UR">
-                    <img src="assets/images/logo-client/KNI UR.png" alt="Koło Naukowe Informatyków UR">
-                    <img src="assets/images/logo-client/feniks.fm.png" alt="feniks.fm">
-                    <img src="assets/images/logo-client/xchallenge.png" alt="xchallenge">
-                </div>
-            </div>
-        </div>
-    </div>
-
+  <!-- WORK -->
+  <section id="work" class="section">
     <div class="container">
+      <h2 data-i18n="work.h2">Wybrane realizacje</h2>
+      <div class="projects-grid">
+        <article class="project reveal tilt" data-tilt>
+          <div class="project-content">
+            <h3 data-i18n="work.p1.h3">Platforma dla branży edukacyjnej</h3>
+            <p data-i18n="work.p1.p">Kompleksowy system obsługujący przetwarzanie plików w czasie rzeczywistym. Kompresja oraz szyfrowanie danych na najwyższym poziomie bezpieczeństwa z wykorzystaniem narzędzi SI.</p>
+            <a href="#contact" data-i18n="work.p1.cta">Zamów podobny projekt</a>
+          </div>
+          <img src="content/images/others/1.avif" alt="Projekt B2B">
+        </article>
+        <article class="project reveal tilt" data-tilt>
+          <img src="content/images/others/2.avif" alt="Dashboard analityczny">
+          <div class="project-content">
+            <h3 data-i18n="work.p2.h3">Automatyzacja procesów biznesowych</h3>
+            <p data-i18n="work.p2.p">Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.</p>
+            <a href="#contact" data-i18n="work.p2.cta">Porozmawiajmy o tym</a>
+          </div>
+        </article>
+        <article class="project reveal tilt" data-tilt>
+          <div class="project-content">
+            <h3 data-i18n="work.p3.h3">Redesign stron oraz aplikacji</h3>
+            <p data-i18n="work.p3.p">Nowoczesna, wizytówka lub pełnowymiarowa responsywna aplikacja weebowa z funkcjonalnym CMS i zoptymalizowanym SEO.</p>
+            <a href="#contact" data-i18n="work.p3.cta">Zobacz jak mogę pomóc</a>
+          </div>
+          <img src="content/images/others/3.avif" alt="Redesign strony korporacyjnej — nowoczesny layout i CMS">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 data-i18n="services.h2">Usługi</h2>
+    <div class="service-grid">
+      
+	  
+	  <article class="service-card reveal tilt" data-tilt>
+		  <a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M7 3h10a2 2 0 0 1 2 2v14l-7-4-7 4V5a2 2 0 0 1 2-2z"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s1.h3">Projektowanie UX/UI</h3>
+			</div>
+			<p data-i18n="services.s1.p">Od szkicu do design systemu: makiety, prototypy, przygotowanie do wdrożenia, audyt użyteczności.</p>
+			<div class="service-meta"><span class="chip">Figma</span><span class="chip">Design System</span><span class="chip">WCAG</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <rect x="16" y="18" width="128" height="84" rx="10" fill="url(#g1)" stroke="rgba(255,255,255,.18)"/>
+			  <circle cx="40" cy="46" r="14" fill="rgba(124,93,250,.35)"/>
+			  <rect x="66" y="38" width="62" height="8" rx="4" fill="rgba(255,255,255,.28)"/>
+			  <rect x="66" y="54" width="50" height="8" rx="4" fill="rgba(255,255,255,.18)"/>
+			  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#0b0f16"/></linearGradient></defs>
+			</svg>
+		</a>
+	  </article>
+	  
+
+      <article class="service-card reveal tilt" data-tilt>
+		<a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H5.17L4 17.17 V4z"/><path d="M8 8h8M8 12h6"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s2.h3">Aplikacje web</h3>
+			</div>
+			<p data-i18n="services.s2.p">Landing page, panele administracyjne, integracje z API, wydajne bazy danych, bezpieczeństwo i SEO.</p>
+			<div class="service-meta"><span class="chip">Frontend</span><span class="chip">Backend</span><span class="chip">Database</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <rect x="20" y="28" width="120" height="64" rx="8" fill="rgba(214,180,108,.22)"/>
+			  <rect x="28" y="40" width="34" height="8" rx="4" fill="rgba(0,0,0,.25)"/>
+			  <rect x="28" y="56" width="80" height="8" rx="4" fill="rgba(0,0,0,.25)"/>
+			  <rect x="28" y="72" width="60" height="8" rx="4" fill="rgba(0,0,0,.25)"/>
+			</svg>
+		</a>
+      </article>
+
+      <article class="service-card reveal tilt" data-tilt>
+		<a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20v-6m0 0-3 3m3-3 3 3"/><rect x="3" y="3" width="18" height="10" rx="2"/><path d="M7 7h10"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s3.h3">Automatyzacje &amp; AI</h3>
+			</div>
+			<p data-i18n="services.s3.p">Automatyzacja, boty, konwersje plików, przetwarzanie danych, dedykowana sztuczna inteligencja.</p>
+			<div class="service-meta"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">LLM</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <circle cx="48" cy="60" r="22" fill="rgba(124,93,250,.28)"/>
+			  <rect x="78" y="44" width="56" height="12" rx="6" fill="rgba(255,255,255,.28)"/>
+			  <rect x="78" y="64" width="44" height="12" rx="6" fill="rgba(255,255,255,.18)"/>
+			</svg>
+		</a>
+      </article>
+
+      <article class="service-card reveal tilt" data-tilt>
+		<a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M6 10h12M9 13h6"/><rect x="5" y="16" width="14" height="5" rx="2"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s4.h3">Administracja / Support</h3>
+			</div>
+			<p data-i18n="services.s4.p">Utrzymanie, monitoring, kopie zapasowe, automatyzacja wdrożeń i wsparcie użytkowników.</p>
+			<div class="service-meta"><span class="chip">Linux</span><span class="chip">Windows</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <rect x="26" y="34" width="108" height="52" rx="8" fill="rgba(255,255,255,.08)"/>
+			  <circle cx="80" cy="84" r="8" fill="rgba(214,180,108,.32)"/>
+			</svg>
+		</a>
+      </article>
+
+      <article class="service-card reveal tilt" data-tilt>
+		<a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M8 3h8a2 2 0 0 1 2 2v14l-6-3-6 3V5a2 2 0 0 1 2-2z"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s5.h3">Project Management</h3>
+			</div>
+			<p data-i18n="services.s5.p">Planowanie sprintów, roadmapy, ryzyka i rozliczenia. Transparentna komunikacja z interesariuszami.</p>
+			<div class="service-meta"><span class="chip">Agile</span><span class="chip">Scrum/Kanban</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <rect x="20" y="30" width="120" height="60" rx="10" fill="rgba(124,93,250,.20)"/>
+			  <rect x="32" y="44" width="24" height="36" rx="6" fill="rgba(0,0,0,.25)"/>
+			  <rect x="64" y="44" width="24" height="24" rx="6" fill="rgba(0,0,0,.25)"/>
+			  <rect x="96" y="44" width="24" height="16" rx="6" fill="rgba(0,0,0,.25)"/>
+			</svg>
+		</a>
+      </article>
+
+      <article class="service-card reveal tilt" data-tilt>
+		<a href="#">
+			<div class="service-head">
+			  <div class="service-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M12 13l3 3-3 3-3-3 3-3z"/><rect x="6" y="3" width="12" height="4" rx="2"/></svg>
+			  </div>
+			  <h3 data-i18n="services.s6.h3">Bazy danych</h3>
+			</div>
+			<p data-i18n="services.s6.p">Projektowanie, tworzenie oraz zarządzanie relacyjnymi bazami danych.</p>
+			<div class="service-meta"><span class="chip">SQL</span><span class="chip">T-SQL/PLSQL</span></div>
+			<svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+			  <polygon points="60,50 90,50 100,70 50,70" fill="rgba(214,180,108,.28)"/>
+			  <circle cx="78" cy="62" r="6" fill="rgba(255,255,255,.35)"/>
+			</svg>
+		</a>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 data-i18n="skills.h2">Technologie &amp; narzędzia</h2>
+      <div class="skill-grid" aria-label="Stack">
+		<!-- FRONTEND -->
+			<div class="skill-item"><img src="content/images/tech/html5.svg" alt="HTML5"><span class="skill-label" data-i18n="skills.html">HTML — semantyczne szablony</span></div>
+			<div class="skill-item"><img src="content/images/tech/css3.svg" alt="CSS3"><span class="skill-label" data-i18n="skills.css">CSS — style i layout</span></div>
+			<div class="skill-item"><img src="content/images/tech/javascript.svg" alt="JavaScript"><span class="skill-label" data-i18n="skills.js">JavaScript — interakcje i logika front-end</span></div>
+			
+		<!-- CMS -->	
+			<div class="skill-item"><img src="content/images/tech/CMS.svg" alt="C++"><span class="skill-label" data-i18n="skills.cms">CMS - Wordpress, Contao, Ideo</span></div>
         
+		<!-- DATABASE -->
+			<div class="skill-item"><img src="content/images/tech/sql.svg" alt="SQL"><span class="skill-label" data-i18n="skills.sql">SQL, TSQL, PLSQL — języki baz danych</span></div>
+			<div class="skill-item"><img src="content/images/tech/mssql.svg" alt="SQL"><span class="skill-label" data-i18n="skills.mssql">MSSQL — relacyjne bazy</span></div>
+			<div class="skill-item"><img src="content/images/tech/mysql.svg" alt="MySQL"><span class="skill-label" data-i18n="skills.mysql">MySQL — relacyjne bazy</span></div>
+			<div class="skill-item"><img src="content/images/tech/postgresql.svg" alt="PostgreSQL"><span class="skill-label" data-i18n="skills.pg">PostgreSQL — relacyjne bazy</span></div>
+		
+		<!-- BACKEND -->
+			<div class="skill-item"><img src="content/images/tech/php.svg" alt="PHP"><span class="skill-label" data-i18n="skills.php">PHP — backend i API</span></div>
+			<div class="skill-item"><img src="content/images/tech/python.svg" alt="Python"><span class="skill-label" data-i18n="skills.python">Python — automatyzacje, AI, API</span></div>
+			<div class="skill-item"><img src="content/images/tech/CSharp.svg" alt=".net"><span class="skill-label" data-i18n="skills.aspnet">C# & .net — backend</span></div>
+			
+		<!-- SERVERY -->
+			<div class="skill-item"><img src="content/images/tech/windows.svg" alt="Windows Server"><span class="skill-label" data-i18n="skills.windows">Windows — serwery i hosting Microsoft</span></div>
+			<div class="skill-item"><img src="content/images/tech/linux.svg" alt="Debian, Ubuntu - Linux"><span class="skill-label" data-i18n="skills.linux">Debian & Ubuntu — serwery i hosting Linux</span></div>
+		
+		<!-- WERSJE & PRACA -->
+			<div class="skill-item"><img src="content/images/tech/git.svg" alt="Git"><span class="skill-label" data-i18n="skills.git">Git — kontrola wersji</span></div>
+			<div class="skill-item"><img src="content/images/tech/jira.svg" alt="Jira"><span class="skill-label" data-i18n="skills.jira">Jira - system zgłoszeń</span></div>
+			<div class="skill-item"><img src="content/images/tech/otobo.svg" alt="Otobo"><span class="skill-label" data-i18n="skills.otobo">Otobo - system zgłoszeń</span></div>
+			
+			<div class="skill-item"><img src="content/images/tech/office.svg" alt="Office 365"><span class="skill-label" data-i18n="skills.office">Office 365 - pakiet biurowy</span></div>
+		
+		<!-- PROJEKTOWANIE & EDYCJA -->
+			<div class="skill-item"><img src="content/images/tech/figma.svg" alt="Figma"><span class="skill-label" data-i18n="skills.figma">Figma — prototypy i UI</span></div>
+			<div class="skill-item"><img src="content/images/tech/adobe-xd.svg" alt="Adobe XD"><span class="skill-label" data-i18n="skills.adobe-xd">Adobe XD — prototypy i UI</span></div>
+			<div class="skill-item"><img src="content/images/tech/photoshop.svg" alt="Photoshop"><span class="skill-label" data-i18n="skills.photoshop">Photoshop — tworzenie i edytowanie grafik</span></div>
+			<div class="skill-item"><img src="content/images/tech/vegas_pro.svg" alt="Vegas Pro"><span class="skill-label" data-i18n="skills.vegas_pro">Vegas Pro - postprodukcja filmów</span></div>
+			<div class="skill-item"><img src="content/images/tech/audacity.svg" alt="Vegas Pro"><span class="skill-label" data-i18n="skills.audacity">Audacity - edycja audio</span></div>
+			<div class="skill-item"><img src="content/images/tech/canva.svg" alt="Canva"><span class="skill-label" data-i18n="skills.canva">Canva - projektowanie i edycja grafiki </span></div>
+			
+		<!-- AI -->
+			<div class="skill-item"><img src="content/images/tech/ai.svg" alt="AI"><span class="skill-label" data-i18n="skills.ai">Narzędzia AI - Chat GPT, Leonardo.ai itp.</span></div>
+      </div>
     </div>
+  </section>
 
+  <!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <h2 data-i18n="exp.h2">Doświadczenie</h2>
 
+    <!-- Dane zaktualizowane na podstawie przesłanego CV. :contentReference[oaicite:0]{index=0} -->
+    <div class="timeline">
+	
+	<div class="titem reveal" data-i18n="exp.i1">
+        <span>01.2022 — obecnie</span>
+        <b>Młodszy specjalista IT</b>
+        <br><span class="exp-edu-span">Uniwersyteckie Centrum Informatyzacji, Uniwersytet Rzeszowski <br>
+		Administracja bazą danych (MSSQL), programowanie (SQL/T-SQL, HTML/CSS/JS/PHP), nadzór systemów (PCG rekrutacja &amp; dziekanat, OTOBO, Contao), dokumentacja, materiały szkoleniowe, automatyzacje procesów</span>
+      </div>
+	  
+	  <div class="titem reveal" data-i18n="exp.i2">
+        <span>03.2025 — obecnie</span>
+        <b>UI/UX Designer & Architekt oprogramowania</b>
+        <br><span class="exp-edu-span">SSC Master Sp. Z O.O. <br>
+		Projektowanie interfejsu aplikacji mobilnej i webowej zgodnie z dobrymi praktykami UI/UX; wdrażanie standardów WCAG i zwiększanie dostępności</span>
+      </div>
+	  
+      <div class="titem reveal" data-i18n="exp.i3">
+        <span>02.2025 — obecnie</span>
+        <b>Wykładowca akademicki </b>
+		<br><span class="exp-edu-span">Uniwersytet Rzeszowski
+        <br>Prowadzenie zajęć komputerowych (Technologie Informacyjne)</span>
+      </div>
+	  
+	<div class="titem reveal" data-i18n="exp.i4">
+        <span>03.2025 — obecnie</span>
+        <b>Administrator systemu</b>
+        <br><span class="exp-edu-span">ASBiR – Akademicka Sieć Bezpieczeństwa i Równości<br>
+		Administracja stroną asbir.pl, prace serwisowe, tworzenie i aktualizacja dedykowanych wtyczek WordPress.</span>
+      </div>
 
-
-    <div id='newsletter'>
-        <div class="container about-us section">
-            <div class="row">
-                <div class="col-lg-6 align-self-center" style="z-index:2;">
-                    <!--<div class="section-heading">
-                        <h4>About <em>What We Do</em> &amp; Who We Are</h4>
-                        <img src="assets/images/heading-line-dec.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
-                    </div>-->
-                    <!--<div class="row">
-        <div class="col-lg-6">
-            <div class="box-item">
-                <h4><a href="#">Maintance Problems</a></h4>
-                <p>Lorem Ipsum Text</p>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="box-item">
-                <h4><a href="#">24/7 Support &amp; Help</a></h4>
-                <p>Lorem Ipsum Text</p>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="box-item">
-                <h4><a href="#">Fixing Issues About</a></h4>
-                <p>Lorem Ipsum Text</p>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="box-item">
-                <h4><a href="#">Co. Development</a></h4>
-                <p>Lorem Ipsum Text</p>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut labore et dolore adipiscing  magna.</p>
-            <div class="gradient-button">
-                <a href="mailto:djamrozy.cv@gmail.com">Wyślij do mnie maila!</a>
-            </div>-->
-                    <!-- <span>*No Credit Card Required</span> -->
-                    <!--</div>
-    </div>-->
-                    <!--<form class="form-container">
-            <div class="headline"><span>Contact me</span></div>
-            <div class="form-line success">
-                <input type="text" class="form-input" value="Jane Doe">
-                <label class="top">Name</label>
-                <div class="check-label"></div>
-            </div>
-            <div class="form-line">
-                <input type="text" class="form-input" required>
-                <label>Your email *</label>
-                <div class="error-label">Field is required!</div>
-                <div class="check-label"></div>
-            </div>
-            <div class="form-line">
-                <input type="text" class="form-input">
-                <label>Subject</label>
-                <div class="check-label"></div>
-            </div>
-            <div class="form-line">
-                <textarea class="form-input" required></textarea>
-                <label>Message</label>
-                <div class="check-label"></div>
-                <div class="error-label">Field is required!</div>
-            </div>
-
-            <input type="button" class="form-button" value="Submit">
-    </form>-->
-
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFgLiwN8UMHkhkzORCZAntqyztYJRIrDLnRz6zJVsAlDO8jw/viewform?embedded=true" width="640" height="1150"  frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe>
-
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-image">
-                        <img src="assets/images/about-right-dec.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="titem reveal" data-i18n="exp.i5">
+        <span>10.2023 — 05.2024</span>
+		<b>Wykładowca akademicki</b>
+        <br><span class="exp-edu-span">Uniwersytet Trzeciego Wieku, Uniwersytet Rzeszowski
+        <br>Prowadzenie zajęć komputerowych (Podstawy Informatyki) oraz grafiki komputerowej (Adobe Photoshop)</span>
+      </div>
+	  
+	  <div class="titem reveal" data-i18n="exp.i6">
+        <span>01.2020 — 01.2022</span>
+        <b>Informatyk (Pracownik techniczny)</b>
+        <br><span class="exp-edu-span">Instytut Nauk Socjologicznych, Uniwersytet Rzeszowski, <br>
+		 Dbanie o infrastrukturę IT, administracja stronami internetowymi instytutu, tworzenie projektów graficznych </span>
+      </div>
+	  
+	  <div class="titem reveal" data-i18n="exp.i7">
+        <span>11.2017 - 12.2017</span>
+        <b>Praktykant - Frontend developer</b>
+        <br><span class="exp-edu-span">Arkonsoft, <br>
+		 Nauka nowych technologii weebowych z nastawieniem na frontend </span>
+      </div>
+     
     </div>
+  </div>
+  
+  
+  
+  <div class="container">
+    <h2 data-i18n="edu.h2">Edukacja</h2>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading">
-                        <h4>Nie zwlekaj!<br />Skontaktuj się ze mną już teraz.</h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-3">
-                    <!-- <form id="search" action="#" method="GET">
-                      <div class="row">
-                        <div class="col-lg-6 col-sm-6">
-                          <fieldset>
-                            <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                          <fieldset>
-                            <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </form> -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-widget">
-                        <h4>Kontakt</h4>
-                        <p>Rzeszów, Polska</p>
-                        <!-- <p><a href="#">010-020-0340</a></p> -->
-                        <p><a href="#">djamrozy.cv@gmail.com</a></p>
+      <div class="titem reveal" data-i18n="edu.i1">
+        <span>2023 — 2024</span>
+        <b>Magister inż. informatyki</b>
+		<br><span class="exp-edu-span">Uniwersytet Rzeszowski (drugie miejsce w konkursie najlepszych prac dyplomowych)</span>
+      </div>
 
-                        <div>
-                            <a href="https://www.facebook.com/damian.jamrozy.xD" target="_blank">
-                                <i class="fab fa-facebook socialm" tabindex="0"></i>
-                            </a>
+      <div class="titem reveal" data-i18n="edu.i2">
+        <span>2019 — 2023</span>
+        <b>Inżynier informatyki</b>
+		<br><span class="exp-edu-span">Uniwersytet Rzeszowski (specjalizacja: aplikacje internetowe)</span>
+      </div>
 
-                            <a href="https://www.instagram.com/skrrr_dj/" target="_blank">
-                                <i class="fab fa-instagram socialm" tabindex="0"></i>
-                            </a>
+      <div class="titem reveal" data-i18n="edu.i3">
+        <span>2015 — 2019</span>
+        <b>Technik informatyk</b>
+		<br><span class="exp-edu-span"> ZS im. Stanisława Staszica w Staszowie</span>
+      </div>
+    </div>
+	
+	
+	<div class="container" id="certs">
+	  <h2 data-i18n="cert.h2">Certyfikaty</h2>
 
-                            <a href="https://github.com/DamianJamrozy" target="_blank">
-                                <i class="fab fa-github socialm" tabindex="0"></i>
-                            </a>
+	  <!-- Nawigacja slidera -->
+	  <div class="hnav" aria-hidden="false">
+		<button class="hbtn prev is-disabled" type="button" aria-label="Przewiń w lewo" aria-disabled="true">&#10094;</button>
+<button class="hbtn next" type="button" aria-label="Przewiń w prawo" aria-disabled="false">&#10095;</button>
 
-                            <a href="https://www.youtube.com/@djamrozy" target="_blank">
-                                <i class="fab fa-youtube socialm" tabindex="0" target="_blank"></i>
-                            </a>
-                        </div>
+	  </div>
+
+	  <!-- TOR SLIDERA: dodane klasy hslider + id -->
+	  <div class="skill-grid hslider" id="certs-track" aria-label="Certyfikaty (slider)">
+		<!-- Twoje istniejące kafelki .skill-item bez zmian: -->
+		<div class="skill-item"><img src="content/images/cert/cert1.svg" alt="HTML5"><span class="skill-label" data-i18n="cert.e14">E14 Tworzenie aplikacji internetowych i baz danych oraz administrowanie bazami</span></div>
+		<div class="skill-item"><img src="content/images/cert/cert1.svg" alt="CSS3"><span class="skill-label" data-i18n="cert.e13">E13 Projektowanie lokalnych sieci komputerowych i administrowanie sieciami</span></div>
+		<div class="skill-item"><img src="content/images/cert/cert1.svg" alt="JavaScript"><span class="skill-label" data-i18n="cert.e12">E12 Montaż i eksploatacja komputerów osobistych oraz urządzeń peryferyjnych</span></div>
+
+		<div class="skill-item"><img src="content/images/cert/cert2.svg" alt="Security Awareness"><span class="skill-label">Bezpieczeństwo informacji - Security Awareness - Uniseco Sp. z.o.o</span></div>
+		<div class="skill-item"><img src="content/images/cert/cert2.svg" alt="RODO"><span class="skill-label">Nowe podejście do ochrony danych osobowych po wejściu RODO - Uniseco Sp. z.o.o</span></div>
+
+		<div class="skill-item"><img src="content/images/cert/cert3.svg" alt="PCGAcademia"><span class="skill-label">Szkolenia dotyczących funkcjonowania systemów informatycznych firmy PCGAcademia</span></div>
+		<div class="skill-item"><img src="content/images/cert/cert3.svg" alt="OPTeam"><span class="skill-label">Szkolenie "Ewolucja w realizacji podstawowych zadań Administratora IT" OPTeam</span></div>
+	  </div>
+	</div>
+
+	
+  </div>
+</section>
 
 
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-widget">
-                        <h4>Mapa strony / Zakładki</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Usługi</a></li>
-                            <li><a href="#">O mnie</a></li>
-                            <li><a href="#">Współpraca</a></li>
-                            <li><a href="#">Kontakt</a></li>
-                            <li><a href="#">Stopka</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Projekt managment</a></li>
-                            <li><a href="#">Projekty graficzne</a></li>
-                            <li><a href="#">Programowanie</a></li>
-                            <li><a href="#">Administracja / Support</a></li>
-                            <li><a href="#">O mnie</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-widget">
-                        <h4>Źródła zewnętrzne</h4>
-                        <ul>
-                            <li><a href="#">Free Apps</a></li>
-                            <li><a href="#">App Engine</a></li>
-                            <li><a href="#">Programming</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">App News</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">App Dev Team</a></li>
-                            <li><a href="#">Digital Web</a></li>
-                            <li><a href="#">Normal Apps</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-widget">
-                        <h4>O mnie</h4>
-                        <div class="logo">
-                            <img src="assets/images/logo-white.png" alt="">
-                        </div>
-                        <p>Sprawiam, że informatyka oraz życie staje się prostsze. W skrócie Make IT Simpler!</p>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <p>Copyright © 2024 Damian Jamroży. All Rights Reserved.
-                    </div>
-                </div>
-            </div>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-card reveal tilt" data-tilt>
+        <img src="content/images/others/4.avif" alt="Damian Jamroży">
+        <div>
+          <h2 data-i18n="about.h2">O mnie</h2>
+          <p data-i18n="about.p">Jestem specjalistą łączącym inżynierię oprogramowania z projektowaniem doświadczeń użytkownika. Tworzę rozwiązania, które nie tylko działają, ale i angażują. Od 2020 roku buduję produkty dla partnerów, w tym uczelni wyższych (Uniwersytet Rzeszowski). Oferuję kompleksową usługę obejmującą takie elementy jak: architekturę oprogramowania, projekty UI/UX, project management, frontend, backend oraz zaawansowaną automatyzację danych z uwzględnieniem rozwiązań opartych na sztucznej inteligencji.</p>
+          <div class="metrics">
+            <div class="metric">
+				<div class="num" data-target="5" data-suffix-i18n="about.suffix.years" id="expYears">0</div><div class="label" data-i18n="about.m1">doświadczenia zawodowego</div>
+			</div>
+            <div class="metric">
+				<div class="num" id="ghRepos" data-suffix="+" >0</div><div class="label" data-i18n="about.m3">projektów na github</div>
+			</div>
+			<div class="metric">
+				<div class="num" data-target="100" data-suffix="%">0</div><div class="label" data-i18n="about.m2">zadowolonych klientów</div>
+			</div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 data-i18n="contact.h2">Skontaktuj się ze mną</h2>
+      <p class="lead" data-i18n="contact.lead">Opowiedz krótko o projekcie: cel, zakres, termin i budżet (widełki są ok).<br>Powrócę z odpowiedzią najszybciej jak to możliwe.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal tilt" data-tilt>
+          <h3 style="margin-top:0" data-i18n="contact.fast.h3">Szybki kontakt</h3>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:djamrozy.cv@gmail.com?subject=Zapytanie%20ofertowe&body=Dzie%C5%84%20dobry%2C%0D%0A%0D%0A1)%20Oferta%20jednorazowa%3A%0D%0AW%20nawi%C4%85zaniu%20do%20Pana%20oferty%2C%20prosz%C4%99%20o%20przygotowanie%20oferty%20na%20projekt%2C%20kt%C3%B3rego%20szczeg%C3%B3%C5%82y%20znajduj%C4%85%20si%C4%99%20poni%C5%BCej%3A%0D%0AChc%C4%99%20zrealizowa%C4%87%20projekt%3A%20(opisz%20kr%C3%B3tko).%0D%0ATermin%20realizacji%3A%20...%20(preferowany%20oraz%20maksymalny)%0D%0ABud%C5%BCet%3A%20...%20(konkretna%20kwota%20lub%20wide%C5%82ki%20od%20-%20do)%0D%0AZale%C5%BCy%20mi%20na%3A%20..%20(Specyficzne%20wymagania%20projektowe)%0D%0A%0D%0A2)%20Oferta%20d%C5%82ugoterminowej%20wsp%C3%B3%C5%82pracy%3A%0D%0APosiadam%20dla%20Pana%20ofert%C4%99%20pracy%3A%0D%0ANazwa%20firmy%3A%20....%0D%0AStanowisko%3A%20...%20(nazwa%20stanowiska)%0D%0ABud%C5%BCet%3A%20...%20(stawka%20miesi%C4%99czna%20lub%20inna)%0D%0AForma%20wsp%C3%B3%C5%82pracy%3A%20...%20(UoP%20/%20UZ%20/%20UoD%20/%20B2B)%0D%0AZakres%20obowi%C4%85zk%C3%B3w%3A%20....%20(Opis%20stanowiska)%0D%0AInne%20informacje%3A%20...(Np.%20link%20do%20oferty%20pracy)%0D%0A%0D%0AZ%20wyrazami%20szacunku%2C%0D%0A%7Btutaj%20podpis%7D" !" data-i18n="contact.fast.cta">Napisz e-mail</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/djamrozy/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/damianjamrozy" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="mini">
+            <span class="pill" data-i18n="contact.pill1">Rzeszów, Polska</span>
+            <span class="pill" data-i18n="contact.pill2">Odpowiedź ≤ 24h</span>
+            <span class="pill">PL / EN</span>
+          </div>
+        </div>
+
+        <div class="contact-card reveal tilt" data-tilt>
+          <h3 style="margin-top:0" data-i18n="contact.brief.h3">Brief startowy</h3>
+          <ul style="margin:10px 0 0 18px;color:var(--muted)">
+            <li data-i18n="contact.brief.i1">Jaki problem chcesz rozwiązać?</li>
+            <li data-i18n="contact.brief.i2">Do kogo kierujemy produkt?</li>
+            <li data-i18n="contact.brief.i3">Co już masz: treści, logotyp, dane?</li>
+            <li data-i18n="contact.brief.i4">Deadline i preferowany budżet?</li>
+          </ul>
+          <p style="margin-top:12px;color:var(--muted)" data-i18n="contact.brief.p">Możesz wkleić gotowe odpowiedzi w mailu — ułatwi to wycenę i timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Damian Jamroży — <span data-i18n="footer.rights">Wszystkie prawa zastrzeżone.</span></p>
+    </div>
+  </footer>
+  
+  
+  
+  <!-- Back to top -->
+<button id="backToTop" class="backtop" type="button" aria-label="Wróć na górę" title="Wróć na górę">
+  <!-- strzałka w górę (SVG, bez tła) -->
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 5l6.5 6.5-1.5 1.5L13 9.99V19h-2V9.99L7 13l-1.5-1.5L12 5z" fill="currentColor"/>
+  </svg>
+</button>
 
 
-    <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/default.js"></script>
+  <script src="content/javascript/script.js"></script>
+  <script src="content/javascript/lang.js"></script>
+  
+  <!-- Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Damian Jamroży",
+    "jobTitle":"Junior IT Specialist / UX-UI Designer",
+    "address":{"@type":"PostalAddress","addressLocality":"Rzeszów","addressCountry":"PL"},
+    "email":"mailto:djamrozy.cv@gmail.com",
+    "url":"https://www.linkedin.com/in/djamrozy/",
+    "sameAs":[
+      "https://github.com/damianjamrozy",
+      "https://www.instagram.com/skrrr_dj/"
+    ],
+    "alumniOf":"Uniwersytet Rzeszowski"
+  }
+  </script>
 </body>
 </html>
