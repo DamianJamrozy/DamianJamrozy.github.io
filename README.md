@@ -11,7 +11,7 @@
 ### 🧠 About
 Personal online portfolio built as a fully responsive website.  
 It presents my professional experience, selected projects, skills, and contact information in a clean, modern form.  
-The website is powered only by **HTML, CSS, and JavaScript** — no backend required.
+The website is powered only by **HTML, CSS, and JavaScript**.
 
 ### ⚙️ Tech stack
 - **HTML5 / CSS3 / JavaScript (ES6+)**
@@ -42,7 +42,7 @@ The website is powered only by **HTML, CSS, and JavaScript** — no backend requ
 ### 🧠 O projekcie
 Moje osobiste portfolio online – w pełni responsywna strona,  
 prezentująca doświadczenie zawodowe, projekty, umiejętności i dane kontaktowe w nowoczesnej formie.  
-Strona działa wyłącznie w oparciu o **HTML, CSS i JavaScript** — bez backendu.
+Strona działa wyłącznie w oparciu o **HTML, CSS i JavaScript**.
 
 ### ⚙️ Technologie
 - **HTML5 / CSS3 / JavaScript (ES6+)**
