@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Damian Jamroży — Portfolio / CV</title>
     <meta name="description" content="Mgr inż. Damian Jamroży — Junior IT Specialist, UX/UI Designer, programista PHP/JS/Python. Tworzę aplikacje webowe, automatyzacje AI oraz projekty UX/UI. Portfolio i kontakt.">
 
@@ -11,34 +12,53 @@
     <meta property="og:description" content="Junior IT Specialist, UX/UI Designer, Software Developer. Portfolio i doświadczenie zawodowe.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://damianjamrozy.github.io/">
-    <meta property="og:image" content="https://damianjamrozy.github.io/content/images/personal/1.png">
+    <meta property="og:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:locale:alternate" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Damian Jamroży — Portfolio / CV">
     <meta name="twitter:description" content="Junior IT Specialist, UX/UI Designer, Software Developer.">
-    <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/personal/1.png">
+    <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
 
     <meta name="theme-color" content="#0a0c10">
 
     <!-- Canonical + hreflang -->
-    <link id="canonical" rel="canonical" href="">
+    <link rel="canonical" href="https://damianjamrozy.github.io/">
     <link rel="alternate" hreflang="x-default" href="https://damianjamrozy.github.io/">
     <link rel="alternate" hreflang="pl" href="https://damianjamrozy.github.io/?lang=pl">
     <link rel="alternate" hreflang="en" href="https://damianjamrozy.github.io/?lang=en">
 
     <!-- Assets -->
-    <link rel="icon" href="content/images/favicon.ico" />
+    <link rel="icon" href="content/images/favicon.ico">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Fonts: najprościej przez Google Fonts bez blokowania renderu -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap">
+    </noscript>
+
+    <!-- CSS (blokujące, ale konieczne; jeden skompresowany plik) -->
     <link rel="stylesheet" href="content/css/style.css">
 
-    <!-- Preload LCP hero image (AVIF) -->
-    <link rel="preload" as="image" href="content/images/personal/1.avif" fetchpriority="high">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <!-- Preload LCP z responsywnym imagesrcset (działa lepiej niż pojedynczy href) -->
+    <link rel="preload"
+          as="image"
+          imagesrcset="
+      content/images/personal/optimized/1-400.avif 400w,
+      content/images/personal/optimized/1-800.avif 800w,
+      content/images/personal/optimized/1-1200.avif 1200w,
+      content/images/personal/optimized/1-1600.avif 1600w"
+          imagesizes="(max-width: 600px) 100vw, 50vw"
+          fetchpriority="high"
+          type="image/avif">
 </head>
+
 <body>
     <!-- Skip link for a11y -->
     <a class="skip-link" href="#home" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Przejdź do treści</a>
@@ -95,12 +115,23 @@
     <section id="home" class="hero">
         <div class="hero-media">
             <picture>
-                <source srcset="content/images/personal/1.avif" type="image/avif">
-                <source srcset="content/images/personal/1.webp" type="image/webp">
-                <img src="content/images/personal/1.png"
+                <source type="image/avif"
+                        srcset="content/images/personal/optimized/1-400.avif 400w,
+                            content/images/personal/optimized/1-800.avif 800w,
+                            content/images/personal/optimized/1-1200.avif 1200w,
+                            content/images/personal/optimized/1-1600.avif 1600w"
+                        sizes="(max-width: 600px) 100vw, 50vw">
+                <source type="image/webp"
+                        srcset="content/images/personal/optimized/1-400.webp 400w,
+                        content/images/personal/optimized/1-800.webp 800w,
+                        content/images/personal/optimized/1-1200.webp 1200w,
+                        content/images/personal/optimized/1-1600.webp 1600w"
+                        sizes="(max-width: 600px) 100vw, 50vw">
+                <img src="content/images/personal/optimized/1-800.webp"
                      alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
-                     width="800" height="800" fetchpriority="high" decoding="async">
+                     width="800" height="800" decoding="async" fetchpriority="high">
             </picture>
+
         </div>
         <div class="hero-overlay"></div>
         <div class="social-rail rail">
@@ -547,7 +578,7 @@
           "@type":"Person",
           "name":"Damian Jamroży",
           "jobTitle":"Junior IT Specialist / UX-UI Designer",
-          "image":"https://damianjamrozy.github.io/content/images/personal/1.png",
+          "image":"https://damianjamrozy.github.io/content/images/personal/optimized/1.png",
           "url":"https://damianjamrozy.github.io/",
           "address":{"@type":"PostalAddress","addressLocality":"Rzeszów","addressCountry":"PL"},
           "email":"mailto:djamrozy.cv@gmail.com",
