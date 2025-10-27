@@ -30,7 +30,7 @@ echo [INFO] Wyjscie:  "%OUT%"
 echo.
 
 :: === PETLA PLIKOW ===
-for %%F in (*.jpg *.jpeg *.png *.JPG *.JPEG *.PNG) do (
+for %%F in (*.jpg *.jpeg *.png *.JPG *.JPEG *.PNG *.avif) do (
   if exist "%%~fF" (
     echo --- %%~nxF ---
     for %%S in (%SIZES%) do (
