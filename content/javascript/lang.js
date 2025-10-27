@@ -265,9 +265,9 @@ document.querySelectorAll('.num[data-suffix]').forEach(el => {
 }
 
 // inicjalizacja + obsługa kliknięć
-const savedLang = localStorage.getItem('lang') || 'pl';
-applyLang(savedLang);
-const _btnPl = document.getElementById('btn-pl');
-const _btnEn = document.getElementById('btn-en');
-if (_btnPl) _btnPl.addEventListener('click', () => applyLang('pl'));
-if (_btnEn) _btnEn.addEventListener('click', () => applyLang('en'));
+//const savedLang = localStorage.getItem('lang') || 'pl';
+//applyLang(savedLang);
+//const _btnPl = document.getElementById('btn-pl');
+//const _btnEn = document.getElementById('btn-en');
+//if (_btnPl) _btnPl.addEventListener('click', () => applyLang('pl'));
+//if (_btnEn) _btnEn.addEventListener('click', () => applyLang('en'));
