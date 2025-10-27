@@ -1,3 +1,14 @@
+function getInitialLang() {
+    const usp = new URLSearchParams(location.search);
+    const urlLang = usp.get('lang');
+    const saved = localStorage.getItem('lang');
+    return (urlLang === 'en' || urlLang === 'pl') ? urlLang : (saved || 'pl');
+}
+
+const initial = getInitialLang();
+applyLang(initial);
+
+
 /* I18N - kompletny zestaw tłumaczeń dla index.html (PL/EN) */
 const dict = {
   "pl": {

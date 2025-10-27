@@ -519,6 +519,25 @@
     </script>
 
     <script src="content/javascript/lang.js"></script>
+
+    <script>
+        (function () {
+            const btnPL = document.getElementById('btn-pl');
+            const btnEN = document.getElementById('btn-en');
+
+            function go(lang) {
+                // zapisz preferencję i przeładuj z parametrem, zachowując #sekcję
+                localStorage.setItem('lang', lang);
+                const hash = location.hash || '';
+                location.href = '/?lang=' + lang + hash;
+            }
+
+            btnPL && btnPL.addEventListener('click', () => go('pl'));
+            btnEN && btnEN.addEventListener('click', () => go('en'));
+        })();
+    </script>
+
+
     <script src="content/javascript/script.js" async></script>
 
     <!-- Person schema -->
