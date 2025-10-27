@@ -73,7 +73,7 @@ const dict = {
     "exp.i4":"<span>03.2025 - obecnie</span> <b>Administrator systemu</b><br><span class=\"exp-edu-span\">ASBiR – Akademicka Sieć Bezpieczeństwa i Równości<br>Administracja stroną asbir.pl, prace serwisowe, tworzenie i aktualizacja dedykowanych wtyczek WordPress.</span>",
     "exp.i5":"<span>10.2023 - 05.2024</span> <b>Wykładowca akademicki</b><br><span class=\"exp-edu-span\">Uniwersytet Trzeciego Wieku, Uniwersytet Rzeszowski<br>Prowadzenie zajęć komputerowych (Podstawy Informatyki) oraz grafiki komputerowej (Adobe Photoshop)</span>",
     "exp.i6":"<span>01.2020 - 01.2022</span> <b>Informatyk (Pracownik techniczny)</b><br><span class=\"exp-edu-span\">Instytut Nauk Socjologicznych, Uniwersytet Rzeszowski<br>Dbanie o infrastrukturę IT, administracja stronami internetowymi instytutu, tworzenie projektów graficznych</span>",
-	"exp.i7":"<span>11.2017 - 12.2017</span> <b>Praktykant - Frontend developer</b><br><span class=\"exp-edu-span\">Arkonsoft<br>Nauka nowych technologii weebowych z nastawieniem na frontend</span>",
+	"exp.i7":"<span>11.2017 - 12.2017</span> <b>Praktykant - Frontend developer</b><br><span class=\"exp-edu-span\">Arkonsoft<br>Nauka nowych technologii webowych z nastawieniem na frontend</span>",
 	
     /* education */
     "edu.h2":"Edukacja",
