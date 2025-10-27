@@ -1,6 +1,6 @@
 # 🌐 Damian Jamroży — Portfolio / CV
 
-> Junior IT Specialist · UX/UI Designer · Web Developer · Software & Database Engineer 
+> Junior IT Specialist · UX/UI Designer · Software Developer · Software & Database Engineer 
 
 [🇵🇱 **Polski**](#-wersja-polska) · [🇬🇧 **English**](#-english-version)
 
