@@ -9,7 +9,7 @@
 ## 🇬🇧 English version
 
 ### 🧠 About
-Personal online portfolio built as a fully responsive single-page website.  
+Personal online portfolio built as a fully responsive website.  
 It presents my professional experience, selected projects, skills, and contact information in a clean, modern form.  
 The website is powered only by **HTML, CSS, and JavaScript** — no backend required.
 
@@ -33,15 +33,14 @@ The website is powered only by **HTML, CSS, and JavaScript** — no backend requ
 
 ### 📬 Contact
 - **Email:** [djamrozy.cv@gmail.com](mailto:djamrozy.cv@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/djamrozy](https://www.linkedin.com/in/djamrozy/)  
-- **GitHub:** [github.com/DamianJamrozy](https://github.com/DamianJamrozy)
+- **LinkedIn:** [linkedin.com/in/djamrozy](https://www.linkedin.com/in/djamrozy/) 
 
 ---
 
 ## 🇵🇱 Wersja polska
 
 ### 🧠 O projekcie
-Moje osobiste portfolio online – w pełni responsywna strona typu **single-page**,  
+Moje osobiste portfolio online – w pełni responsywna strona,  
 prezentująca doświadczenie zawodowe, projekty, umiejętności i dane kontaktowe w nowoczesnej formie.  
 Strona działa wyłącznie w oparciu o **HTML, CSS i JavaScript** — bez backendu.
 
@@ -65,8 +64,7 @@ Strona działa wyłącznie w oparciu o **HTML, CSS i JavaScript** — bez backen
 
 ### 📬 Kontakt
 - **Email:** [djamrozy.cv@gmail.com](mailto:djamrozy.cv@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/djamrozy](https://www.linkedin.com/in/djamrozy/)  
-- **GitHub:** [github.com/DamianJamrozy](https://github.com/DamianJamrozy)
+- **LinkedIn:** [linkedin.com/in/djamrozy](https://www.linkedin.com/in/djamrozy/) 
 
 ---
 
