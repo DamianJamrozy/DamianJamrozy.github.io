@@ -183,9 +183,9 @@ const dict = {
 
     /* education */
     "edu.h2":"Education",
-    "edu.i1":"<span>2023 - 2024</span> <b>MSc Eng. in Computer Science</b><br><span class=\"exp-edu-span\">University of Rzeszów (second place in the best theses competition)</span>",
-    "edu.i2":"<span>2019 - 2023</span> <b>Eng in Computer Science</b><br><span class=\"exp-edu-span\">University of Rzeszów (specialization: web applications)</span>",
-    "edu.i3":"<span>2015 - 2019</span> <b>IT Technician</b><br><span class=\"exp-edu-span\">Stanisław Staszic Secondary School Complex in Staszów</span>",
+    "edu.i1":"<span>2023 - 2024</span><b> MSc Eng. in Computer Science</b><br><span class=\"exp-edu-span\">University of Rzeszów (second place in the best theses competition)</span>",
+    "edu.i2":"<span>2019 - 2023</span><b> Eng in Computer Science</b><br><span class=\"exp-edu-span\">University of Rzeszów (specialization: web applications)</span>",
+    "edu.i3":"<span>2015 - 2019</span><b> IT Technician</b><br><span class=\"exp-edu-span\">Stanisław Staszic Secondary School Complex in Staszów</span>",
 
     /* certificates */
     "cert.h2":"Certificates",
