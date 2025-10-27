@@ -11,6 +11,9 @@
     <meta property="og:image" content="https://damianjamrozy.github.io/content/images/personal/1.png">
     <meta property="og:url" content="https://damianjamrozy.github.io/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:locale:alternate" content="en_US">
+
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Damian Jamroży — Portfolio / CV">
@@ -31,6 +34,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="content/css/style.css">
+
+    <link rel="preload" as="image" href="content/images/personal/1.png" imagesrcset="content/images/personal/1.png 1x" fetchpriority="high">
+
 </head>
 <body>
     <!-- progress bar -->
@@ -83,15 +89,15 @@
 
     <!-- HERO -->
     <section id="home" class="hero">
-        <div class="hero-media"><img src="content/images/personal/1.png" alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"></div>
+        <div class="hero-media"><img src="content/images/personal/1.png" alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer" fetchpriority="high" decoding="async"></div>
         <div class="hero-overlay"></div>
         <div class="social-rail rail">
             <span class="rail-line"></span>
-            <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank">FB</a>
-            <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank">IG</a>
-            <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank">YT</a>
-            <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank">GH</a>
-            <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank">IN</a>
+            <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+            <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+            <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank" rel="noopener">YT</a>
+            <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+            <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank" rel="noopener">IN</a>
         </div>
         <div class="container hero-content">
             <div class="hero-topline" data-i18n="hero.topline">Software Engineer & Visual Thinker</div>
