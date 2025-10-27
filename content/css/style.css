@@ -9,6 +9,9 @@
     overflow-x: hidden;
 	}
 
+    h1{
+        margin: 0;
+    }
 
     /* === HEADER === */
     header.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:linear-gradient(180deg,rgba(10,12,16,.92),rgba(10,12,16,.35),rgba(10,12,16,0));border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(8px)}

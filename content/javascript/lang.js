@@ -20,7 +20,7 @@ const dict = {
     "work.p2.p":"Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.",
     "work.p2.cta":"Porozmawiajmy o tym",
     "work.p3.h3":"Redesign stron oraz aplikacji",
-    "work.p3.p":"Nowoczesna, wizytówka lub pełnowymiarowa responsywna aplikacja weebowa z funkcjonalnym CMS i zoptymalizowanym SEO.",
+    "work.p3.p":"Nowoczesna, wizytówka lub pełnowymiarowa responsywna aplikacja webowa z funkcjonalnym CMS i zoptymalizowanym SEO.",
     "work.p3.cta":"Zobacz jak mogę pomóc",
 
     /* services */
