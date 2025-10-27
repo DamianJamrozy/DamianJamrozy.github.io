@@ -88,7 +88,15 @@
 
     <!-- HERO -->
     <section id="home" class="hero">
-        <div class="hero-media"><img src="content/images/personal/1.avif" alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer" fetchpriority="high" decoding="async"></div>
+        <div class="hero-media">
+            <picture>
+                <source srcset="content/images/personal/1.avif" type="image/avif">
+                <source srcset="content/images/personal/1.webp" type="image/webp">
+                <img src="content/images/personal/1.png"
+                     alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
+                     width="800" height="800" fetchpriority="high" decoding="async">
+            </picture>
+        </div>
         <div class="hero-overlay"></div>
         <div class="social-rail rail">
             <span class="rail-line"></span>
