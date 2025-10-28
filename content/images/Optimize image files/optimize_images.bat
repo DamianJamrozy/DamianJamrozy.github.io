@@ -16,9 +16,9 @@ set "src=."
 set "out=optimized"
 if not exist "%out%" mkdir "%out%"
 
-for %%F in ("%src%\*.jpg" "%src%\*.png") do (
+for %%F in ("%src%\*.jpg" "%src%\*.png" "%src%\*.avif") do (
   echo Przetwarzanie %%~nxF ...
-  for %%S in (400 800 1200 1600) do (
+  for %%S in (400 600 800 1200 1600) do (
     magick "%%F" -resize %%Sx%%S^ -quality 82 "%out%\%%~nF-%%S.webp"
     magick "%%F" -resize %%Sx%%S^ -quality 48 "%out%\%%~nF-%%S.avif"
   )

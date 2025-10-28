@@ -38,13 +38,16 @@
     <!-- Fonts: najprościej przez Google Fonts bez blokowania renderu -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap">
     </noscript>
 
     <!-- CSS (blokujące, ale konieczne; jeden skompresowany plik) -->
-    <link rel="stylesheet" href="content/css/style.css">
+    <!--<link rel="stylesheet" href="content/css/style.css">-->
+    <link rel="preload" as="style" href="content/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="content/css/style.css"></noscript>
 
     <!-- Preload LCP z responsywnym imagesrcset (działa lepiej niż pojedynczy href) -->
     <link rel="preload"
@@ -117,12 +120,14 @@
             <picture>
                 <source type="image/avif"
                         srcset="content/images/personal/optimized/1-400.avif 400w,
+                            content/images/personal/optimized/1-600.avif 600w,
                             content/images/personal/optimized/1-800.avif 800w,
                             content/images/personal/optimized/1-1200.avif 1200w,
                             content/images/personal/optimized/1-1600.avif 1600w"
                         sizes="(max-width: 600px) 100vw, 50vw">
                 <source type="image/webp"
                         srcset="content/images/personal/optimized/1-400.webp 400w,
+                        content/images/personal/optimized/1-600.webp 600w,
                         content/images/personal/optimized/1-800.webp 800w,
                         content/images/personal/optimized/1-1200.webp 1200w,
                         content/images/personal/optimized/1-1600.webp 1600w"
@@ -164,11 +169,13 @@
                     <picture>
                         <source type="image/avif"
                                 srcset="content/images/others/optimized/1-400.avif 400w,
+                                    content/images/others/optimized/1-600.avif 600w,
                                     content/images/others/optimized/1-800.avif 800w,
                                     content/images/others/optimized/1-1200.avif 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <source type="image/webp"
                                 srcset="content/images/others/optimized/1-400.webp 400w,
+                                    content/images/others/optimized/1-600.webp 600w,
                                     content/images/others/optimized/1-800.webp 800w,
                                     content/images/others/optimized/1-1200.webp 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
@@ -183,11 +190,13 @@
                     <picture>
                         <source type="image/avif"
                                 srcset="content/images/others/optimized/2-400.avif 400w,
+                                  content/images/others/optimized/2-600.avif 600w,  
                                   content/images/others/optimized/2-800.avif 800w,
                                   content/images/others/optimized/2-1200.avif 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <source type="image/webp"
                                 srcset="content/images/others/optimized/2-400.webp 400w,
+                                  content/images/others/optimized/2-600.webp 600w,
                                   content/images/others/optimized/2-800.webp 800w,
                                   content/images/others/optimized/2-1200.webp 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
@@ -211,11 +220,13 @@
                     <picture>
                         <source type="image/avif"
                                 srcset="content/images/others/optimized/3-400.avif 400w,
+                                  content/images/others/optimized/3-600.avif 600w,
                                   content/images/others/optimized/3-800.avif 800w,
                                   content/images/others/optimized/3-1200.avif 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <source type="image/webp"
                                 srcset="content/images/others/optimized/3-400.webp 400w,
+                                  content/images/others/optimized/3-600.webp 600w,
                                   content/images/others/optimized/3-800.webp 800w,
                                   content/images/others/optimized/3-1200.webp 1200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">

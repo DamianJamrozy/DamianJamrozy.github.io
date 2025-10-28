@@ -2,18 +2,18 @@
 ## 🇵🇱 Wersja polska
 
 ### 📘 Opis programu
-**optimize_images.bat** to prosty i skuteczny skrypt wsadowy stworzony przez **Damiana Jamrożego**, służący do automatycznej **konwersji i optymalizacji obrazów** w formatach **JPG** i **PNG** do nowoczesnych, skompresowanych formatów **WEBP** oraz **AVIF**.
+**optimize_images.bat** to prosty i skuteczny skrypt wsadowy stworzony przez **Damiana Jamrożego**, służący do automatycznej **konwersji i optymalizacji obrazów** w formatach **JPG**, **PNG** i **AVIF** do nowoczesnych, skompresowanych formatów **WEBP** oraz **AVIF**.
 
 Program generuje zoptymalizowane wersje grafik w różnych rozdzielczościach, co jest szczególnie przydatne przy tworzeniu stron internetowych, aplikacji webowych lub materiałów promocyjnych.
 
 ---
 
 ### ⚙️ Funkcjonalności
-- ✅ Automatyczna konwersja plików `.jpg` i `.png` z bieżącego katalogu  
+- ✅ Automatyczna konwersja plików `.jpg`, `.png` i `.avif` z bieżącego katalogu  
 - ✅ Tworzenie zoptymalizowanych kopii w formatach:
   - **WEBP** (jakość 82)
   - **AVIF** (jakość 48)
-- ✅ Generowanie wielu rozdzielczości: `400`, `800`, `1200`, `1600` pikseli  
+- ✅ Generowanie wielu rozdzielczości: `400`, `600`, `800`, `1200`, `1600` pikseli  
 - ✅ Zapis wyników w folderze `optimized/`  
 - ✅ Obsługa znaków UTF-8 (np. polskie znaki w nazwach plików)  
 - ✅ Automatyczne sprawdzanie dostępności programu **ImageMagick**
@@ -104,18 +104,18 @@ Użytkowanie programu do celów prywatnych lub komercyjnych wymaga **indywidualn
 ## 🇬🇧 English Version
 
 ### 📘 Program Description
-**optimize_images.bat** is a simple and efficient batch script created by **Damian Jamroży** for **automated image conversion and optimization** from **JPG** and **PNG** formats to modern compressed formats — **WEBP** and **AVIF**.
+**optimize_images.bat** is a simple and efficient batch script created by **Damian Jamroży** for **automated image conversion and optimization** from **JPG**, **PNG** and **AVIF** formats to modern compressed formats — **WEBP** and **AVIF**.
 
 The script automatically generates optimized versions of images in multiple resolutions — ideal for web development, responsive design, or digital content optimization.
 
 ---
 
 ### ⚙️ Features
-- ✅ Automatically converts `.jpg` and `.png` files from the current folder  
+- ✅ Automatically converts `.jpg`, `.png` and `.avif` files from the current folder  
 - ✅ Creates optimized copies in:
   - **WEBP** (`quality 82`)
   - **AVIF** (`quality 48`)
-- ✅ Generates multiple sizes: `400`, `800`, `1200`, `1600` pixels  
+- ✅ Generates multiple sizes: `400`, `600`, `800`, `1200`, `1600` pixels  
 - ✅ Saves results in the `optimized/` folder  
 - ✅ UTF-8 support (Polish and special characters)  
 - ✅ Checks if **ImageMagick** is installed before running
