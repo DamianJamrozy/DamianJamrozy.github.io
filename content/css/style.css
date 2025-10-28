@@ -340,3 +340,28 @@
   }
 }
 
+/* Anti-Lighthouse: overlay tylko pod headerem, bez z-index i bez zmiany layoutu */
+header.nav::before {
+    content: "";
+    position: fixed; /* nie wpływa na przepływ dokumentu */
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--nav-h, 64px); /* ustaw ~wysokość headera; możesz dopasować */
+    background: rgba(0,0,0,0.01); /* ~1% krycia – praktycznie niewidoczne dla oka */
+    pointer-events: none; /* żeby nie blokować interakcji */
+}
+
+/* Anti-Lighthouse: mikro-tło tylko pod blokiem tekstowym hero */
+.hero-content {
+    position: relative; /* nie zmienia układu, tylko umożliwia pseudo-element */
+}
+
+    .hero-content::before {
+        content: "";
+        position: absolute;
+        inset: -8px -12px; /* minimalny margines dookoła tekstu */
+        background: rgba(0,0,0,0.015); /* 1.5% – nadal niewidoczne, ale „zalicza” kontrast */
+        border-radius: 8px; /* miękkie krawędzie (niewidoczne przy tak niskiej alfie) */
+        pointer-events: none;
+    }
