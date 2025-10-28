@@ -526,7 +526,24 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-card reveal tilt" data-tilt>
-                <img src="content/images/others/4.avif" alt="Damian Jamroży" width="360px" height="240px">
+                <!--<img src="content/images/others/4.avif" alt="Damian Jamroży" width="360px" height="240px">-->
+                <picture>
+                    <source type="image/avif"
+                            srcset="content/images/others/optimized/4-400.avif 400w,
+                              content/images/others/optimized/4-600.avif 600w,
+                              content/images/others/optimized/4-800.avif 800w,
+                              content/images/others/optimized/4-1200.avif 1200w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <source type="image/webp"
+                            srcset="content/images/others/optimized/4-400.webp 400w,
+                              content/images/others/optimized/4-600.webp 600w,
+                              content/images/others/optimized/4-800.webp 800w,
+                              content/images/others/optimized/4-1200.webp 1200w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="content/images/others/optimized/4-800.webp"
+                         alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
+                         width="800" height="600" loading="lazy" decoding="async">
+                </picture>
 
                 <div>
                     <h2 data-i18n="about.h2">O mnie</h2>
