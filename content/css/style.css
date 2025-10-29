@@ -5,13 +5,9 @@
     img{max-width:100%;display:block}
     .container{width:min(var(--container),92vw);margin-inline:auto}
 
-	html, body {
-    overflow-x: hidden;
-	}
+	html, body {overflow-x: hidden}
 
-    h1{
-        margin: 0;
-    }
+    h1{ margin: 0}
 
     /* === HEADER === */
     header.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:linear-gradient(180deg,rgba(10,12,16,.92),rgba(10,12,16,.35),rgba(10,12,16,0));border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(8px)}
@@ -68,66 +64,15 @@
     .about{padding:100px 0;background:linear-gradient(180deg,#0b0e13,#0d1016)}
     .about-card{background:#0f131a;border-radius:var(--radius);padding:32px;display:flex;gap:28px;align-items:center;border:1px solid rgba(255,255,255,.08)}
     .about-card img{width:360px;border-radius:var(--radius);object-fit:cover;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+    .about-card picture{display:block;width:360px;flex:0 0 360px;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5);aspect-ratio:3/2}
+    .about-card picture img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0;box-shadow:none}
     .about-card h2{color:var(--gold);margin-bottom:.6rem;font-family:Fraunces,ui-serif}
     .about-card p{color:var(--muted);font-size:clamp(.95rem,2.5vw,1rem)}
     .metrics{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
     .metric{min-width:120px}
     .metric .num{font-family:Fraunces,ui-serif;font-weight:900;font-size:clamp(1.2rem,4.2vw,2rem);color:#fff}
     .metric .label{color:var(--muted);font-weight:600;letter-spacing:.02em;font-size:clamp(.85rem,2.3vw,.95rem)}
-
-
-/* ABOUT – baza */
-.about-card {
-    background: #0f131a;
-    border-radius: var(--radius);
-    padding: 32px;
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    border: 1px solid rgba(255,255,255,.08);
-}
-
-    /* (zostaw) dla zwykłych <img> poza picture */
-    .about-card img {
-        width: 360px;
-        border-radius: var(--radius);
-        object-fit: cover;
-        box-shadow: 0 8px 40px rgba(0,0,0,.5);
-    }
-
-    /* >>> DODAJ / PODMIEŃ: kontener picture trzyma rozmiar i kształt */
-    .about-card picture {
-        display: block;
-        width: 360px; /* jak wcześniej */
-        flex: 0 0 360px; /* zarezerwuj miejsce w układzie flex */
-        border-radius: var(--radius);
-        overflow: hidden; /* żeby zaokrąglenie działało na obraz */
-        box-shadow: 0 8px 40px rgba(0,0,0,.5);
-        aspect-ratio: 3 / 2; /* jak 360x240 */
-    }
-
-        /* >>> DODAJ / PODMIEŃ: obraz wypełnia picture */
-        .about-card picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 0; /* promień jest już na picture */
-            box-shadow: none; /* cień na picture */
-        }
-
-    /* Teksty – bez zmian */
-    .about-card h2 {
-        color: var(--gold);
-        margin-bottom: .6rem;
-        font-family: Fraunces,ui-serif
-    }
-
-    .about-card p {
-        color: var(--muted);
-        font-size: clamp(.95rem,2.5vw,1rem)
-    }
-
+    @media (max-width:768px){.about-card{flex-direction:column;align-items:flex-start}.about-card picture{width:100%;max-width:520px;flex-basis:auto}}
 
 
     /* Services */
