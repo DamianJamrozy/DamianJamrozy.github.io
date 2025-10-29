@@ -1,26 +1,18 @@
 /* === LOCAL FONTS === */
-/* === Inter (latin-ext) === */
 @font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
 @font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-500.woff2")    format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
 @font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-600.woff2")    format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
 @font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-700.woff2")    format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
 @font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-800.woff2")    format("woff2"); font-weight:800; font-style:normal; font-display:swap; }
-
-/* === Fraunces (latin-ext) === */
 @font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
 @font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-900.woff2") format("woff2"); font-weight:900; font-style:normal; font-display:swap; }
 
-
-
 :root { --bg:#0a0c10; --paper:#10131a; --ink:#f5f6f8; --muted:#9ba4b5; --accent:#7c5dfa; --gold:#d6b46c; --radius:18px; --container:1180px; --navH:64px; }
     *{box-sizing:border-box}
-    html,body{scroll-behavior:smooth;}
+    html,body{scroll-behavior:smooth;overflow-x: hidden}
     body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,system-ui,Roboto,sans-serif;line-height:1.6}
     img{max-width:100%;display:block}
     .container{width:min(var(--container),92vw);margin-inline:auto}
-
-	html, body {overflow-x: hidden}
-
     h1{ margin: 0}
 
     /* === HEADER === */
@@ -37,16 +29,4 @@
 
 
 /* Nagłówki nadal Fraunces jak masz teraz */
-.section h2, .work h2, .services h2, .about h2, .hero-name {
-    font-feature-settings: "liga" 1, "dlig" 1; /* ligatury włączone */
-}
-
-/* Piękniejszy ampersand – włączamy dostępne alternatywy */
-.amp {
-    font-feature-settings: "ss01" 1, /* stylistic set 1 – częsty wariant & w Fraunces */
-    "ss02" 1, /* stylistic set 2 – jeśli istnieje */
-    "swsh" 1, /* swash – ozdobne formy, bywa na & */
-    "salt" 1; /* stylistic alternates */
-}
-
-
+.section h2, .work h2, .services h2, .about h2, .hero-name {font-feature-settings: "liga" 1, "dlig" 1; }

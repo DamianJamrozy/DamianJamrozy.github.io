@@ -3,6 +3,14 @@
 
     .side-label{position:fixed;left:12px;top:40vh;writing-mode:vertical-rl;text-orientation:mixed;color:#6e7583;letter-spacing:.32em;font-weight:800;font-size:.72rem;z-index:5;cursor:default}
 
+    /* Piękniejszy ampersand – włączamy dostępne alternatywy */
+    .amp {
+        font-feature-settings: "ss01" 1, /* stylistic set 1 – częsty wariant & w Fraunces */
+        "ss02" 1, /* stylistic set 2 – jeśli istnieje */
+        "swsh" 1, /* swash – ozdobne formy, bywa na & */
+        "salt" 1; /* stylistic alternates */
+    }
+
     /* === HERO === */
     .hero{position:relative;min-height:90svh;min-height:90dvh;display:grid;place-items:end center;background:var(--bg)}
     .hero-media{position:absolute;inset:0;overflow:hidden}
