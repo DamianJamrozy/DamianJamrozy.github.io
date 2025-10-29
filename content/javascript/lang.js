@@ -35,7 +35,7 @@ const dict = {
         "services.s6.h3": "Bazy danych",
         "services.s6.p": "Projektowanie, tworzenie oraz zarządzanie relacyjnymi bazami danych.",
         /* skills */
-        "skills.h2": "Technologie & narzędzia",
+        "skills.h2": "Technologie <span class='amp'>&amp;</span> narzędzia",
         "skills.html": "HTML - semantyczne szablony",
         "skills.css": "CSS - style i layout",
         "skills.js": "JavaScript - interakcje i logika front-end",
