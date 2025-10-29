@@ -2,56 +2,58 @@
 ## 🇵🇱 Wersja polska
 
 ### 📘 Opis programu
-**optimize_images.bat** to prosty i skuteczny skrypt wsadowy stworzony przez **Damiana Jamrożego**, służący do automatycznej **konwersji i optymalizacji obrazów** w formatach **JPG**, **PNG** i **AVIF** do nowoczesnych, skompresowanych formatów **WEBP** oraz **AVIF**.
+**optimize_images.bat** to rozwinięta wersja skryptu wsadowego autorstwa **Damiana Jamrożego**, służąca do **automatycznej konwersji, optymalizacji i skalowania obrazów** w formatach **JPG**, **PNG** i **AVIF** do nowoczesnych, wysoko wydajnych formatów **WEBP** oraz **AVIF**.
 
-Program generuje zoptymalizowane wersje grafik w różnych rozdzielczościach, co jest szczególnie przydatne przy tworzeniu stron internetowych, aplikacji webowych lub materiałów promocyjnych.
+Nowa wersja umożliwia wybór **trzech trybów jakości**, generowanie obrazów w **stałym zestawie rozdzielczości** oraz prezentuje **czytelny pasek postępu** w procentach.  
+To narzędzie idealne do przygotowywania grafik dla stron internetowych, aplikacji webowych oraz systemów responsywnych.
 
 ---
 
 ### ⚙️ Funkcjonalności
-- ✅ Automatyczna konwersja plików `.jpg`, `.png` i `.avif` z bieżącego katalogu  
+- ✅ Automatyczna konwersja plików `.jpg`, `.jpeg`, `.png` i `.avif` z bieżącego katalogu  
 - ✅ Tworzenie zoptymalizowanych kopii w formatach:
-  - **WEBP** (jakość 82)
-  - **AVIF** (jakość 48)
-- ✅ Generowanie wielu rozdzielczości: `400`, `600`, `800`, `1200`, `1600` pikseli  
+  - **WEBP**
+  - **AVIF**
+- ✅ Generowanie 8 rozdzielczości:  
+  `400`, `600`, `800`, `1200`, `1600`, `2000`, `2560`, `3200` pikseli  
+- ✅ Możliwość wyboru trybu jakości:
+  1. **Bezstratny** – maksymalna jakość, duże pliki  
+  2. **Wysoka jakość** – prawie bezstratna (zalecana dla grafik hero)  
+  3. **Standard** – mniejsze pliki, szybsze działanie  
+- ✅ Pasek postępu z procentowym wskaźnikiem (`Postęp: [#####.....] 73%`)  
+- ✅ Automatyczne sprawdzanie dostępności programu **ImageMagick**  
+- ✅ Obsługa nazw plików z polskimi znakami (UTF-8)  
 - ✅ Zapis wyników w folderze `optimized/`  
-- ✅ Obsługa znaków UTF-8 (np. polskie znaki w nazwach plików)  
-- ✅ Automatyczne sprawdzanie dostępności programu **ImageMagick**
 
 ---
 
 ### 🧩 Wymagania
 - System operacyjny **Windows 10/11**
-- Zainstalowany program **ImageMagick**
+- Program **ImageMagick** dodany do zmiennej środowiskowej PATH
 
 #### 🖥️ Instalacja ImageMagick przez CMD (winget)
-Jeśli nie masz zainstalowanego programu **ImageMagick**, uruchom **Wiersz poleceń (CMD)** jako administrator i wpisz:
-
 ```cmd
 winget install ImageMagick.ImageMagick
-```
-
-Po zakończeniu instalacji upewnij się, że polecenie `magick` działa:
-
-```cmd
 magick -version
 ```
-
-Jeśli zobaczysz wersję programu — instalacja przebiegła pomyślnie ✅
+Jeśli polecenie `magick` zwróci wersję programu — instalacja zakończona pomyślnie ✅
 
 ---
 
 ### 🚀 Sposób użycia
-1. Skopiuj plik `optimize_images.bat` do folderu zawierającego pliki `.jpg` lub `.png`
-2. Uruchom skrypt dwukrotnym kliknięciem lub z poziomu CMD:
-   ```cmd
-   optimize_images.bat
+1. Skopiuj plik `optimize_images.bat` do folderu z obrazami.  
+2. Uruchom go dwukrotnym kliknięciem lub z poziomu CMD.  
+3. Wybierz tryb:
    ```
-3. Po zakończeniu działania skryptu utworzy się folder:
+   [1] Bezstratny (duże pliki)
+   [2] Wysoka jakość (zalecane dla hero)
+   [3] Standard (mniejsze pliki)
+   ```
+4. Skrypt automatycznie utworzy folder:
    ```
    optimized/
    ```
-   Zawierający zoptymalizowane pliki w formatach `.webp` i `.avif` dla każdej rozdzielczości.
+   Zawierający wszystkie pliki `.webp` i `.avif` w 8 rozdzielczościach.
 
 ---
 
@@ -59,148 +61,129 @@ Jeśli zobaczysz wersję programu — instalacja przebiegła pomyślnie ✅
 ```
 / (bieżący folder)
 │
-├── photo1.jpg
-├── photo2.png
+├── hero.png
+├── banner.jpg
 │
 └── optimized/
-    ├── photo1-400.webp
-    ├── photo1-400.avif
-    ├── photo1-800.webp
-    ├── photo1-800.avif
-    ├── photo2-1200.webp
-    └── photo2-1200.avif
+    ├── hero-400.webp
+    ├── hero-400.avif
+    ├── hero-800.webp
+    ├── hero-800.avif
+    ├── hero-2000.webp
+    ├── hero-2000.avif
+    └── ...
 ```
 
 ---
 
-### 🧠 Dodatkowe wskazówki
-- Możesz edytować pętlę:
-  ```bat
-  for %%S in (400 800 1200 1600)
-  ```
-  aby dodać własne rozdzielczości.
-- Zmniejszenie parametru `-quality` spowoduje większą kompresję (mniejszy rozmiar pliku).
-- Format **AVIF** oferuje najlepszy stosunek jakości do rozmiaru, lecz nie wszystkie przeglądarki go obsługują.
+### 🔧 Tryby jakości (parametry techniczne)
+
+#### 1️⃣ **Bezstratny (LOSSLESS)**
+- WEBP: `-define webp:lossless=true -quality 100`
+- AVIF: `-define heic:lossless=true -quality 100`
+- AVIF SPEED: `2`
+
+#### 2️⃣ **Wysoka jakość (HIGH)**
+- WEBP: `-quality 92 -define webp:method=6 -define webp:use-sharp-yuv=true`
+- AVIF: `-quality 72 -define heic:chroma=444 -define heic:speed=4`
+
+#### 3️⃣ **Standard (DEFAULT)**
+- WEBP: `-quality 88`
+- AVIF: `-quality 62 -define heic:chroma=444 -define heic:speed=6`
+
+Wszystkie tryby stosują:
+```
+-filter Lanczos -resize SxS> -colorspace sRGB -strip
+```
+(`SxS>` = tylko zmniejszanie — brak powiększania mniejszych obrazów)
+
+---
+
+### 💡 Wskazówki
+- Dla grafik **hero** na stronach desktopowych używaj trybu **Wysoka jakość** – oferuje niemal perfekcyjny wygląd przy mniejszym rozmiarze.  
+- Dla galerii, miniaturek i mobilnych wersji strony wystarczy tryb **Standard**.  
+- Tryb **Bezstratny** zalecany jest wyłącznie do plików bazowych lub archiwizacji.  
+- Skrypt obsługuje także **wejściowe pliki AVIF**, dzięki czemu można ponownie je przeskalować i zoptymalizować.  
+- Jeśli zobaczysz plik większy niż oryginał (np. AVIF), to normalne w trybie bezstratnym — jest to efekt kompresji bezztraty.
 
 ---
 
 ### 👨‍💻 Autor
 **Damian Jamroży**  
-Magister inżynier nauk informatycznych  
-Uniwersytet Rzeszowski – Kolegium Nauk Przyrodniczych  
-📅 Rok: 2025  
+Magister inżynier nauk informatycznych
 
 ---
 
 ### 📜 Licencja
-Wszelkie prawa zastrzeżone © 2025 Damian Jamroży.  
+Wszelkie prawa zastrzeżone © 2025 **Damian Jamroży**.  
 Kopiowanie, modyfikowanie, rozpowszechnianie lub wykorzystywanie tego programu w jakiejkolwiek formie bez **pisemnej zgody autora** jest zabronione.
 
 Użytkowanie programu do celów prywatnych lub komercyjnych wymaga **indywidualnej zgody Damiana Jamrożego**.
 
-
+📅 Rok: 2025
+  
 ---
 
 ## 🇬🇧 English Version
 
 ### 📘 Program Description
-**optimize_images.bat** is a simple and efficient batch script created by **Damian Jamroży** for **automated image conversion and optimization** from **JPG**, **PNG** and **AVIF** formats to modern compressed formats — **WEBP** and **AVIF**.
+**optimize_images.bat** is an advanced batch script created by **Damian Jamroży**, designed for **automatic image conversion, optimization, and scaling** from **JPG**, **PNG**, and **AVIF** to modern formats **WEBP** and **AVIF**.
 
-The script automatically generates optimized versions of images in multiple resolutions — ideal for web development, responsive design, or digital content optimization.
+It now supports **three quality modes**, generates **eight fixed resolutions**, and shows a **live progress bar** during processing.  
+Perfect for responsive web design and performance-focused workflows.
 
 ---
 
 ### ⚙️ Features
-- ✅ Automatically converts `.jpg`, `.png` and `.avif` files from the current folder  
-- ✅ Creates optimized copies in:
-  - **WEBP** (`quality 82`)
-  - **AVIF** (`quality 48`)
-- ✅ Generates multiple sizes: `400`, `600`, `800`, `1200`, `1600` pixels  
-- ✅ Saves results in the `optimized/` folder  
-- ✅ UTF-8 support (Polish and special characters)  
-- ✅ Checks if **ImageMagick** is installed before running
+- ✅ Converts `.jpg`, `.jpeg`, `.png`, and `.avif` images from the current directory  
+- ✅ Generates optimized copies in:
+  - **WEBP**
+  - **AVIF**
+- ✅ Creates 8 resolutions:  
+  `400`, `600`, `800`, `1200`, `1600`, `2000`, `2560`, `3200` px  
+- ✅ Choose one of three modes:
+  1. **Lossless** – best quality, largest files  
+  2. **High Quality** – near-lossless (recommended for hero)  
+  3. **Standard** – smaller size, faster conversion  
+- ✅ Displays a live **progress bar** with percentages  
+- ✅ Checks if **ImageMagick** is installed  
+- ✅ UTF-8 filename support  
+- ✅ Output saved to `optimized/`
 
 ---
 
-### 🧩 Requirements
-- Operating system: **Windows 10/11**  
-- Installed **ImageMagick**
+### 🔧 Quality presets
+#### 🔹 Lossless
+- WEBP: `-define webp:lossless=true -quality 100`
+- AVIF: `-define heic:lossless=true -quality 100`
+- Speed: 2
 
-#### 🖥️ Install ImageMagick via CMD (winget)
-If you don’t have ImageMagick installed, open **Command Prompt (CMD)** as administrator and run:
+#### 🔹 High Quality
+- WEBP: `-quality 92 -define webp:method=6 -define webp:use-sharp-yuv=true`
+- AVIF: `-quality 72 -define heic:chroma=444 -define heic:speed=4`
 
-```cmd
-winget install ImageMagick.ImageMagick
+#### 🔹 Standard
+- WEBP: `-quality 88`
+- AVIF: `-quality 62 -define heic:chroma=444 -define heic:speed=6`
+
+All modes use:
 ```
-
-After installation, verify it works by typing:
-
-```cmd
-magick -version
+-filter Lanczos -resize SxS> -colorspace sRGB -strip
 ```
-
-If you see version information — installation was successful ✅
-
----
-
-### 🚀 Usage
-1. Copy `optimize_images.bat` to a folder containing `.jpg` or `.png` images  
-2. Run the script by double-clicking it or through CMD:
-   ```cmd
-   optimize_images.bat
-   ```
-3. The script will create a new folder:
-   ```
-   optimized/
-   ```
-   containing all optimized `.webp` and `.avif` files at various resolutions.
-
----
-
-### 📂 Example Directory Structure
-```
-/ (current folder)
-│
-├── photo1.jpg
-├── photo2.png
-│
-└── optimized/
-    ├── photo1-400.webp
-    ├── photo1-400.avif
-    ├── photo1-800.webp
-    ├── photo1-800.avif
-    ├── photo2-1200.webp
-    └── photo2-1200.avif
-```
-
----
-
-### 🧠 Tips
-- You can modify the list of resolutions inside the loop:
-  ```bat
-  for %%S in (400 800 1200 1600)
-  ```
-  to suit your needs.  
-- Lowering the `-quality` value increases compression (reduces file size).  
-- The **AVIF** format provides the best compression ratio but may not be supported by all browsers.
 
 ---
 
 ### 👨‍💻 Author
 **Damian Jamroży**  
-M.Sc. Eng. in Computer Science  
-University of Rzeszów – College of Natural Sciences  
-📅 Year: 2025  
+M.Sc. Eng. in Computer Science 
+
 
 ---
 
 ### 📜 License
-All rights reserved © 2025 Damian Jamroży.  
-Copying, modifying, redistributing, or using this program in any form without the **written permission of the author** is strictly prohibited.
+All rights reserved © 2025 **Damian Jamroży**.  
+Copying, modifying, redistributing, or using this program in any form without the **written consent of the author** is strictly prohibited.
 
 Use of this program for private or commercial purposes requires **individual permission from Damian Jamroży**.
 
-
----
-
-© 2025 Damian Jamroży
+📅 Year: 2025  
