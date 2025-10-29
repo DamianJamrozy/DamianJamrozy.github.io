@@ -111,9 +111,14 @@
     </header>
 
     <!-- mobile offcanvas -->
-    <div class="mobile-backdrop" id="backdrop" style="opacity:0;pointer-events:none;"></div>
+    <div class="mobile-backdrop" id="backdrop"></div>
     <!--<aside class="mobile-panel" id="mobile-menu" aria-hidden="true" style="transform:translateX(100%);">-->
     <aside class="mobile-panel" id="mobile-menu" aria-hidden="true">
+        <button class="mobile-close" id="mobile-close" aria-label="Zamknij menu" title="Zamknij">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+            </svg>
+        </button>
 
         <a href="#work" data-i18n="nav.work">WORK</a>
         <a href="#services" data-i18n="nav.services">SERVICES</a>

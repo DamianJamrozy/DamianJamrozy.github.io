@@ -114,15 +114,18 @@
 	  if (first) first.focus({ preventScroll: true });
 	}
 
-	function closeMenu() {
-	  panel.classList.remove('open');
-	  panel.setAttribute('aria-hidden', 'true');
-	  btn.setAttribute('aria-expanded', 'false');
-	  backdrop.classList.remove('show');
+    function closeMenu() {
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        backdrop.classList.remove('show');
 
-	  if (langToggle) langToggle.classList.remove('hide-lang'); // <— pokaż języki
-	  btn.focus({ preventScroll: true });
-	}
+        if (langToggle) langToggle.classList.remove('hide-lang'); // <— pokaż języki
+        btn.focus({ preventScroll: true });
+    }
+
+    const closeBtn = document.getElementById('mobile-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
     btn.addEventListener('click', ()=> (panel.classList.contains('open')? closeMenu():openMenu()));
     backdrop.addEventListener('click', closeMenu);
