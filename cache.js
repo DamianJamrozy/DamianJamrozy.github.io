@@ -1,41 +1,52 @@
-/* sw.js (root) */
+/* cache.js (Service Worker) */
 self.skipWaiting();
 self.clientsClaim();
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
+// 1) Spróbuj wczytać Workbox z CDN, ale nie zakładaj, że się uda
+try {
+    importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
+} catch (e) {
+    // np. blokada sieci / CDN — odpuść workbox, pojedź fallbackiem
+    console.warn('Workbox import failed:', e);
+}
 
-// porządek przy aktualizacjach
-workbox.core.setCacheNameDetails({prefix: 'cv'});
-workbox.precaching.cleanupOutdatedCaches();
+// 2) Jeśli Workbox dostępny – konfiguruj cache zgodnie z planem
+if (self.workbox) {
+    const { routing, strategies, core, precaching, cacheableResponse, expiration } = self.workbox;
 
-// CSS/JS → szybko odświeżaj z tła
-workbox.routing.registerRoute(
-  ({request}) => ['style', 'script'].includes(request.destination),
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'cv-static',
-  })
-);
+    core.setCacheNameDetails({ prefix: 'cv' });
+    precaching.cleanupOutdatedCaches();
 
-// Fonty → trzymaj długo w cache
-workbox.routing.registerRoute(
-  ({request}) => request.destination === 'font',
-  new workbox.strategies.CacheFirst({
-    cacheName: 'cv-fonts',
-    plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [0, 200]}),
-      new workbox.expiration.ExpirationPlugin({maxEntries: 30, maxAgeSeconds: 31536000}) // 1 rok
-    ]
-  })
-);
+    // CSS/JS – stale-while-revalidate
+    routing.registerRoute(
+        ({ request }) => ['style', 'script'].includes(request.destination),
+        new strategies.StaleWhileRevalidate({ cacheName: 'cv-static' })
+    );
 
-// Obrazy (AVIF/WEBP) → CacheFirst z limitem
-workbox.routing.registerRoute(
-  ({request}) => request.destination === 'image',
-  new workbox.strategies.CacheFirst({
-    cacheName: 'cv-images',
-    plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [0, 200]}),
-      new workbox.expiration.ExpirationPlugin({maxEntries: 60, maxAgeSeconds: 31536000})
-    ]
-  })
-);
+    // Fonty – cache-first na 1 rok
+    routing.registerRoute(
+        ({ request }) => request.destination === 'font',
+        new strategies.CacheFirst({
+            cacheName: 'cv-fonts',
+            plugins: [
+                new cacheableResponse.CacheableResponsePlugin({ statuses: [0, 200] }),
+                new expiration.ExpirationPlugin({ maxEntries: 30, maxAgeSeconds: 31536000 })
+            ]
+        })
+    );
+
+    // Obrazy – cache-first na 1 rok
+    routing.registerRoute(
+        ({ request }) => request.destination === 'image',
+        new strategies.CacheFirst({
+            cacheName: 'cv-images',
+            plugins: [
+                new cacheableResponse.CacheableResponsePlugin({ statuses: [0, 200] }),
+                new expiration.ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 31536000 })
+            ]
+        })
+    );
+} else {
+    // 3) Fallback: „pusty” SW, żeby się zarejestrował i nie wywalał
+    self.addEventListener('fetch', () => { });
+}
