@@ -1,14 +1,15 @@
 * === LOCAL FONTS === */
-/* Inter (jak w Twoim GF: 400–800) */
-@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-400.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
-@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-500.woff2") format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
-@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-600.woff2") format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
-@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
-@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-800.woff2") format("woff2"); font-weight:800; font-style:normal; font-display:swap; }
+/* === Inter (latin-ext) === */
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-500.woff2")    format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-600.woff2")    format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-700.woff2")    format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-800.woff2")    format("woff2"); font-weight:800; font-style:normal; font-display:swap; }
 
-/* Fraunces – stałe wagi 700 i 900 (odpowiednik tego, co miałeś w GF) */
-@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
-@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-900.woff2") format("woff2"); font-weight:900; font-style:normal; font-display:swap; }
+/* === Fraunces (latin-ext) === */
+@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-900.woff2") format("woff2"); font-weight:900; font-style:normal; font-display:swap; }
+
 
 
 :root { --bg:#0a0c10; --paper:#10131a; --ink:#f5f6f8; --muted:#9ba4b5; --accent:#7c5dfa; --gold:#d6b46c; --radius:18px; --container:1180px; --navH:64px; }
