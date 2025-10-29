@@ -734,5 +734,15 @@
           "alumniOf":"Uniwersytet Rzeszowski"
         }
     </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            // automatycznie wykryj scope katalogu, w którym jest index.html
+            const scope = location.pathname.replace(/[^/]+$/, '');
+            navigator.serviceWorker.register(scope + 'cache.js', { scope })
+                .catch(console.error);
+        }
+    </script>
+
 </body>
 </html>
