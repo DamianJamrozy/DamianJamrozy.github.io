@@ -41,12 +41,12 @@
     .projects-grid{display:grid;gap:40px;margin-top:40px}
     .project{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:32px;background:#0f131a;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);position:relative}
     .project:nth-child(even){grid-template-columns:0.9fr 1.1fr}
-    .project::before{content:"";position:absolute;inset:0;background:radial-gradient(180px 180px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.06), transparent 60%);opacity:0;transition:opacity .35s ease}
+    .project::before{pointer-events: none;content:"";position:absolute;inset:0;background:radial-gradient(180px 180px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.06), transparent 60%);opacity:0;transition:opacity .35s ease}
     .project:hover::before{opacity:1}
     .project-content{padding:28px}
-    .project-content h3{font-size:clamp(1.2rem,3.6vw,1.6rem);font-weight:800;margin:0 0 8px;color:var(--gold)}
-    .project-content p{color:var(--muted);margin-bottom:1rem;font-size:clamp(.92rem,2.5vw,1rem)}
-    .project-content a{display:inline-block;text-decoration:none;color:#fff;background:var(--accent);padding:.6rem 1.1rem;border-radius:999px;font-weight:700;transition:transform .2s ease, background .3s}
+    .project-content h3{cursor:default;font-size:clamp(1.2rem,3.6vw,1.6rem);font-weight:800;margin:0 0 8px;color:var(--gold)}
+    .project-content p{cursor:default;color:var(--muted);margin-bottom:1rem;font-size:clamp(.92rem,2.5vw,1rem)}
+    .project-content a{z-index:999;display:inline-block;text-decoration:none;color:#fff;background:var(--accent);padding:.6rem 1.1rem;border-radius:999px;font-weight:700;transition:transform .2s ease, background .3s}
     .project-content a:hover{transform:translateY(-1px);background:#9d7dfb}
     .project img{width:100%;height:100%;object-fit:cover;filter:brightness(.9);transform:scale(1.02);transition:transform 1.2s ease}
     .project:hover img{transform:scale(1.06)}
