@@ -368,5 +368,3 @@ header.nav::before {
     background: rgba(0,0,0,0.01); /* ~1% krycia – praktycznie niewidoczne dla oka */
     pointer-events: none; /* żeby nie blokować interakcji */
 }
-
-

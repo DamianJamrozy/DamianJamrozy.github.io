@@ -12,7 +12,7 @@
     <meta property="og:description" content="Junior IT Specialist, UX/UI Designer, Software Developer. Portfolio i doświadczenie zawodowe.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://damianjamrozy.github.io/">
-    <meta property="og:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
+    <meta property="og:image" content="https://damianjamrozy.github.io/content/images/others/optimized/1-1200.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Damian Jamroży — Portfolio / CV">
     <meta name="twitter:description" content="Junior IT Specialist, UX/UI Designer, Software Developer.">
-    <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
+    <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/others/optimized/1-1200.webp">
 
     <meta name="theme-color" content="#0a0c10">
 
@@ -38,21 +38,12 @@
     <!-- API Github -->
     <link rel="preconnect" href="https://api.github.com" crossorigin>
 
-
-    <!-- Fonts: najprościej przez Google Fonts bez blokowania renderu -->
-    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" onload="this.rel='stylesheet'">
-    <noscript> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"></noscript>-->
-
-    <!-- Inter (latin-ext) -->
     <link rel="preload" as="font" type="font/woff2" href="content/fonts/Inter/inter-v20-latin-ext-regular.woff2" crossorigin="anonymous"> <!-- 400 -->
     <link rel="preload" as="font" type="font/woff2" href="content/fonts/Inter/inter-v20-latin-ext-700.woff2" crossorigin="anonymous">
     <link rel="preload" as="font" type="font/woff2" href="content/fonts/Inter/inter-v20-latin-ext-800.woff2" crossorigin="anonymous">
 
 
     <!-- CSS (blokujące, ale konieczne; jeden skompresowany plik) -->
-    <!--<link rel="stylesheet" href="content/css/style.css">-->
     <link rel="stylesheet" href="content/css/critical.css">
     <link rel="preload" as="style" href="content/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/style.css"></noscript>
@@ -60,14 +51,14 @@
     <link rel="preload"
           as="image"
           imagesrcset="
-            content/images/personal/optimized/1-400.avif 400w,
-            content/images/personal/optimized/1-600.avif 600w,
-            content/images/personal/optimized/1-800.avif 800w,
-            content/images/personal/optimized/1-1200.avif 1200w,
-            content/images/personal/optimized/1-1600.avif 1600w,
-            content/images/personal/optimized/1-2000.avif 2000w,
-            content/images/personal/optimized/1-2560.avif 2560w,
-            content/images/personal/optimized/1-3200.avif 3200w"
+            content/images/others/optimized/1-400.avif 400w,
+            content/images/others/optimized/1-600.avif 600w,
+            content/images/others/optimized/1-800.avif 800w,
+            content/images/others/optimized/1-1200.avif 1200w,
+            content/images/others/optimized/1-1600.avif 1600w,
+            content/images/others/optimized/1-2000.avif 2000w,
+            content/images/others/optimized/1-2560.avif 2560w,
+            content/images/others/optimized/1-3200.avif 3200w"
           imagesizes="(max-width: 600px) 100vw, 50vw"
           fetchpriority="high"
           type="image/avif">
@@ -82,17 +73,14 @@
 
     <header class="nav" role="banner">
         <div class="container wrap">
-            <a class="brand" href="#home">DAMIAN&nbsp;JAMROŻY <small>PORTFOLIO</small></a>
+            <a class="brand" href="index.html">DAMIAN&nbsp;JAMROŻY <small>PORTFOLIO</small></a>
 
             <!-- desktop nav -->
-            <nav aria-label="Main">
+            <nav aria-label="Projects">
                 <ul>
-                    <li><a href="#work" data-i18n="nav.work">WORK</a></li>
-                    <li><a href="#services" data-i18n="nav.services">SERVICES</a></li>
-                    <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
-                    <li><a href="#experience" data-i18n="nav.experience">EXPERIENCE</a></li>
-                    <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                    <li><a href="project_platform.html" data-i18n="plat.nav.platform">Platforma</a></li>
+                    <li><a href="project_automation.html" data-i18n="plat.nav.automation">Automatyzacje</a></li>
+                    <li><a href="project_redesign.html" data-i18n="plat.nav.redesign">Redesign</a></li>
                 </ul>
             </nav>
 
@@ -107,7 +95,6 @@
 
     <!-- mobile offcanvas -->
     <div class="mobile-backdrop" id="backdrop"></div>
-    <!--<aside class="mobile-panel" id="mobile-menu" aria-hidden="true" style="transform:translateX(100%);">-->
     <aside class="mobile-panel" id="mobile-menu" aria-hidden="true">
         <button class="mobile-close" id="mobile-close" aria-label="Zamknij menu" title="Zamknij">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
@@ -115,12 +102,10 @@
             </svg>
         </button>
 
-        <a href="#work" data-i18n="nav.work">WORK</a>
-        <a href="#services" data-i18n="nav.services">SERVICES</a>
-        <a href="#skills" data-i18n="nav.skills">SKILLS</a>
-        <a href="#experience" data-i18n="nav.experience">EXPERIENCE</a>
-        <a href="#about" data-i18n="nav.about">ABOUT</a>
-        <a href="#contact" data-i18n="nav.contact">CONTACT</a>
+        <a href="index.html" data-i18n="plat.nav.home">Home</a>
+        <a href="project_platform.html" data-i18n="plat.nav.platform">Platforma</a>
+        <a href="project_automation.html" data-i18n="plat.nav.automation">Automatyzacje</a>
+        <a href="project_redesign.html" data-i18n="plat.nav.redesign">Redesign</a>
     </aside>
 
     <!-- language toggle (fixed) -->
@@ -130,7 +115,7 @@
         <button type="button" id="btn-en" aria-pressed="false" aria-labelledby="lang-label">EN</button>
     </div>
 
-    <span class="side-label" data-i18n="side.portfolio">PORTFOLIO</span>
+    <span class="side-label" data-i18n="plat.side.portfolio">PORTFOLIO</span>
 
     <!-- HERO -->
     <section id="home" class="hero">
@@ -139,27 +124,27 @@
                 <!-- Desktop: AVIF/WebP duże, wysokiej jakości -->
                 <source type="image/avif"
                         srcset="
-                          content/images/personal/optimized/1-400.avif 400w,
-                          content/images/personal/optimized/1-600.avif 600w,
-                          content/images/personal/optimized/1-800.avif 800w,
-                          content/images/personal/optimized/1-1200.avif 1200w,
-                          content/images/personal/optimized/1-1600.avif 1600w,
-                          content/images/personal/optimized/1-2000.avif 2000w,
-                          content/images/personal/optimized/1-2560.avif 2560w,
-                          content/images/personal/optimized/1-3200.avif 3200w"
+                          content/images/others/optimized/1-400.avif 400w,
+                          content/images/others/optimized/1-600.avif 600w,
+                          content/images/others/optimized/1-800.avif 800w,
+                          content/images/others/optimized/1-1200.avif 1200w,
+                          content/images/others/optimized/1-1600.avif 1600w,
+                          content/images/others/optimized/1-2000.avif 2000w,
+                          content/images/others/optimized/1-2560.avif 2560w,
+                          content/images/others/optimized/1-3200.avif 3200w"
                         sizes="100vw">
                 <source type="image/webp"
                         srcset="
-                          content/images/personal/optimized/1-400.webp 400w,
-                          content/images/personal/optimized/1-600.webp 600w,
-                          content/images/personal/optimized/1-800.webp 800w,
-                          content/images/personal/optimized/1-1200.webp 1200w,
-                          content/images/personal/optimized/1-1600.webp 1600w,
-                          content/images/personal/optimized/1-2000.webp 2000w,
-                          content/images/personal/optimized/1-2560.webp 2560w,
-                          content/images/personal/optimized/1-3200.webp 3200w"
+                          content/images/others/optimized/1-400.webp 400w,
+                          content/images/others/optimized/1-600.webp 600w,
+                          content/images/others/optimized/1-800.webp 800w,
+                          content/images/others/optimized/1-1200.webp 1200w,
+                          content/images/others/optimized/1-1600.webp 1600w,
+                          content/images/others/optimized/1-2000.webp 2000w,
+                          content/images/others/optimized/1-2560.webp 2560w,
+                          content/images/others/optimized/1-3200.webp 3200w"
                         sizes="100vw">
-                <img src="content/images/personal/optimized/1-1600.webp"
+                <img src="content/images/others/optimized/1-1600.webp"
                      alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
                      width="1600" height="900"
                      decoding="async" fetchpriority="high">
@@ -176,14 +161,54 @@
             <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">IN</a>
         </div>
         <div class="container hero-content">
-            <div class="hero-topline" data-i18n="hero.topline">Software Engineer & Visual Thinker</div>
-            <h1><span class="hero-name">DAMIAN&nbsp;JAMROŻY</span></h1>
-            <p class="hero-sub" data-i18n="hero.sub">Pomagam organizacjom wejść w świat cyfryzacji danych oraz sztucznej inteligencji, łącząc najnowsze technologie ze spersonalizowanym wyglądem.</p>
+            <div class="hero-topline" data-i18n="plat.hero.top">Opis skrócony</div>
+            <h1><span class="hero-name" data-i18n="plat.hero.title">NAZWA USŁUGI</span></h1>
+            <p class="hero-sub" data-i18n="plat.hero.sub">Opis usługi.</p>
         </div>
     </section>
 
     <!-- SECTIONS -->
-    
+    <!-- In progress... -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-card reveal tilt" data-tilt>
+                <picture>
+                    <source type="image/avif"
+                            srcset="
+                            content/images/others/optimized/4-400.avif 400w,
+                            content/images/others/optimized/4-600.avif 600w,
+                            content/images/others/optimized/4-800.avif 800w,
+                            content/images/others/optimized/4-1200.avif 1200w,
+                            content/images/others/optimized/4-1600.avif 1600w,
+                            content/images/others/optimized/4-2000.avif 2000w,
+                            content/images/others/optimized/4-2560.avif 2560w,
+                            content/images/others/optimized/4-3200.avif 3200w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <source type="image/webp"
+                            srcset="
+                            content/images/others/optimized/4-400.webp 400w,
+                            content/images/others/optimized/4-600.webp 600w,
+                            content/images/others/optimized/4-800.webp 800w,
+                            content/images/others/optimized/4-1200.webp 1200w,
+                            content/images/others/optimized/4-1600.webp 1600w,
+                            content/images/others/optimized/4-2000.webp 2000w,
+                            content/images/others/optimized/4-2560.webp 2560w,
+                            content/images/others/optimized/4-3200.webp 3200w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="content/images/others/optimized/4-800.webp"
+                         alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
+                         width="360" height="240" loading="lazy" decoding="async">
+                </picture>
+
+                <div>
+                    <h2 data-i18n="xabout.h2">W trakcie tworzenia</h2>
+                    <p data-i18n="xabout.p">Ta sekcja nie jest jeszczce gotowa. Wróć niebawem, a jestem pewien że zawartość ta będzie już gotowa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
@@ -274,7 +299,7 @@
           "@type":"Person",
           "name":"Damian Jamroży",
           "jobTitle":"Junior IT Specialist / UX-UI Designer",
-          "image":"https://damianjamrozy.github.io/content/images/personal/optimized/1.png",
+          "image":"https://damianjamrozy.github.io/content/images/others/optimized/1.png",
           "url":"https://damianjamrozy.github.io/",
           "address":{"@type":"PostalAddress","addressLocality":"Rzeszów","addressCountry":"PL"},
           "email":"mailto:djamrozy.cv@gmail.com",

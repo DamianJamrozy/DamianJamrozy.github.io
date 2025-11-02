@@ -79,7 +79,7 @@
             <!-- desktop nav -->
             <nav aria-label="Main">
                 <ul>
-                    <li><a href="#work" data-i18n="nav.work">WORK</a></li>
+                    <li><a href="#work" data-i18n="nav.work">PRODUCTS</a></li>
                     <li><a href="#services" data-i18n="nav.services">SERVICES</a></li>
                     <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
                     <li><a href="#experience" data-i18n="nav.experience">EXPERIENCE</a></li>
@@ -107,7 +107,7 @@
             </svg>
         </button>
 
-        <a href="#work" data-i18n="nav.work">WORK</a>
+        <a href="#work" data-i18n="nav.work">PRODUCTS</a>
         <a href="#services" data-i18n="nav.services">SERVICES</a>
         <a href="#skills" data-i18n="nav.skills">SKILLS</a>
         <a href="#experience" data-i18n="nav.experience">EXPERIENCE</a>
@@ -177,15 +177,13 @@
     <!-- WORK -->
     <section id="work" class="section">
         <div class="container">
-            <h2 data-i18n="work.h2">Wybrane realizacje</h2>
+            <h2 data-i18n="work.h2">Produkty</h2>
             <div class="projects-grid">
-
-                
                 <article class="project reveal tilt" data-tilt>
                     <div class="project-content">
                         <h3 data-i18n="work.p1.h3">Platforma dla branży edukacyjnej</h3>
                         <p data-i18n="work.p1.p">Kompleksowy system obsługujący przetwarzanie plików w czasie rzeczywistym. Kompresja oraz szyfrowanie danych na najwyższym poziomie bezpieczeństwa z wykorzystaniem narzędzi SI.</p>
-                        <a href="project_platform.html" data-i18n="work.p1.cta">Zamów podobny projekt</a>
+                        <a href="product_UCI_SoftHub.html" data-i18n="work.p1.cta">Zapoznaj się z ofertą</a>
                     </div>
                     <picture>
                         <source type="image/avif"
@@ -211,12 +209,22 @@
                                 content/images/others/optimized/1-3200.webp 3200w"
                                 sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <img src="content/images/others/optimized/1-800.webp"
-                                alt="Platforma edukacyjna — projekt Damiana Jamrożego"
-                                width="800" height="600" loading="lazy" decoding="async">
+                             alt="Platforma edukacyjna — projekt Damiana Jamrożego"
+                             width="800" height="600" loading="lazy" decoding="async">
                     </picture>
                 </article>
-                
+            </div>
+
+            <!-- SERVICES -->
+            <h2 data-i18n="services.h2" id="services">Usługi</h2>
+            <div class="projects-grid">
+                <!-- 1) Automatyzacja procesów biznesowych -->
                 <article class="project reveal tilt" data-tilt>
+                    <div class="project-content">
+                        <h3 data-i18n="services.p1.h3">Automatyzacja procesów biznesowych</h3>
+                        <p data-i18n="services.p1.p">Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.</p>
+                        <a href="service_automation.html" data-i18n="services.p1.cta">Zautomatyzujmy to</a>
+                    </div>
                     <picture>
                         <source type="image/avif"
                                 srcset="
@@ -244,19 +252,10 @@
                              alt="Automatyzacja procesów biznesowych - oferta Damiana Jamrożego"
                              width="800" height="600" loading="lazy" decoding="async">
                     </picture>
-                    <div class="project-content">
-                        <h3 data-i18n="work.p2.h3">Automatyzacja procesów biznesowych</h3>
-                        <p data-i18n="work.p2.p">Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.</p>
-                        <a href="project_automation.html" data-i18n="work.p2.cta">Porozmawiajmy o tym</a>
-                    </div>
                 </article>
 
+                <!-- 2) Redesign stron oraz aplikacji -->
                 <article class="project reveal tilt" data-tilt>
-                    <div class="project-content">
-                        <h3 data-i18n="work.p3.h3">Redesign stron oraz aplikacji</h3>
-                        <p data-i18n="work.p3.p">Nowoczesna, wizytówka lub pełnowymiarowa responsywna aplikacja webowa z funkcjonalnym CMS i zoptymalizowanym SEO.</p>
-                        <a href="project_redesign.html" data-i18n="work.p3.cta">Zobacz jak mogę pomóc</a>
-                    </div>
                     <picture>
                         <source type="image/avif"
                                 srcset="
@@ -284,126 +283,121 @@
                              alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
                              width="800" height="600" loading="lazy" decoding="async">
                     </picture>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 data-i18n="services.h2">Usługi</h2>
-            <div class="service-grid">
-
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_design.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M7 3h10a2 2 0 0 1 2 2v14l-7-4-7 4V5a2 2 0 0 1 2-2z" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s1.h3">Projektowanie UX/UI</h3>
-                        </div>
-                        <p data-i18n="services.s1.p">Od szkicu do design systemu: makiety, prototypy, przygotowanie do wdrożenia, audyt użyteczności.</p>
-                        <div class="service-meta"><span class="chip">Figma</span><span class="chip">Design System</span><span class="chip">WCAG</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="16" y="18" width="128" height="84" rx="10" fill="url(#g1)" stroke="rgba(255,255,255,.18)" />
-                            <circle cx="40" cy="46" r="14" fill="rgba(124,93,250,.35)" />
-                            <rect x="66" y="38" width="62" height="8" rx="4" fill="rgba(255,255,255,.28)" />
-                            <rect x="66" y="54" width="50" height="8" rx="4" fill="rgba(255,255,255,.18)" />
-                            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827" /><stop offset="1" stop-color="#0b0f16" /></linearGradient></defs>
-                        </svg>
-                    </a>
+                    <div class="project-content">
+                        <h3 data-i18n="services.p2.h3">Redesign stron oraz aplikacji</h3>
+                        <p data-i18n="services.p2.p">Nowoczesne projekty UI/UX oparte na analizie zachowań użytkowników i automatyzacji procesów. Tworzę intuicyjne interfejsy, które skracają czas obsługi i budują wizerunek Twojej marki w sieci.</p>
+                        <a href="service_design.html" data-i18n="services.p2.cta">Zobacz jak mogę pomóc</a>
+                    </div>
                 </article>
 
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_app.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H5.17L4 17.17 V4z" /><path d="M8 8h8M8 12h6" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s2.h3">Aplikacje web</h3>
-                        </div>
-                        <p data-i18n="services.s2.p">Landing page, panele administracyjne, integracje z API, wydajne bazy danych, bezpieczeństwo i SEO.</p>
-                        <div class="service-meta"><span class="chip">Frontend</span><span class="chip">Backend</span><span class="chip">Database</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="28" width="120" height="64" rx="8" fill="rgba(214,180,108,.22)" />
-                            <rect x="28" y="40" width="34" height="8" rx="4" fill="rgba(0,0,0,.25)" />
-                            <rect x="28" y="56" width="80" height="8" rx="4" fill="rgba(0,0,0,.25)" />
-                            <rect x="28" y="72" width="60" height="8" rx="4" fill="rgba(0,0,0,.25)" />
-                        </svg>
-                    </a>
+                <!-- 3) Aplikacje małe i duże -->
+                <article class="project reveal tilt" data-tilt>
+                    <div class="project-content">
+                        <h3 data-i18n="services.p3.h3">Aplikacje małe i duże</h3>
+                        <p data-i18n="services.p3.p">Tworzę dedykowane rozwiązania, które wspierają rozwój biznesu. Od lekkich aplikacji internetowych po rozbudowane systemy firmowe - wydajność, bezpieczeństwo i łatwość obsługi gwarantowane.</p>
+                        <a href="service_apps.html" data-i18n="services.p3.cta">Stwórzmy Twoją aplikację</a>
+                    </div>
+                    <picture>
+                        <source type="image/avif"
+                                srcset="
+                                  content/images/others/optimized/2-400.avif 400w,
+                                  content/images/others/optimized/2-600.avif 600w,
+                                  content/images/others/optimized/2-800.avif 800w,
+                                  content/images/others/optimized/2-1200.avif 1200w,
+                                  content/images/others/optimized/2-1600.avif 1600w,
+                                  content/images/others/optimized/2-2000.avif 2000w,
+                                  content/images/others/optimized/2-2560.avif 2560w,
+                                  content/images/others/optimized/2-3200.avif 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <source type="image/webp"
+                                srcset="
+                                  content/images/others/optimized/2-400.webp 400w,
+                                  content/images/others/optimized/2-600.webp 600w,
+                                  content/images/others/optimized/2-800.webp 800w,
+                                  content/images/others/optimized/2-1200.webp 1200w,
+                                  content/images/others/optimized/2-1600.webp 1600w,
+                                  content/images/others/optimized/2-2000.webp 2000w,
+                                  content/images/others/optimized/2-2560.webp 2560w,
+                                  content/images/others/optimized/2-3200.webp 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="content/images/others/optimized/2-800.webp"
+                             alt="Automatyzacja procesów biznesowych - oferta Damiana Jamrożego"
+                             width="800" height="600" loading="lazy" decoding="async">
+                    </picture>
                 </article>
 
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_automation.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20v-6m0 0-3 3m3-3 3 3" /><rect x="3" y="3" width="18" height="10" rx="2" /><path d="M7 7h10" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s3.h3">Automatyzacje &amp; AI</h3>
-                        </div>
-                        <p data-i18n="services.s3.p">Automatyzacja, boty, konwersje plików, przetwarzanie danych, dedykowana sztuczna inteligencja.</p>
-                        <div class="service-meta"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">LLM</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="48" cy="60" r="22" fill="rgba(124,93,250,.28)" />
-                            <rect x="78" y="44" width="56" height="12" rx="6" fill="rgba(255,255,255,.28)" />
-                            <rect x="78" y="64" width="44" height="12" rx="6" fill="rgba(255,255,255,.18)" />
-                        </svg>
-                    </a>
+                <!-- 4) Inżynieria oprogramowania & Project managment -->
+                <article class="project reveal tilt" data-tilt>
+                    <picture>
+                        <source type="image/avif"
+                                srcset="
+                                    content/images/others/optimized/1-400.avif 400w,
+                                    content/images/others/optimized/1-600.avif 600w,
+                                    content/images/others/optimized/1-800.avif 800w,
+                                    content/images/others/optimized/1-1200.avif 1200w,
+                                    content/images/others/optimized/1-1600.avif 1600w,
+                                    content/images/others/optimized/1-2000.avif 2000w,
+                                    content/images/others/optimized/1-2560.avif 2560w,
+                                    content/images/others/optimized/1-3200.avif 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <source type="image/webp"
+                                srcset="
+                                    content/images/others/optimized/1-400.webp 400w,
+                                    content/images/others/optimized/1-600.webp 600w,
+                                    content/images/others/optimized/1-800.webp 800w,
+                                    content/images/others/optimized/1-1200.webp 1200w,
+                                    content/images/others/optimized/1-1600.webp 1600w,
+                                    content/images/others/optimized/1-2000.webp 2000w,
+                                    content/images/others/optimized/1-2560.webp 2560w,
+                                    content/images/others/optimized/1-3200.webp 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="content/images/others/optimized/3-800.webp"
+                             alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
+                             width="800" height="600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="project-content">
+                        <h3 data-i18n="services.p4.h3">Inżynieria oprogramowania & Project managment</h3>
+                        <p data-i18n="services.p4.p">Analiza procesów, planowanie architektury i nadzór nad cyklem życia projektu. Projektuję logiczne, skalowalne rozwiązania i skutecznie zarządzam realizacją, by każde wdrożenie przebiegało terminowo.</p>
+                        <a href="service_projectManagment.html" data-i18n="services.p4.cta">Zaplanujmy Twój projekt</a>
+                    </div>
                 </article>
 
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_support.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M6 10h12M9 13h6" /><rect x="5" y="16" width="14" height="5" rx="2" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s4.h3">Administracja / Support</h3>
-                        </div>
-                        <p data-i18n="services.s4.p">Utrzymanie, monitoring, kopie zapasowe, automatyzacja wdrożeń i wsparcie użytkowników.</p>
-                        <div class="service-meta"><span class="chip">Linux</span><span class="chip">Windows</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="26" y="34" width="108" height="52" rx="8" fill="rgba(255,255,255,.08)" />
-                            <circle cx="80" cy="84" r="8" fill="rgba(214,180,108,.32)" />
-                        </svg>
-                    </a>
+                <!-- 5) Administrator aplikacji / bazy danych -->
+                <article class="project reveal tilt" data-tilt>
+                    <div class="project-content">
+                        <h3 data-i18n="services.p5.h3">Administrator aplikacji / bazy danych</h3>
+                        <p data-i18n="services.p5.p">Zarządzanie bazami danych, kopie zapasowe, monitoring i wsparcie techniczne. Dbam o to, by Twoje systemy działały szybko, niezawodnie i bez przestojów.</p>
+                        <a href="service_supportDatabase.html" data-i18n="services.p5.cta">Porozmawiajmy o tym</a>
+                    </div>
+                    <picture>
+                        <source type="image/avif"
+                                srcset="
+                                  content/images/others/optimized/2-400.avif 400w,
+                                  content/images/others/optimized/2-600.avif 600w,
+                                  content/images/others/optimized/2-800.avif 800w,
+                                  content/images/others/optimized/2-1200.avif 1200w,
+                                  content/images/others/optimized/2-1600.avif 1600w,
+                                  content/images/others/optimized/2-2000.avif 2000w,
+                                  content/images/others/optimized/2-2560.avif 2560w,
+                                  content/images/others/optimized/2-3200.avif 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <source type="image/webp"
+                                srcset="
+                                  content/images/others/optimized/2-400.webp 400w,
+                                  content/images/others/optimized/2-600.webp 600w,
+                                  content/images/others/optimized/2-800.webp 800w,
+                                  content/images/others/optimized/2-1200.webp 1200w,
+                                  content/images/others/optimized/2-1600.webp 1600w,
+                                  content/images/others/optimized/2-2000.webp 2000w,
+                                  content/images/others/optimized/2-2560.webp 2560w,
+                                  content/images/others/optimized/2-3200.webp 3200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="content/images/others/optimized/2-800.webp"
+                             alt="Automatyzacja procesów biznesowych - oferta Damiana Jamrożego"
+                             width="800" height="600" loading="lazy" decoding="async">
+                    </picture>
                 </article>
 
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_project_managment.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M8 3h8a2 2 0 0 1 2 2v14l-6-3-6 3V5a2 2 0 0 1 2-2z" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s5.h3">Project Management</h3>
-                        </div>
-                        <p data-i18n="services.s5.p">Planowanie sprintów, roadmapy, ryzyka i rozliczenia. Transparentna komunikacja z interesariuszami.</p>
-                        <div class="service-meta"><span class="chip">Agile</span><span class="chip">Scrum/Kanban</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="30" width="120" height="60" rx="10" fill="rgba(124,93,250,.20)" />
-                            <rect x="32" y="44" width="24" height="36" rx="6" fill="rgba(0,0,0,.25)" />
-                            <rect x="64" y="44" width="24" height="24" rx="6" fill="rgba(0,0,0,.25)" />
-                            <rect x="96" y="44" width="24" height="16" rx="6" fill="rgba(0,0,0,.25)" />
-                        </svg>
-                    </a>
-                </article>
-
-                <article class="service-card reveal tilt" data-tilt>
-                    <a href="service_database.html">
-                        <div class="service-head">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M12 13l3 3-3 3-3-3 3-3z" /><rect x="6" y="3" width="12" height="4" rx="2" /></svg>
-                            </div>
-                            <h3 data-i18n="services.s6.h3">Bazy danych</h3>
-                        </div>
-                        <p data-i18n="services.s6.p">Projektowanie, tworzenie oraz zarządzanie relacyjnymi bazami danych.</p>
-                        <div class="service-meta"><span class="chip">SQL</span><span class="chip">T-SQL/PLSQL</span></div>
-                        <svg class="s-illustration" width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="60,50 90,50 100,70 50,70" fill="rgba(214,180,108,.28)" />
-                            <circle cx="78" cy="62" r="6" fill="rgba(255,255,255,.35)" />
-                        </svg>
-                    </a>
-                </article>
             </div>
         </div>
     </section>

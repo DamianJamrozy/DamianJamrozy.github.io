@@ -1,0 +1,497 @@
+
+/* =========================================================
+PLATFORM — wspólne dodatki wizualne
+========================================================= */
+:root {
+    --plat-glass-bg: rgba(255,255,255,0.04);
+    --plat-glass-brd: rgba(255,255,255,0.10);
+    --plat-shadow: 0 10px 30px rgba(0,0,0,.35);
+    --plat-blur: saturate(1.1) blur(6px);
+    /* lekkie przebłyski akcentów */
+    --plat-accent-1: #7c3aed; /* fiolet */
+    --plat-accent-2: #06b6d4; /* cyjan */
+    --plat-accent-3: #22c55e; /* zieleń */
+    --plat-accent-4: #f59e0b; /* złoto */
+}
+
+/* delikatna siateczka, którą można nakładać na tła */
+.plat-grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background-image: linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* subtelny „bloom” na krawędziach kart */
+.plat-bloom {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* pigułki akcentowe */
+.pill-ghost {
+    display: inline-block;
+    padding: .25rem .6rem;
+    border-radius: 999px;
+    border: 1px solid var(--plat-glass-brd);
+    background: var(--plat-glass-bg);
+    font-size: .8rem;
+    color: #ddd;
+}
+
+/* delikatne wejście */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        animation: platFadeUp .6s ease both;
+    }
+
+    @keyframes platFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* card „glass” */
+.plat-card {
+    position: relative;
+    background: var(--plat-glass-bg);
+    border: 1px solid var(--plat-glass-brd);
+    backdrop-filter: var(--plat-blur);
+    -webkit-backdrop-filter: var(--plat-blur);
+    border-radius: var(--radius,16px);
+    box-shadow: var(--plat-shadow);
+}
+
+/* sekcje dostają wewnętrzne odstępy spójne z resztą */
+.section.plat-intro,
+.section.plat-functions,
+.section.plat-how,
+.section.plat-partners {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================================
+SEKCJA 1 — plat-intro (miękki gradient + obraz po prawej)
+========================================================= */
+.plat-intro {
+    /* tło: podwójny radial + delikatna siatka */
+    background: radial-gradient(1200px 500px at 10% -10%, rgba(124,58,237,.18), transparent 60%), radial-gradient(900px 380px at 100% 20%, rgba(6,182,212,.18), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%);
+}
+
+    .plat-intro .grid-2col {
+        display: grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: clamp(28px,4vw,64px);
+        align-items: center;
+    }
+
+    .plat-intro .text h2 {
+        font-weight: 800;
+        letter-spacing: .2px;
+    }
+
+    .plat-intro .text p {
+        color: var(--muted);
+        margin: .7rem 0 0;
+    }
+
+    .plat-intro .btn {
+        margin-top: 1rem;
+    }
+
+    .plat-intro .media {
+        position: relative;
+    }
+
+        .plat-intro .media::before {
+            /* miękka poświata za obrazem */
+            content: "";
+            position: absolute;
+            inset: -8%;
+            filter: blur(30px);
+            background: radial-gradient(40% 40% at 60% 30%, rgba(34,197,94,.25), transparent 60%), radial-gradient(50% 50% at 30% 70%, rgba(124,58,237,.25), transparent 60%);
+            z-index: 0;
+        }
+
+        .plat-intro .media img {
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            box-shadow: var(--plat-shadow);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+/* =========================================================
+SEKCJA 2 — plat-functions (morska mgła + siatka)
+========================================================= */
+.plat-functions {
+    background: radial-gradient(900px 400px at -10% 10%, rgba(2,132,199,.14), transparent 60%), radial-gradient(900px 400px at 110% 90%, rgba(124,58,237,.12), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.02), transparent 50%);
+}
+
+    .plat-functions::after {
+        /* siatka nakładana na tło */
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: .10;
+        background-image: linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+        background-size: 26px 26px;
+    }
+
+    .plat-functions .center {
+        text-align: center;
+    }
+
+    .plat-functions .features-grid {
+        display: grid;
+        gap: 24px;
+        margin-top: clamp(16px,2vw,24px);
+        grid-template-columns: repeat(4, minmax(0,1fr));
+    }
+
+@media (max-width: 1100px) {
+    .plat-functions .features-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .plat-functions .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.plat-functions .feature-card {
+    composes: plat-card;
+    background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    padding: 24px;
+    text-align: left;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+    .plat-functions .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255,255,255,.16);
+        box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+
+    .plat-functions .feature-card img {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 10px;
+        opacity: .95;
+    }
+
+    .plat-functions .feature-card h3 {
+        margin: 4px 0 6px;
+        font-weight: 800;
+    }
+
+    .plat-functions .feature-card p {
+        color: var(--muted);
+    }
+
+/* akcentowa linia po lewej stronie karty */
+.plat-functions .feature-card {
+    position: relative;
+}
+
+    .plat-functions .feature-card::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 12px;
+        bottom: 12px;
+        width: 3px;
+        background: linear-gradient(180deg, var(--plat-accent-2), var(--plat-accent-1));
+        border-radius: 2px;
+        opacity: .8;
+    }
+
+/* =========================================================
+SEKCJA 3 — plat-how (poziomy stepper z linią)
+========================================================= */
+.plat-how {
+    background: radial-gradient(1000px 420px at 50% 0%, rgba(245,158,11,.10), transparent 65%), linear-gradient(180deg, rgba(255,255,255,.02), transparent 50%);
+}
+
+    .plat-how .center {
+        text-align: center;
+    }
+
+    .plat-how .steps-line {
+        position: relative;
+        display: flex;
+        gap: 24px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .plat-how .step {
+        composes: plat-card;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 22px 18px;
+        flex: 1 1 220px;
+        min-width: 220px;
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    }
+
+    .plat-how .step-number {
+        display: inline-grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        font-weight: 800;
+        color: white;
+        background: conic-gradient(from 90deg, var(--plat-accent-1), var(--plat-accent-2), var(--plat-accent-1));
+        box-shadow: 0 8px 18px rgba(0,0,0,.35);
+        margin-bottom: 8px;
+    }
+
+    .plat-how .step h3 {
+        margin: 4px 0 6px;
+    }
+
+    .plat-how .step p {
+        color: var(--muted);
+    }
+
+/* na wąskich — linia znika, układ stosuje się pionowo */
+@media (max-width:880px) {
+    .plat-how .steps-line::before {
+        display: none;
+    }
+}
+
+/* =========================================================
+SEKCJA 4 — plat-partners (ściana logotypów)
+========================================================= */
+.plat-partners {
+    background: radial-gradient(1200px 420px at 0% 100%, rgba(34,197,94,.10), transparent 65%), radial-gradient(900px 420px at 100% 0%, rgba(6,182,212,.10), transparent 65%), linear-gradient(180deg, rgba(255,255,255,.02), transparent 50%);
+}
+
+    .plat-partners .center {
+        text-align: center;
+    }
+
+    .plat-partners p.center {
+        color: var(--muted);
+        margin-top: .4rem;
+    }
+
+    .plat-partners .partners-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(22px, 5vw, 56px);
+        margin-top: clamp(16px, 3vw, 28px);
+    }
+
+        .plat-partners .partners-logos img {
+            filter: grayscale(18%);
+            opacity: .85;
+            transition: transform .25s ease, opacity .25s ease, filter .25s ease;
+            border-radius: 10px;
+            background: rgba(255,255,255,.02);
+            padding: 10px 14px;
+            border: 1px solid rgba(255,255,255,.06);
+        }
+
+            .plat-partners .partners-logos img:hover {
+                transform: translateY(-4px) scale(1.04);
+                opacity: 1;
+                filter: none;
+                box-shadow: 0 12px 26px rgba(0,0,0,.35);
+            }
+
+/* =========================================================
+DROBNE UPIĘKSZENIA NAGŁÓWKÓW SEKCJI
+========================================================= */
+.section h2.center {
+    position: relative;
+    display: inline-block;
+    padding-inline: 10px;
+}
+
+    .section h2.center::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 78px;
+        height: 3px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--plat-accent-1), var(--plat-accent-2));
+        opacity: .8;
+    }
+
+/* =========================================================
+DOSTOSOWANIA RESPONSYWNE
+========================================================= */
+@media (max-width: 1100px) {
+    .plat-intro .grid-2col {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .plat-intro .media {
+        order: -1;
+    }
+
+    .plat-intro .btn {
+        margin-inline: auto;
+    }
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation: none !important;
+    }
+
+    .plat-functions .feature-card,
+    .plat-partners .partners-logos img {
+        transition: none !important;
+    }
+}
+
+
+
+
+
+/* =========================================================
+SEKCJA — plat-pricing (cennik)
+========================================================= */
+.plat-pricing {
+    background: radial-gradient(1000px 420px at 10% 0%, rgba(124,58,237,.12), transparent 60%), radial-gradient(900px 380px at 100% 100%, rgba(6,182,212,.10), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.02), transparent 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+    .plat-pricing .sub {
+        color: var(--muted);
+        margin-top: 6px;
+    }
+
+    .plat-pricing .pricing-grid {
+        display: grid;
+        gap: 24px;
+        margin-top: clamp(16px, 2vw, 28px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+@media (max-width: 1100px) {
+    .plat-pricing .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.plat-pricing .price-card {
+    background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    padding: 26px 22px;
+    border-radius: 18px; /* dziedziczy z plat-card, ale wzmacniamy */
+    position: relative;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+    .plat-pricing .price-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255,255,255,.16);
+        box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+
+    .plat-pricing .price-card .badge {
+        position: absolute;
+        top: -10px;
+        right: 16px;
+        padding: .28rem .6rem;
+        border-radius: 999px;
+        font-size: .75rem;
+        background: linear-gradient(90deg, var(--plat-accent-1), var(--plat-accent-2));
+        color: #fff;
+        box-shadow: 0 10px 22px rgba(0,0,0,.35);
+    }
+
+    .plat-pricing .price-card.highlight {
+        border-color: rgba(255,255,255,.18);
+        box-shadow: 0 16px 38px rgba(0,0,0,.38);
+    }
+
+.plat-pricing .price {
+    margin: 10px 0 8px;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+    .plat-pricing .price .amount {
+        font-size: clamp(1.4rem, 2.4vw, 2rem);
+    }
+
+    .plat-pricing .price .per {
+        font-size: .95rem;
+        color: var(--muted);
+        margin-left: 6px;
+    }
+
+.plat-pricing .desc {
+    color: var(--muted);
+    margin: 6px 0 12px;
+}
+
+.plat-pricing .features {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+    .plat-pricing .features li {
+        position: relative;
+        padding-left: 22px;
+    }
+
+        .plat-pricing .features li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: linear-gradient(180deg, var(--plat-accent-2), var(--plat-accent-1));
+            opacity: .85;
+        }
+
+.plat-pricing .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.plat-pricing .note {
+    opacity: .8;
+    margin-top: 10px;
+    font-size: .95rem;
+}

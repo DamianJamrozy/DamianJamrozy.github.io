@@ -4,36 +4,39 @@ const dict = {
         /* meta / nav / ui */
         "html.lang": "pl",
         "meta.desc": "Damian Jamroży - wirtualna wizytówka / CV. Junior IT Specialist (UR), wykładowca U3W, programista PHP/JS/Python, projektant UX/UI. Magister inż. (2024).",
-        "nav.work": "Realizacje", "nav.services": "Usługi", "nav.skills": "Umiejętności", "nav.experience": "Doświadczenie", "nav.about": "O mnie", "nav.contact": "Kontakt",
+        "nav.work": "Produkty", "nav.services": "Usługi", "nav.skills": "Umiejętności", "nav.experience": "Doświadczenie", "nav.about": "O mnie", "nav.contact": "Kontakt",
         "side.portfolio": "PORTFOLIO",
         /* hero */
         "hero.topline": "Software Engineer & Visual Thinker",
         "hero.sub": "Pomagam organizacjom wejść w świat cyfryzacji danych oraz sztucznej inteligencji, łącząc najnowsze technologie ze spersonalizowanym wyglądem.",
         /* work */
-        "work.h2": "Wybrane realizacje",
+        "work.h2": "Produkty",
         "work.p1.h3": "Platforma dla branży edukacyjnej",
         "work.p1.p": "Kompleksowy system obsługujący przetwarzanie plików w czasie rzeczywistym. Kompresja oraz szyfrowanie danych na najwyższym poziomie bezpieczeństwa z wykorzystaniem narzędzi SI.",
-        "work.p1.cta": "Zamów podobny projekt",
-        "work.p2.h3": "Automatyzacja procesów biznesowych",
-        "work.p2.p": "Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.",
-        "work.p2.cta": "Porozmawiajmy o tym",
-        "work.p3.h3": "Redesign stron oraz aplikacji",
-        "work.p3.p": "Nowoczesna, wizytówka lub pełnowymiarowa responsywna aplikacja webowa z funkcjonalnym CMS i zoptymalizowanym SEO.",
-        "work.p3.cta": "Zobacz jak mogę pomóc",
+        "work.p1.cta": "Zapoznaj się z ofertą",
+
         /* services */
         "services.h2": "Usługi",
-        "services.s1.h3": "Projektowanie UX/UI",
-        "services.s1.p": "Od szkicu do design systemu: makiety, prototypy, przygotowanie do wdrożenia, audyt użyteczności.",
-        "services.s2.h3": "Aplikacje web",
-        "services.s2.p": "Landing page, panele administracyjne, integracje z API, wydajne bazy danych, bezpieczeństwo i SEO.",
-        "services.s3.h3": "Automatyzacje & AI",
-        "services.s3.p": "Automatyzacja, boty, konwersje plików, przetwarzanie danych, dedykowana sztuczna inteligencja.",
-        "services.s4.h3": "Administracja / Support",
-        "services.s4.p": "Utrzymanie, monitoring, kopie zapasowe, automatyzacja wdrożeń i wsparcie użytkowników.",
-        "services.s5.h3": "Project Management",
-        "services.s5.p": "Planowanie sprintów, roadmapy, ryzyka i rozliczenia. Transparentna komunikacja z interesariuszami.",
-        "services.s6.h3": "Bazy danych",
-        "services.s6.p": "Projektowanie, tworzenie oraz zarządzanie relacyjnymi bazami danych.",
+        "services.p1.h3": "Automatyzacja procesów biznesowych",
+        "services.p1.p": "Zaawansowane narzędzia algorytmiczne oraz spersonalizowana sztuczna inteligencja ułatwiająca i przyspieszająca pracę w Twojej firmie.",
+        "services.p1.cta": "Zautomatyzujmy to",
+
+        "services.p2.h3": "Redesign stron oraz aplikacji",
+        "services.p2.p": "Nowoczesne projekty UI/UX oparte na analizie zachowań użytkowników i automatyzacji procesów. Tworzę intuicyjne interfejsy, które skracają czas obsługi i budują wizerunek Twojej marki w sieci.",
+        "services.p2.cta": "Zobacz jak mogę pomóc",
+
+        "services.p3.h3": "Aplikacje małe i duże",
+        "services.p3.p": "Tworzę dedykowane rozwiązania, które wspierają rozwój biznesu. Od lekkich aplikacji internetowych po rozbudowane systemy firmowe - wydajność, bezpieczeństwo i łatwość obsługi gwarantowane.",
+        "services.p3.cta": "Stwórzmy Twoją aplikację",
+
+        "services.p4.h3": "Inżynieria oprogramowania & Project managment",
+        "services.p4.p": "Analiza procesów, planowanie architektury i nadzór nad cyklem życia projektu. Projektuję logiczne, skalowalne rozwiązania i skutecznie zarządzam realizacją, by każde wdrożenie przebiegało terminowo.",
+        "services.p4.cta": "Zaplanujmy Twój projekt",
+
+        "services.p5.h3": "Administrator aplikacji / bazy danych",
+        "services.p5.p": "Zarządzanie bazami danych, kopie zapasowe, monitoring i wsparcie techniczne. Dbam o to, by Twoje systemy działały szybko, niezawodnie i bez przestojów.",
+        "services.p5.cta": "Porozmawiajmy o tym",
+
         /* skills */
         "skills.h2": "Technologie <span class='amp'>&amp;</span> narzędzia",
         "skills.html": "HTML - semantyczne szablony",
@@ -97,33 +100,42 @@ const dict = {
     en: {
         "html.lang": "en",
         "meta.desc": "Damian Jamroży - portfolio / CV. Junior IT Specialist (UR), U3W lecturer, PHP/JS/Python developer, UX/UI designer. MSc Eng. (2024).",
-        "nav.work": "WORK", "nav.services": "SERVICES", "nav.skills": "SKILLS", "nav.experience": "EXPERIENCE", "nav.about": "ABOUT", "nav.contact": "CONTACT",
+        "nav.work": "PRODUCTS", "nav.services": "SERVICES", "nav.skills": "SKILLS", "nav.experience": "EXPERIENCE", "nav.about": "ABOUT", "nav.contact": "CONTACT",
         "side.portfolio": "PORTFOLIO",
         "hero.topline": "Software Engineer & Visual Thinker",
         "hero.sub": "I help organizations adopt data digitization and AI, blending cutting-edge technology with personalized design.",
-        "work.h2": "Selected projects",
-        "work.p1.h3": "Platform for the education sector",
-        "work.p1.p": "A comprehensive system for real-time file processing. Data compression and file encryption at the highest level of security, utilizing AI-powered tools.",
-        "work.p1.cta": "Order a similar project",
-        "work.p2.h3": "Business process automation",
-        "work.p2.p": "Advanced algorithmic tools and personalized artificial intelligence that streamline and accelerate your company’s workflow.",
-        "work.p2.cta": "Let's talk about it",
-        "work.p3.h3": "Websites and aplications redesign",
-        "work.p3.p": "A modern business website or full-scale responsive web application with a functional CMS and optimized SEO.",
-        "work.p3.cta": "See how I can help",
+
+        /* work */
+        "work.h2": "Products",
+        "work.p1.h3": "Platform for the Education Industry",
+        "work.p1.p": "A comprehensive system that handles real-time file processing. Advanced data compression and encryption ensure the highest level of security, powered by AI tools.",
+        "work.p1.cta": "Explore the offer",
+
+        /* services */
         "services.h2": "Services",
-        "services.s1.h3": "UX/UI design",
-        "services.s1.p": "From sketch to design system: wireframes, prototypes, handoff, and usability audits.",
-        "services.s2.h3": "Web apps",
-        "services.s2.p": "Landing pages, admin panels, API integrations, efficient databases, security & SEO.",
-        "services.s3.h3": "Automations & AI",
-        "services.s3.p": "Automation, bots, file conversions, data processing, bespoke artificial intelligence.",
-        "services.s4.h3": "Administration / Support",
-        "services.s4.p": "Maintenance, monitoring, backups, deployment automation, and user support.",
-        "services.s5.h3": "Project Management",
-        "services.s5.p": "Sprint planning, roadmaps, risk management and billing. Transparent stakeholder communication.",
-        "services.s6.h3": "Databases",
-        "services.s6.p": "Designing, building and managing relational databases.",
+        "services.p1.h3": "Business Process Automation",
+        "services.p1.p": "Advanced algorithmic tools and personalized artificial intelligence that simplify and accelerate work in your company.",
+        "services.p1.cta": "Let's automate it",
+
+        "services.p2.h3": "Website and Application Redesign",
+        "services.p2.p": "Modern UI/UX designs based on user behavior analysis and process automation. I create intuitive interfaces that reduce handling time and strengthen your brand's online presence.",
+        "services.p2.cta": "See how I can help",
+
+        "services.p3.h3": "Small and Large Applications",
+        "services.p3.p": "I develop dedicated solutions that support business growth. From lightweight web apps to complex enterprise systems — performance, security, and ease of use guaranteed.",
+        "services.p3.cta": "Let's build your app",
+
+        "services.p4.h3": "Software Engineering & Project Management",
+        "services.p4.p": "Process analysis, architecture planning, and supervision of the project life cycle. I design logical, scalable solutions and effectively manage implementation to ensure every project is delivered on time.",
+        "services.p4.cta": "Let's plan your project",
+
+        "services.p5.h3": "Application / Database Administration",
+        "services.p5.p": "Database management, backups, monitoring, and technical support. I make sure your systems run fast, reliably, and without downtime.",
+        "services.p5.cta": "Let's talk about it",
+
+
+
+        /* skills */
         "skills.h2": "Technologies & Tools",
         "skills.html": "HTML - semantic templates",
         "skills.css": "CSS - styling and layout",
