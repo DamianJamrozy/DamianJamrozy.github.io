@@ -1,8 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://damianjamrozy.github.io/</loc>
-    <lastmod>2025-10-27</lastmod>
-    <priority>1.0</priority>
-  </url>
+
+	<!-- Strona główna -->
+	<url>
+		<loc>https://damianjamrozy.github.io/</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>1.0</priority>
+	</url>
+
+	<!-- Projekty -->
+	<url>
+		<loc>https://damianjamrozy.github.io/project_automation.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/project_platform.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/project_redesign.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.8</priority>
+	</url>
+
+	<!-- Usługi -->
+	<url>
+		<loc>https://damianjamrozy.github.io/service_app.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/service_automation.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/service_database.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/service_design.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/service_project_managment.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://damianjamrozy.github.io/service_support.html</loc>
+		<lastmod>2025-10-30</lastmod>
+		<priority>0.7</priority>
+	</url>
+
 </urlset>
