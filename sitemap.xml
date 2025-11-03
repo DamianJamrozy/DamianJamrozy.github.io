@@ -10,24 +10,14 @@
 
 	<!-- Projekty -->
 	<url>
-		<loc>https://damianjamrozy.github.io/project_automation.html</loc>
-		<lastmod>2025-10-30</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://damianjamrozy.github.io/project_platform.html</loc>
-		<lastmod>2025-10-30</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://damianjamrozy.github.io/project_redesign.html</loc>
+		<loc>https://damianjamrozy.github.io/product_UCI_SoftHub.htmll</loc>
 		<lastmod>2025-10-30</lastmod>
 		<priority>0.8</priority>
 	</url>
 
 	<!-- Usługi -->
 	<url>
-		<loc>https://damianjamrozy.github.io/service_app.html</loc>
+		<loc>https://damianjamrozy.github.io/service_apps.html</loc>
 		<lastmod>2025-10-30</lastmod>
 		<priority>0.7</priority>
 	</url>
@@ -37,22 +27,19 @@
 		<priority>0.7</priority>
 	</url>
 	<url>
-		<loc>https://damianjamrozy.github.io/service_database.html</loc>
-		<lastmod>2025-10-30</lastmod>
-		<priority>0.7</priority>
-	</url>
-	<url>
 		<loc>https://damianjamrozy.github.io/service_design.html</loc>
 		<lastmod>2025-10-30</lastmod>
 		<priority>0.7</priority>
 	</url>
 	<url>
-		<loc>https://damianjamrozy.github.io/service_project_managment.html</loc>
+		<loc>https://damianjamrozy.github.io/service_projectManagment.html</loc>
 		<lastmod>2025-10-30</lastmod>
 		<priority>0.7</priority>
 	</url>
 	<url>
-		<loc>https://damianjamrozy.github.io/service_support.html</loc>
+		<loc>
+			https://damianjamrozy.github.io/service_supportDatabase.html
+		</loc>
 		<lastmod>2025-10-30</lastmod>
 		<priority>0.7</priority>
 	</url>

@@ -1,10 +1,7 @@
 https://damianjamrozy.github.io/
-https://damianjamrozy.github.io/project_automation.html
-https://damianjamrozy.github.io/project_platform.html
-https://damianjamrozy.github.io/project_redesign.html
-https://damianjamrozy.github.io/service_app.html
+https://damianjamrozy.github.io/product_UCI_SoftHub.html
+https://damianjamrozy.github.io/service_apps.html
 https://damianjamrozy.github.io/service_automation.html
-https://damianjamrozy.github.io/service_database.html
 https://damianjamrozy.github.io/service_design.html
-https://damianjamrozy.github.io/service_project_managment.html
-https://damianjamrozy.github.io/service_support.html
+https://damianjamrozy.github.io/service_projectManagment.html
+https://damianjamrozy.github.io/service_supportDatabase.html
