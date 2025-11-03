@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+# Różne formaty map witryn
 Sitemap: https://damianjamrozy.github.io/sitemap.xml
+Sitemap: https://damianjamrozy.github.io/sitemap.txt
+Sitemap: https://damianjamrozy.github.io/sitemap.html
