@@ -1412,17 +1412,3 @@ header.nav::before {
         min-height: 520px; /* w razie potrzeby możesz podbić np. do 560px */
     }
 }
-
-
-@media (min-width:821px) {
-    /* etykiety czasu naprzemiennie, zaczynając OD DOŁU */
-    .rm-item:nth-child(odd) .rm-meta {
-        top: auto;
-        bottom: -44px; /* 1.,3.,5... pod osią */
-    }
-
-    .rm-item:nth-child(even) .rm-meta {
-        top: -44px; /* 2.,4.,6... nad osią */
-        bottom: auto;
-    }
-}
