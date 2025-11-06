@@ -1445,3 +1445,7 @@ header.nav::before {
         height: 15vh;
     }
 }
+
+.about-me-from-me {
+    color: #9aa4b2;
+}
