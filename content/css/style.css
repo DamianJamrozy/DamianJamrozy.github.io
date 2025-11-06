@@ -1426,3 +1426,22 @@ header.nav::before {
         bottom: auto;
     }
 }
+
+
+.logo-slot img{
+    width:80%;
+}
+.logo-slot {
+    height: 15vh;
+}
+
+@media (max-width:900px) {
+    /* etykiety czasu naprzemiennie, zaczynając OD DOŁU */
+    .logo-slot img {
+        width: 30vh;
+    }
+
+    .logo-slot {
+        height: 15vh;
+    }
+}
