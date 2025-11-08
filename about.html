@@ -132,12 +132,11 @@
                     <em data-i18n="about.hero.title.mid">i dokąd zmierzam</em>
                 </h1>
                 <p class="hero-desc" data-i18n="about.hero.sub">
-                    Łączę technologię, ludzi i proces. Lubię klarowny cel, prostą komunikację i odpowiedzialne dowożenie.
-                    Poniżej: historia, wartości i to, co robię dziś.
+                    Hej! Nazywam sie Damian Jamroży i w tej sekcji opowiem troszeczkę o sobie. Czytając poniższe opisy, dowiesz się kim jestem prywatnie, jakie są moje pasje i co sprawiło, że jestem tym kim jestem.
                 </p>
 
                 <div class="hero-actions cta-row">
-                    <a class="btn btn-primary" href="#timeline" data-i18n="about.hero.cta1">Zobacz moją drogę</a>
+                    <a class="btn btn-primary" href="#" data-i18n="about.hero.cta1">Zobacz moje CV</a>
                     <a class="btn btn-ghost" href="#today" data-i18n="about.hero.cta2">Czym zajmuję się dziś</a>
                 </div>
             </div>
@@ -156,163 +155,179 @@
     </section>
 
 
+    <!-- === Skrót o mnie === -->
+    <section class="values section">
+        <div class="container">
+            <div class="values-wrap">
+                <div class="values-copy">
+                    <h2 data-i18n="about.values.h2">Troszkę ode mnie</h2>
+                    <p class="mini about-me-from-me" data-i18n="about.values.dream">
+                        Na wstępie chciałbym Ci bardzo podziękować za to, że zechciałeś/aś zapoznać się z moją stroną internetową. Jest mi niezmiernie miło, że praca włożona w to wirtualne CV nie poszła na marne.<br />
+                        Skoro już o mnie mowa - jak już wiesz, nazywam się Damian Jamroży i jestem miłośnikiem IT. Od dziecka wiedziałem, że to właśnie przy tworzeniu programów komputerowych chcę spędzić swoje życie. Moja pasja zaczęła się, jak u większości osób, od grania w gry komputerowe (to nadal mi nie przeszło, ale coraz trudniej znaleźć na to czas). Moim marzeniem zawsze było posiadanie własnego studia gier, w którym moja kreatywność mogłaby dać upust zarówno pod względem programistycznym, jak i fabularnym. Byłoby to zwieńczenie moich starań związanych z połączeniem produktu, zespołu i doświadczenia gracza.<br />
+                        Odbiegając od tematów związanych z informatyką, lubię sport, w tym sztuki walki, muzykę, filmy, gry oraz inne formy rozrywki, których jest tak wiele, że ciężko o każdej wspomnieć... Jestem bardzo aktywną osobą, nie lubię staryczności, a ciągłe działanie i rozwijanie siebie, uzależnia mnie bardziej niż jakakolwiek używka. Odwołując się do analogii gier komputerowych: to jak zwiększanie poziomu swojej postaci tylko w prawdziwym życiu.
+                    </p>
+                </div>
+                <figure class="values-media">
+                    <img src="content/images/others/optimized/1-800.webp" alt="" loading="lazy">
+                    <figcaption class="mini" data-i18n="about.values.fig">Miejsce na obraz / wideo.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+
     <!-- === OŚ CZASU — ROADMAP === -->
-<section id="timeline" class="section roadmap">
-  <div class="container">
-    <h2 data-i18n="about.timeline.h2">Moja droga</h2>
-    <p class="lead" data-i18n="about.timeline.lead">Kilka punktów, które ułożyły kierunek.</p>
+    <section id="timeline" class="section roadmap">
+        <div class="container">
+            <h2 data-i18n="about.timeline.h2">Moja droga</h2>
+            <p class="lead" data-i18n="about.timeline.lead">Kilka punktów, które ułożyły kierunek.</p>
 
-    <div class="roadmap-scroller">
-      <!-- Stała belka osi (w obrębie viewportu slidera) -->
-      <div class="rm-line" aria-hidden="true"></div>
+            <div class="roadmap-scroller">
+                <!-- Stała belka osi (w obrębie viewportu slidera) -->
+                <div class="rm-line" aria-hidden="true"></div>
 
-      <!-- Nawigacja -->
-      <button class="rm-hbtn prev" id="rm-prev" aria-label="Przewiń w lewo" title="W lewo">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button class="rm-hbtn next" id="rm-next" aria-label="Przewiń w prawo" title="W prawo">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
+                <!-- Nawigacja -->
+                <button class="rm-hbtn prev" id="rm-prev" aria-label="Przewiń w lewo" title="W lewo">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <button class="rm-hbtn next" id="rm-next" aria-label="Przewiń w prawo" title="W prawo">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
 
-      <!-- Tor przewijany (DESKTOP) / lista (MOBILE) -->
-      <div class="roadmap-track" id="rm-track" aria-label="Oś czasu – przewijana">
+                <!-- Tor przewijany (DESKTOP) / lista (MOBILE) -->
+                <div class="roadmap-track" id="rm-track" aria-label="Oś czasu – przewijana">
 
-        <!-- 1 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: nagroda -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="wyróżnienie">
-              <path fill="currentColor" d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.2019.date">2019</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.2019.h3">Stypendium Marszałka Województwa Świętokrzyskiego</h3>
-            <p class="mini" data-i18n="about.tl.2019.p">Wyróżnienie dla 200 najlepszych uczniów - mocny start.</p>
-          </div>
-        </article>
+                    <!-- 1 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: nagroda -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="wyróżnienie">
+                                <path fill="currentColor" d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.2019.date">2019</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.2019.h3">Stypendium Marszałka Województwa Świętokrzyskiego</h3>
+                            <p class="mini" data-i18n="about.tl.2019.p">Wyróżnienie dla 200 najlepszych uczniów - mocny start.</p>
+                        </div>
+                    </article>
 
-        <!-- 2 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: czapka -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="edukacja">
-              <path fill="currentColor" d="M12 3l10 5-10 5L2 8l10-5zm0 7l6.5-3.25V13L12 16l-6.5-3V6.75L12 10z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.tech.date">2019</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.tech.h3">Technikum informatyczne → studia</h3>
-            <p class="mini" data-i18n="about.tl.tech.p">Ukończyłem technikum IT i rozpocząłem studia kierunkowe na Uniwersytecie Rzeszowskim.</p>
-          </div>
-        </article>
+                    <!-- 2 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: czapka -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="edukacja">
+                                <path fill="currentColor" d="M12 3l10 5-10 5L2 8l10-5zm0 7l6.5-3.25V13L12 16l-6.5-3V6.75L12 10z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.tech.date">2019</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.tech.h3">Technikum informatyczne → studia</h3>
+                            <p class="mini" data-i18n="about.tl.tech.p">Ukończyłem technikum IT i rozpocząłem studia kierunkowe na Uniwersytecie Rzeszowskim.</p>
+                        </div>
+                    </article>
 
-        <!-- 3 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: budynek -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="instytut">
-              <path fill="currentColor" d="M3 21h18v-2H3v2zM5 17h2V7H5v10zm6 0h2V7h-2v10zm6 0h2V7h-2v10zM12 3L2 7v2h20V7L12 3z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.ins.date">2020</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.ins.h3">Instytut Nauk Socjologicznych UR</h3>
-            <p class="mini" data-i18n="about.tl.ins.p">Praca na Uniwerystecie Rzeszowskim - wsparcie IT i wdrożenia.</p>
-          </div>
-        </article>
+                    <!-- 3 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: budynek -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="instytut">
+                                <path fill="currentColor" d="M3 21h18v-2H3v2zM5 17h2V7H5v10zm6 0h2V7h-2v10zm6 0h2V7h-2v10zM12 3L2 7v2h20V7L12 3z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.ins.date">2020</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.ins.h3">Instytut Nauk Socjologicznych UR</h3>
+                            <p class="mini" data-i18n="about.tl.ins.p">Praca na Uniwerystecie Rzeszowskim - wsparcie IT i wdrożenia.</p>
+                        </div>
+                    </article>
 
-        <!-- 4 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: serwer/centrum -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="centrum IT">
-              <path fill="currentColor" d="M3 5h18v6H3V5zm0 8h18v6H3v-6zm3-7v2h2V6H6zm0 8v2h2v-2H6z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.uci.date">2022</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.uci.h3">Uniwersyteckie Centrum Informatyzacji UR</h3>
-            <p class="mini" data-i18n="about.tl.uci.p">Administracja i rozwój systemów Uniwersytetu Rzeszowskiego.</p>
-          </div>
-        </article>
+                    <!-- 4 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: serwer/centrum -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="centrum IT">
+                                <path fill="currentColor" d="M3 5h18v6H3V5zm0 8h18v6H3v-6zm3-7v2h2V6H6zm0 8v2h2v-2H6z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.uci.date">2022</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.uci.h3">Uniwersyteckie Centrum Informatyzacji UR</h3>
+                            <p class="mini" data-i18n="about.tl.uci.p">Administracja i rozwój systemów Uniwersytetu Rzeszowskiego.</p>
+                        </div>
+                    </article>
 
-        <!-- 5 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: dyplom -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="inżynier">
-              <path fill="currentColor" d="M12 2l10 5-10 5L2 7l10-5zm-3 9v7l3-2 3 2v-7l-3 1.5L9 11z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.eng.date">2023</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.eng.h3">Inżynier (Aplikacje Internetowe)</h3>
-            <p class="mini" data-i18n="about.tl.eng.p">Obrona tytułu i start studiów magisterskich.</p>
-          </div>
-        </article>
+                    <!-- 5 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: dyplom -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="inżynier">
+                                <path fill="currentColor" d="M12 2l10 5-10 5L2 7l10-5zm-3 9v7l3-2 3 2v-7l-3 1.5L9 11z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.eng.date">2023</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.eng.h3">Inżynier (Aplikacje Internetowe)</h3>
+                            <p class="mini" data-i18n="about.tl.eng.p">Obrona tytułu i start studiów magisterskich.</p>
+                        </div>
+                    </article>
 
-        <!-- 6 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: wykładowca -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="wykładowca">
-              <path fill="currentColor" d="M12 2a7 7 0 017 7c0 3.87-3.13 7-7 7a7 7 0 110-14zm-8 18a8 8 0 0116 0H4z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.lect.date">2023</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.lect.h3">Wykładowca akademicki</h3>
-            <p class="mini" data-i18n="about.tl.lect.p">Prowadzenie przedmiotów: grafika, podstawy informatyki, technologie informacyjne.</p>
-          </div>
-        </article>
+                    <!-- 6 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: wykładowca -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="wykładowca">
+                                <path fill="currentColor" d="M12 2a7 7 0 017 7c0 3.87-3.13 7-7 7a7 7 0 110-14zm-8 18a8 8 0 0116 0H4z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.lect.date">2023</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.lect.h3">Wykładowca akademicki</h3>
+                            <p class="mini" data-i18n="about.tl.lect.p">Prowadzenie przedmiotów: grafika, podstawy informatyki, technologie informacyjne.</p>
+                        </div>
+                    </article>
 
-        <!-- 7 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: tarcza/AI -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="magister">
-              <path fill="currentColor" d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.msc.date">2024</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.msc.h3">Magister inżynier</h3>
-            <p class="mini" data-i18n="about.tl.msc.p">Obrona pracy magisterskiej oraz uzyskanie 2 miejsca w konkursie prac dyplomowych.</p>
-          </div>
-        </article>
+                    <!-- 7 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: tarcza/AI -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="magister">
+                                <path fill="currentColor" d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.msc.date">2024</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.msc.h3">Magister inżynier</h3>
+                            <p class="mini" data-i18n="about.tl.msc.p">Obrona pracy magisterskiej oraz uzyskanie 2 miejsca w konkursie prac dyplomowych.</p>
+                        </div>
+                    </article>
 
-        <!-- 8 -->
-        <article class="rm-item reveal">
-          <div class="rm-node" aria-hidden="true">
-            <!-- ikona: rakieta / awans -->
-            <svg viewBox="0 0 24 24" role="img" aria-label="awans">
-              <path fill="currentColor" d="M12 2l4 4-3 3 2 2 3-3 4 4-8 8-6 2 2-6 8-8z"/>
-            </svg>
-          </div>
-          <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.promo.date">2025</span></div>
-          <div class="rm-card">
-            <h3 data-i18n="about.tl.promo.h3">SSCMaster / ASBiR</h3>
-            <p class="mini" data-i18n="about.tl.promo.p">Rozpoczęcie pracy jako UI/UX designer oraz Web administrator.</p>
-          </div>
-        </article>
+                    <!-- 8 -->
+                    <article class="rm-item reveal">
+                        <div class="rm-node" aria-hidden="true">
+                            <!-- ikona: rakieta / awans -->
+                            <svg viewBox="0 0 24 24" role="img" aria-label="awans">
+                                <path fill="currentColor" d="M12 2l4 4-3 3 2 2 3-3 4 4-8 8-6 2 2-6 8-8z" />
+                            </svg>
+                        </div>
+                        <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.promo.date">2025</span></div>
+                        <div class="rm-card">
+                            <h3 data-i18n="about.tl.promo.h3">SSCMaster / ASBiR</h3>
+                            <p class="mini" data-i18n="about.tl.promo.p">Rozpoczęcie pracy jako UI/UX designer oraz Web administrator.</p>
+                        </div>
+                    </article>
 
-      </div><!-- /roadmap-track -->
-    </div><!-- /roadmap-scroller -->
-
-    <!-- Mobile-only: pokaż resztę elementów (7+) -->
-    <button class="rm-more" id="rm-more" type="button">Pokaż więcej</button>
-  </div>
-</section>
-<!-- === /OŚ CZASU === -->
-
-
-
-
+                </div><!-- /roadmap-track -->
+            </div><!-- /roadmap-scroller -->
+            <!-- Mobile-only: pokaż resztę elementów (7+) -->
+            <button class="rm-more" id="rm-more" type="button">Pokaż więcej</button>
+        </div>
+    </section>
+    <!-- === /OŚ CZASU === -->
     <!-- === ZAANGAŻOWANIE AKADEMICKIE — z miejscem na logo (lekki polish) === -->
     <section class="community section">
         <div class="container">
@@ -322,7 +337,7 @@
             <div class="cards-3">
                 <article class="feature-card">
                     <div class="logo-slot">
-                         <img src="content/images/logos/ssur.svg" alt="Samorząd Studentów"> 
+                        <img src="content/images/logos/ssur.svg" alt="Samorząd Studentów">
                         <!--<span data-i18n="about.community.logo.placeholder">LOGO</span>-->
                     </div>
                     <h3 data-i18n="about.community.sam.h3">Samorząd Studentów</h3>
@@ -331,7 +346,7 @@
 
                 <article class="feature-card">
                     <div class="logo-slot">
-                         <img src="content/images/logos/feniksfm.svg" alt="feniks.fm"> 
+                        <img src="content/images/logos/feniksfm.svg" alt="feniks.fm">
                         <!--<span data-i18n="about.community.logo.placeholder">LOGO</span>-->
                     </div>
                     <h3 data-i18n="about.community.radio.h3">feniks.fm - radio akademickie</h3>
@@ -340,7 +355,7 @@
 
                 <article class="feature-card">
                     <div class="logo-slot">
-                         <img src="content/images/logos/kni.svg" alt="Koło Naukowe Informatyków UR"> 
+                        <img src="content/images/logos/kni.svg" alt="Koło Naukowe Informatyków UR">
                         <!--<span data-i18n="about.community.logo.placeholder">LOGO</span>-->
                     </div>
                     <h3 data-i18n="about.community.kni.h3">Koło Naukowe Informatyków UR</h3>
@@ -428,27 +443,6 @@
                         <li data-i18n="about.today.pm.c3">Sztuczna inteligencja</li>
                     </ul>
                 </article>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- === Skrót o mnie === -->
-    <section class="values section">
-        <div class="container">
-            <div class="values-wrap">
-                <div class="values-copy">
-                    <h2 data-i18n="about.values.h2">Troszkę ode mnie</h2>
-                    <p class="mini about-me-from-me" data-i18n="about.values.dream">
-                        Na wstępie chciałbym Ci bardzo podziękować za to, że zechciałeś/zechciałaś zapoznać się z moją stroną internetową. Jest mi niezmiernie miło, że praca włożona w to wirtualne CV nie poszła na marne.<br />
-                        Skoro już o mnie mowa - jak już wiesz, nazywam się Damian Jamroży i jestem miłośnikiem IT. Od dziecka wiedziałem, że to właśnie przy tworzeniu programów komputerowych chcę spędzić swoje życie. Moja pasja zaczęła się, jak u większości osób, od grania w gry komputerowe (to nadal mi nie przeszło, ale coraz trudniej znaleźć na to czas). Moim marzeniem zawsze było posiadanie własnego studia gier, w którym moja kreatywność mogłaby dać upust zarówno pod względem programistycznym, jak i fabularnym. Byłoby to zwieńczenie moich starań związanych z połączeniem produktu, zespołu i doświadczenia gracza.<br />
-                        Odbiegając od tematów związanych z informatyką, lubię sport, w tym sztuki walki, muzykę, filmy oraz inne formy rozrywki, które opisałem nieco dokładniej w sekcji poniżej.
-                    </p>
-                </div>
-                <figure class="values-media">
-                    <img src="content/images/others/optimized/1-800.webp" alt="" loading="lazy">
-                    <figcaption class="mini" data-i18n="about.values.fig">Miejsce na obraz / wideo.</figcaption>
-                </figure>
             </div>
         </div>
     </section>
