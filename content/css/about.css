@@ -1113,12 +1113,12 @@
 
 /* 2. "Zaangażowanie akademickie" – płynne wyjście z "Mojej drogi" */
 .community.section {
-    background: linear-gradient(180deg, #0c1017 0%, #0b1017 100%);
+    background: linear-gradient(180deg, #0c141e 0%, #0b1017 100%);
 }
 
 /* 3. "Na czym się teraz skupiam" – delikatny glow + dalsze przyciemnienie */
 .section.focus.section--softA {
-    background: radial-gradient(70% 100% at 10% 0%, rgba(214,180,108,0.16), transparent 60%), linear-gradient(180deg, #0b1017 0%, #080f18 100%);
+    background: radial-gradient(80% 120% at 85% 100%, rgba(6,182,212,0.14), transparent 60%), linear-gradient(180deg, #080f18 0%, #060a11 100%);
 }
 
 /* 4. "Po godzinach" – przejście w dół strony */
@@ -1126,10 +1126,7 @@
     background: radial-gradient(80% 120% at 85% 0%, rgba(6,182,212,0.14), transparent 60%), linear-gradient(180deg, #080f18 0%, #060a11 100%);
 }
 
-/* 5. Kontakt – zamknięcie całego dużego gradientu na dole */
-.contact {
-    background: linear-gradient(180deg, #060a11 0%, #04070c 100%);
-}
+
 
 
 
