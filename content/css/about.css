@@ -1130,3 +1130,473 @@
 
 
 
+/* === LINK W OSI CZASU (ZOBACZ WIĘCEJ) === */
+.msc-link{
+    margin-left: 4px;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(214,180,108,.75);
+    cursor: pointer;
+}
+.msc-link:hover{
+    color: #fff;
+    border-bottom-color: transparent;
+}
+
+/* === MODAL: Osiągnięcia – Magister inżynier ===================== */
+/* Overlay + dialog */
+
+.msc-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+    background:
+        radial-gradient(circle at top left, rgba(88, 28, 135, 0.35), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.25), transparent 55%),
+        rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* klasa nadawana z JS przy otwarciu */
+.msc-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.msc-modal-dialog {
+    width: 100%;
+    max-width: min(1320px, 100% - 64px);
+    background: radial-gradient(circle at top left, #111827, #020617 65%);
+    border-radius: 24px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+    padding: 24px 24px 28px;
+    position: relative;
+    color: #f9fafb;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* === Nagłówek =================================================== */
+
+.msc-modal-header {
+    position: relative;
+    padding-right: 44px; /* miejsce na X */
+    margin-bottom: 20px;
+}
+
+.msc-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #4c1d95, #a855f7);
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.msc-modal-header h2 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 0 0 10px;
+}
+
+.msc-modal-sub {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+/* X */
+
+.msc-modal-close {
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: rgba(15, 23, 42, 0.95);
+    color: #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        transform 0.12s ease,
+        border-color 0.18s ease;
+}
+
+.msc-modal-close:hover {
+    background: rgba(30, 64, 175, 0.85);
+    border-color: rgba(129, 140, 248, 0.9);
+    transform: scale(1.05);
+}
+
+/* === Layout: galeria + linki ==================================== */
+
+.msc-modal-layout {
+    display: flex;
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.msc-modal-body {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.msc-modal-aside {
+    flex: 0 0 340px;
+    max-width: 360px;
+}
+
+/* === Linki po prawej ============================================ */
+
+.msc-links h3 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.msc-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.msc-links li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.msc-links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.msc-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.msc-links a:hover {
+    color: #f9a8d4;
+    border-color: rgba(248, 113, 113, 0.7);
+}
+
+/* === GALERIA – slider (używana na wszystkich szerokościach) ===== */
+
+.msc-gallery {
+    margin-bottom: 18px;
+}
+
+/* używamy wersji desktopowej jako głównej */
+.msc-gallery--desktop {
+    display: block;
+}
+
+/* wersję mobile-grid chowamy wszędzie (HTML może zostać) */
+.msc-gallery--mobile {
+    display: none !important;
+}
+
+/* główne zdjęcie */
+
+.msc-gallery-main {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: radial-gradient(circle at top left, #111827, #020617);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    aspect-ratio: 16 / 9; /* desktop: szerokie foto */
+}
+
+.msc-gallery-main-frame {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.msc-gallery-main-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* strzałki */
+
+.msc-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5e7eb;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        transform 0.12s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.msc-gallery-arrow--prev {
+    left: 10px;
+}
+.msc-gallery-arrow--next {
+    right: 10px;
+}
+
+.msc-gallery-arrow:hover {
+    background: radial-gradient(circle at top left, #4c1d95, #1e293b);
+    border-color: rgba(129, 140, 248, 0.9);
+    box-shadow:
+        0 0 0 1px rgba(79, 70, 229, 0.7),
+        0 10px 25px rgba(15, 23, 42, 0.9);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* miniatury */
+
+.msc-gallery-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.msc-thumb {
+    position: relative;
+    width: 110px;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 0;
+    cursor: pointer;
+    background: #020617;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.msc-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.msc-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.45), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.msc-thumb:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.85);
+    border-color: rgba(129, 140, 248, 0.8);
+}
+
+.msc-thumb.is-active {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.45);
+}
+
+.msc-thumb.is-active::after {
+    opacity: 1;
+}
+
+/* === „Stara” wersja kafelkowa – gdybyś chciał użyć ręcznie ====== */
+
+.msc-gallery-item {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: radial-gradient(circle at top left, #111827, #020617);
+}
+
+.msc-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* ===============================================================
+   RESPONSYWNOŚĆ – BEZ ZMIAN NA DUŻYCH EKRANACH
+   =============================================================== */
+
+/* TABLETY / MAŁE LAPTOPY: do 1199px
+   - modal trochę węższy, przewijalny
+   - układ w jednej kolumnie (galeria nad linkami)
+   - slider zostaje
+*/
+@media (max-width: 1199px) {
+
+    .msc-modal {
+        align-items: flex-start;
+        justify-content: center;
+        padding: 24px 12px;
+    }
+
+    .msc-modal-dialog {
+        max-width: min(960px, 100% - 24px);
+        max-height: calc(100vh - 40px);
+        height: auto;
+        overflow-y: auto;
+        border-radius: 20px;
+        padding: 20px 18px 20px;
+    }
+
+    .msc-modal-layout {
+        flex-direction: column;
+        gap: 22px;
+        margin-top: 18px;
+    }
+
+    .msc-modal-body,
+    .msc-modal-aside {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+
+    /* slider dalej 16:9, ale może być trochę wyższy */
+    .msc-gallery-main {
+        aspect-ratio: 16 / 9;
+    }
+
+    .msc-gallery-thumbs {
+        justify-content: flex-start;
+    }
+}
+
+/* TELEFONY: do 767px
+   - modal na pełny ekran
+   - jedna kolumna
+   - slider na pełną szerokość, miniatury przewijane horyzontalnie
+*/
+@media (max-width: 767px) {
+
+    .msc-modal {
+        padding: 0;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .msc-modal-dialog {
+        max-width: 100%;
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 16px 12px 18px;
+    }
+
+    .msc-modal-header {
+        padding-right: 38px;
+        margin-bottom: 14px;
+    }
+
+    .msc-modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .msc-modal-sub {
+        font-size: 0.9rem;
+    }
+
+    .msc-modal-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .msc-modal-layout {
+        flex-direction: column;
+        margin-top: 12px;
+        gap: 14px;
+    }
+
+    .msc-gallery-main {
+        aspect-ratio: 4 / 3; /* na telefonie trochę wyższe foto */
+    }
+
+    .msc-gallery-thumbs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+    }
+
+    .msc-thumb {
+        flex: 0 0 120px;
+    }
+
+    .msc-links h3 {
+        font-size: 0.95rem;
+    }
+
+    .msc-links li {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+}
+
+/* BARDZO DUŻE EKRANY – lekko szerzej, ale styl ten sam jak teraz */
+@media (min-width: 1440px) {
+    .msc-modal-dialog {
+        max-width: min(1400px, 100% - 96px);
+    }
+}
+
+
+@media (max-width: 405px) {
+    .msc-gallery-thumbs {
+        display: none;
+    }
+}

@@ -301,9 +301,20 @@
                         <div class="rm-meta"><span class="rm-year" data-i18n="about.tl.msc.date">2024</span></div>
                         <div class="rm-card">
                             <h3 data-i18n="about.tl.msc.h3">Magister inżynier</h3>
-                            <p class="mini" data-i18n="about.tl.msc.p">Obrona pracy magisterskiej oraz uzyskanie 2 miejsca w konkursie prac dyplomowych.</p>
+                            <p class="mini">
+                                <span data-i18n="about.tl.msc.text">
+                                    Obrona pracy magisterskiej oraz uzyskanie 2 miejsca w konkursie prac dyplomowych.
+                                </span>
+                                <a href="#msc-modal"
+                                   class="msc-link"
+                                   data-msc-modal
+                                   data-i18n="about.tl.msc.more">
+                                    Zobacz więcej
+                                </a>
+                            </p>
                         </div>
                     </article>
+
 
                     <!-- 8 -->
                     <article class="rm-item reveal">
@@ -686,6 +697,187 @@
         </svg>
     </button>
 
+
+
+
+
+    <!-- MODAL: Osiągnięcia – Magister inżynier -->
+    <div id="msc-modal"
+         class="msc-modal"
+         aria-hidden="true"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="msc-modal-title">
+
+        <div class="msc-modal-dialog">
+            <header class="msc-modal-header">
+                <span class="msc-pill" data-i18n="about.tl.msc.modal.badge">
+                    Osiągnięcia
+                </span>
+                <h2 id="msc-modal-title" data-i18n="about.tl.msc.modal.title">
+                    Magister inżynier - praca dyplomowa
+                </h2>
+                <p class="msc-modal-sub" data-i18n="about.tl.msc.modal.sub">
+                    Kilka kadrów z konkursu prac dyplomowych oraz linki do artykułów,
+                    w których pojawiła się wzmianka o moim osiągnięciu.
+                </p>
+
+                <!-- przycisk zamykania, używany przez JS -->
+                <button class="msc-modal-close"
+                        type="button"
+                        aria-label="Zamknij"
+                        data-modal-close>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6l-12 12"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round" />
+                    </svg>
+                </button>
+            </header>
+
+            <div class="msc-modal-layout">
+                <!-- LEWA KOLUMNA: GALERIA -->
+                <div class="msc-modal-body">
+
+                    <!-- === GALERIA – DESKTOP: duże zdjęcie + miniatury + strzałki === -->
+                    <section class="msc-gallery msc-gallery--desktop"
+                             aria-label="Galeria z obrony i konkursu">
+                        <div class="msc-gallery-main">
+                            <button class="msc-gallery-arrow msc-gallery-arrow--prev"
+                                    type="button"
+                                    aria-label="Poprzednie zdjęcie">
+                                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                    <path d="M15 6l-6 6 6 6"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round" />
+                                </svg>
+                            </button>
+
+                            <figure class="msc-gallery-main-frame">
+                                <!-- obraz główny, JS podmienia src/alt -->
+                                <img src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg"
+                                     alt="Obrona pracy magisterskiej — prezentacja"
+                                     loading="lazy"
+                                     data-gallery-main>
+                            </figure>
+
+                            <button class="msc-gallery-arrow msc-gallery-arrow--next"
+                                    type="button"
+                                    aria-label="Następne zdjęcie">
+                                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="msc-gallery-thumbs" role="list">
+                            <button class="msc-thumb is-active"
+                                    type="button"
+                                    role="listitem"
+                                    data-index="0"
+                                    data-src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg"
+                                    data-alt="Obrona pracy magisterskiej — prezentacja">
+                                <img src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg" alt="">
+                            </button>
+
+                            <button class="msc-thumb"
+                                    type="button"
+                                    role="listitem"
+                                    data-index="1"
+                                    data-src="content/images/personal/achievements/djamrozy-prz-ur-2.jpg"
+                                    data-alt="Wręczenie dyplomu — konkurs prac dyplomowych">
+                                <img src="content/images/personal/achievements/djamrozy-prz-ur-2.jpg" alt="">
+                            </button>
+
+                            <button class="msc-thumb"
+                                    type="button"
+                                    role="listitem"
+                                    data-index="2"
+                                    data-src="content/images/personal/achievements/djamrozy-prz-ur-3.jpg"
+                                    data-alt="Zdjęcie pamiątkowe po obronie">
+                                <img src="content/images/personal/achievements/djamrozy-prz-ur-3.jpg" alt="">
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- === GALERIA – MOBILE: stara siatka kart, bez slidera === -->
+                    <section class="msc-gallery msc-gallery--mobile"
+                             aria-label="Galeria z obrony i konkursu">
+                        <figure class="msc-gallery-item">
+                            <img src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg"
+                                 alt="Obrona pracy magisterskiej — prezentacja"
+                                 loading="lazy">
+                        </figure>
+                        <figure class="msc-gallery-item">
+                            <img src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg"
+                                 alt="Wręczenie dyplomu — konkurs prac dyplomowych"
+                                 loading="lazy">
+                        </figure>
+                        <figure class="msc-gallery-item">
+                            <img src="content/images/personal/achievements/djamrozy-prz-ur-1.jpg"
+                                 alt="Zdjęcie pamiątkowe po obronie"
+                                 loading="lazy">
+                        </figure>
+                    </section>
+                </div>
+
+                <!-- PRAWA KOLUMNA: LINKI -->
+                <aside class="msc-modal-aside msc-links" aria-label="Linki do artykułów">
+                    <h3 data-i18n="about.tl.msc.modal.links.h3">
+                        Gdzie o tym pisali?
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="https://w.prz.edu.pl/uczelnia/aktualnosci/konkurs-na-najlepsza-prace-dyplomowa-2725.html"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-i18n="about.tl.msc.modal.links.l1">
+                                Artykuł na stronie głównej Politechniki Rzeszowskiej
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sep.w.prz.edu.pl/dzialalnosc/konkursy/konkurs-2024-wyniki"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-i18n="about.tl.msc.modal.links.l2">
+                                Artykuł na stronie koła naukowego SEP przy Politechnice Rzeszowskiej
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://weii.prz.edu.pl/aktualnosci/wyloniono-laureatow-39-konkursu-na-najlepsza-prace-dyplomowa-763.html"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-i18n="about.tl.msc.modal.links.l2">
+                                Artykuł na stronie wydziału Elektrotechniki i Informatyki Politechniki Rzeszowskiej
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://seprzeszow.pl/aktualnosci/39-konkurs-na-najlepsza-prace-dyplomowa-studentow/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-i18n="about.tl.msc.modal.links.l2">
+                                Artykuł na stronie Stowarzyszenia Elektryków Polskich (Oddział w Rzeszowie)
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <!-- Canonical + lang (jedno źródło prawdy) -->
     <script>
         (function () {
@@ -751,6 +943,123 @@
 
 
 
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            /* === MODAL: Magister inżynier – galeria + linki === */
+            const modal = document.getElementById('msc-modal');
+            if (!modal) return; // jeśli jesteś na innej podstronie, po prostu nic nie rób
+
+            const triggers = document.querySelectorAll('[data-msc-modal]');
+            const closeBtn = modal.querySelector('[data-modal-close]');
+            const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select';
+            let lastFocused = null;
+
+            function openModal(evt) {
+                if (evt) evt.preventDefault();
+                lastFocused = document.activeElement;
+
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+
+                const firstFocusable = modal.querySelector(focusableSelectors);
+                if (firstFocusable) {
+                    firstFocusable.focus();
+                }
+            }
+
+            function closeModal() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            // klik w każdy link z data-msc-modal
+            triggers.forEach(function (trigger) {
+                trigger.addEventListener('click', openModal);
+            });
+
+            // klik w X
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    closeModal();
+                });
+            }
+
+            // klik w tło (overlay)
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // zamknięcie ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+
+            /* === GALERIA w modalu – slider (desktop) === */
+            const gallery = modal.querySelector('.msc-gallery--desktop');
+            if (!gallery) return;
+
+            const mainImg = gallery.querySelector('[data-gallery-main]');
+            const thumbs = Array.from(gallery.querySelectorAll('.msc-thumb'));
+            const prevBtn = gallery.querySelector('.msc-gallery-arrow--prev');
+            const nextBtn = gallery.querySelector('.msc-gallery-arrow--next');
+
+            if (!mainImg || !thumbs.length) return;
+
+            let currentIndex = 0;
+
+            function showImage(index) {
+                const total = thumbs.length;
+                currentIndex = (index + total) % total; // pętla
+
+                const btn = thumbs[currentIndex];
+                const src = btn.dataset.src;
+                const alt = btn.dataset.alt || '';
+
+                if (src) mainImg.src = src;
+                mainImg.alt = alt;
+
+                thumbs.forEach(t => t.classList.toggle('is-active', t === btn));
+            }
+
+            // klik w miniatury
+            thumbs.forEach((btn, i) => {
+                btn.addEventListener('click', function () {
+                    showImage(i);
+                });
+            });
+
+            // strzałki
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    showImage(currentIndex - 1);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    showImage(currentIndex + 1);
+                });
+            }
+
+            // start: pierwsze zdjęcie
+            showImage(0);
+        });
+    </script>
 
 
 
