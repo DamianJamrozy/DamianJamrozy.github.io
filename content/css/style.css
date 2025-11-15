@@ -1452,3 +1452,12 @@ header.nav::before {
 .about-me-from-me {
     color: #9aa4b2;
 }
+
+
+
+@media (max-width:1420px) {
+    /* etykiety czasu naprzemiennie, zaczynając OD DOŁU */
+    .right-base-nav {
+        margin-right: 8vw;
+    }
+}
