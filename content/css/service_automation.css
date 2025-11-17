@@ -1,0 +1,806 @@
+/* =========================================
+   SERVICE AUTOMATION – PODSTRONA
+   Wszystko namespacowane .sa-
+   ========================================= */
+
+/* ---------- HERO: gradient + pseudo-terminal (BEZ ZMIAN) ---------- */
+
+.sa-hero {
+    position: relative;
+    color: #f9fafb;
+    background: radial-gradient(140% 200% at 0% 0%, rgba(214, 180, 108, 0.2), transparent 60%), radial-gradient(130% 180% at 100% 0%, rgba(79, 70, 229, 0.32), transparent 65%), linear-gradient(180deg, #020617, #020617 60%, #050816 100%);
+    overflow: hidden;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    padding-top: 10vh;
+    padding-bottom: 8vh;
+}
+
+    .sa-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient( rgba(148, 163, 184, 0.08) 1px, transparent 1px ), linear-gradient( 90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px );
+        background-size: 32px 32px;
+        opacity: 0.35;
+        mix-blend-mode: soft-light;
+        pointer-events: none;
+    }
+
+.sa-hero-inner {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(72px, 12vh, 110px) 0 clamp(56px, 10vh, 80px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 56px);
+    align-items: center;
+    z-index: 1;
+}
+
+.sa-hero-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.sa-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(17, 24, 39, 0.9);
+    border: 1px solid rgba(214, 180, 108, 0.7);
+    color: #f9f5e9;
+}
+
+.sa-tag-soft {
+    background: rgba(148, 163, 184, 0.10);
+    border-color: rgba(148, 163, 184, 0.45);
+    color: #e5e7eb;
+}
+
+.sa-hero-copy h1 {
+    margin-top: 12px;
+    font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.sa-hero-lead {
+    margin-top: 10px;
+    font-size: 0.98rem;
+    max-width: 38rem;
+    color: var(--muted, #d1d5db);
+}
+
+.sa-hero-actions {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sa-hero-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.86rem;
+    color: var(--muted, #9ca3af);
+}
+
+    .sa-hero-meta span {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .sa-hero-meta strong {
+        font-weight: 600;
+        color: #e5e7eb;
+    }
+
+/* prawa kolumna – pseudo-terminal */
+
+.sa-hero-visual {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sa-hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: -18%;
+        background: radial-gradient(circle at 0% 0%, rgba(214, 180, 108, 0.35), transparent 60%), radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.5), transparent 65%);
+        opacity: 0.75;
+        filter: blur(10px);
+    }
+
+.sa-terminal {
+    position: relative;
+    width: min(440px, 100%);
+    border-radius: 20px;
+    background: radial-gradient(circle at top left, #020617, #020617 40%, #050816 100%);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(15, 23, 42, 0.7);
+    overflow: hidden;
+}
+
+.sa-terminal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    font-size: 0.78rem;
+    color: #9ca3af;
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+}
+
+.sa-terminal-dots {
+    display: inline-flex;
+    gap: 5px;
+}
+
+    .sa-terminal-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #4b5563;
+    }
+
+        .sa-terminal-dots span:nth-child(1) {
+            background: #f97373;
+        }
+
+        .sa-terminal-dots span:nth-child(2) {
+            background: #facc15;
+        }
+
+        .sa-terminal-dots span:nth-child(3) {
+            background: #22c55e;
+        }
+
+.sa-terminal-title {
+    opacity: 0.9;
+}
+
+.sa-terminal-body {
+    padding: 14px 14px 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    background: radial-gradient(120% 160% at 0% 0%, rgba(56, 189, 248, 0.16), transparent 60%), #020617;
+}
+
+.sa-code-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    color: rgba(209, 213, 219, 0.8);
+    opacity: 0.65;
+    transform-origin: left center;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+    .sa-code-line + .sa-code-line {
+        margin-top: 4px;
+    }
+
+.sa-code-prompt {
+    color: rgba(250, 204, 21, 0.9);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.sa-code-line.is-active {
+    opacity: 1;
+    color: #e5e7eb;
+    transform: translateX(2px);
+}
+
+    .sa-code-line.is-active .sa-code-prompt {
+        color: var(--gold, #d6b46c);
+    }
+
+/* =========================================
+   SEKCJA 1 – OVERVIEW
+   - ciemna, szeroka taśma + 3 kolumny tekstu (bez kafelków)
+   ========================================= */
+
+.sa-overview {
+    position: relative;
+    background: radial-gradient(140% 220% at 0% 0%, rgba(15, 23, 42, 0.9), transparent 60%), #020617;
+    padding-top: clamp(52px, 7vh, 70px);
+    padding-bottom: clamp(52px, 7vh, 70px);
+}
+
+
+.sa-overview-band {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px;
+    /* ZERO BOXA: brak tła, brak obramowania, brak cienia */
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* nagłówek sekcji */
+
+.sa-overview-head {
+    max-width: 56rem;
+    margin: 0 auto 22px;
+/*    text-align: center;*/
+}
+
+    .sa-overview-head .sa-tag {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sa-overview-head h2 {
+        margin-top: 14px;
+    }
+
+    .sa-overview-head .sa-lead {
+        margin-top: 12px;
+/*        max-width: 42rem;*/
+/*        margin-left: auto;*/
+/*        margin-right: auto;*/
+        color: var(--muted, #cbd5f5);
+        font-size: 0.97rem;
+    }
+
+/* 3 kolumny – dekoracyjnie, ale bez cardów */
+
+.sa-criteria {
+    position: relative;
+    list-style: none;
+    padding: 24px 0 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+    /* delikatna, przerywana linia pod nagłówkiem sekcji */
+
+    .sa-criteria::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 1px;
+        background-image: linear-gradient( 90deg, rgba(214, 180, 108, 0.0) 0%, rgba(214, 180, 108, 0.8) 16%, rgba(129, 140, 248, 0.8) 50%, rgba(214, 180, 108, 0.8) 84%, rgba(214, 180, 108, 0.0) 100% );
+        opacity: 0.55;
+    }
+
+/* pojedynczy punkt – typografia + duży numer w tle */
+
+.sa-criteria-item {
+    position: relative;
+    padding-top: 18px;
+    padding-left: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    color: #e5e7eb;
+    overflow: hidden;
+}
+
+    /* duży numer w tle, bardzo delikatny */
+
+    .sa-criteria-item::before {
+        content: "01";
+        position: absolute;
+        top: -10px;
+        right: 4px;
+        font-size: 3.4rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: rgba(15, 23, 42, 0.9);
+        text-shadow: 0 0 24px rgba(15, 23, 42, 1), 0 0 40px rgba(15, 23, 42, 1);
+        pointer-events: none;
+    }
+
+    /* numery dla kolejnych elementów */
+
+    .sa-criteria-item:nth-child(2)::before {
+        content: "02";
+    }
+
+    .sa-criteria-item:nth-child(3)::before {
+        content: "03";
+    }
+
+/* label – złoty tytuł z małym gradientowym podkreśleniem */
+
+.sa-criteria-label {
+    position: relative;
+    padding: 0 0 4px;
+    border: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold, #d6b46c);
+    background: transparent;
+}
+
+    .sa-criteria-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 72%;
+        height: 2px;
+        border-radius: 999px;
+        background-image: linear-gradient( 90deg, rgba(214, 180, 108, 0.95), rgba(129, 140, 248, 0.95) );
+        opacity: 0.9;
+    }
+
+/* opis */
+
+.sa-criteria p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted, #d1d5db);
+    max-width: 24rem;
+}
+
+/* subtelny hover – tylko kolor, bez podnoszenia */
+
+.sa-criteria-item:hover .sa-criteria-label {
+    color: #fde68a;
+}
+
+    .sa-criteria-item:hover .sa-criteria-label::after {
+        opacity: 1;
+    }
+
+.sa-criteria-item:hover p {
+    color: #e5e7eb;
+}
+
+/* responsywność */
+
+@media (max-width: 1024px) {
+    .sa-criteria {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sa-criteria {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .sa-criteria-item::before {
+        font-size: 3rem;
+        right: 0;
+        top: -6px;
+    }
+}
+
+
+
+/* =========================================
+   SEKCJA 2 – FLOW
+   - pozioma oś kroków, bez cardów
+   ========================================= */
+
+.sa-flow {
+    position: relative;
+    overflow: hidden;
+    background: #020617; /* czyste ciemne tło */
+    padding-top: clamp(52px, 7vh, 70px);
+    padding-bottom: clamp(52px, 7vh, 70px);
+}
+
+
+    /* złoto–fioletowy glow tylko w prawym dolnym rogu,
+   stylizowany jak w sekcji „Powtarzasz proces w nieskończoność?” */
+
+    .sa-flow::after {
+        content: "";
+        position: absolute;
+        inset: 0; /* zajmuje całą sekcję, ale świeci tylko w rogu */
+        pointer-events: none;
+        background: radial-gradient( 160% 140% at 120% 140%, /* główny złoty glow */
+        rgba(133, 138, 169, 0.32), transparent 60% ), radial-gradient( 180% 150% at 110% 130%, /* fioletowe „halo” pod spodem */
+        rgba(7, 0, 125, 0.40), transparent 72% );
+        opacity: 0.9;
+        mix-blend-mode: screen;
+    }
+
+
+
+
+
+
+
+.sa-collab {
+    position: relative;
+    background: radial-gradient(140% 200% at 100% 0%, rgba(79, 70, 229, 0.28), transparent 65%), #020617;
+    padding-top: clamp(40px, 6vh, 56px); /* trochę bliżej poprzedniej sekcji */
+    padding-bottom: clamp(52px, 7vh, 80px);
+}
+
+
+
+    /* nagłówek na ciemnym tle */
+
+    .sa-flow .sa-section-head {
+        color: #e5e7eb;
+    }
+
+        .sa-flow .sa-section-head .lead {
+            color: var(--muted, #cbd5f5);
+        }
+
+/* --- Pozioma oś kroków --- */
+
+.sa-flow-list {
+    position: relative;
+    list-style: none;
+    padding: 34px 0 0;
+    margin: 0 auto;
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(18px, 3vw, 26px);
+}
+
+    /* linia łącząca kroki */
+
+    .sa-flow-list::before {
+        content: "";
+        position: absolute;
+        top: 26px;
+        left: calc(12.5%);
+        right: calc(12.5%);
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient( 90deg, rgba(214, 180, 108, 0.0), rgba(214, 180, 108, 0.85), rgba(129, 140, 248, 0.85), rgba(214, 180, 108, 0.85), rgba(214, 180, 108, 0.0) );
+        opacity: 0.9;
+    }
+
+/* pojedynczy krok – marker u góry, tekst pod spodem */
+
+.sa-flow-step {
+    position: relative;
+    text-align: left;
+    padding-top: 42px; /* miejsce na marker */
+}
+
+/* marker – sam okrąg z numerem, bez carda */
+
+.sa-flow-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 2px solid rgba(214, 180, 108, 0.95);
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--gold, #d6b46c);
+    box-shadow: 0 0 0 4px rgba(214, 180, 108, 0.18), 0 12px 30px rgba(15, 23, 42, 0.95);
+    z-index: 1;
+}
+
+    /* delikatny glow w środku */
+
+    .sa-flow-marker::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border-radius: inherit;
+        background: radial-gradient(circle at 30% 25%, rgba(250, 250, 249, 0.22), transparent 60%);
+        opacity: 0.9;
+    }
+
+/* treść kroku */
+
+.sa-flow-body h3 {
+    font-size: 0.98rem;
+    margin: 0 0 4px;
+    color: #e5e7eb;
+}
+
+.sa-flow-body p {
+    font-size: 0.9rem;
+    color: var(--muted, #d1d5db);
+    margin: 0;
+}
+
+/* subtelny hover – lekko podświetla marker i tekst, bez unoszenia / carda */
+
+.sa-flow-step:hover .sa-flow-marker {
+    border-color: #fde68a;
+    color: #fde68a;
+    box-shadow: 0 0 0 5px rgba(252, 211, 77, 0.2), 0 14px 34px rgba(15, 23, 42, 1);
+}
+
+.sa-flow-step:hover .sa-flow-body p {
+    color: #e5e7eb;
+}
+
+/* =========================================
+   RESPONSYWNOŚĆ
+   ========================================= */
+
+@media (max-width: 992px) {
+    .sa-flow-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 28px;
+    }
+
+        .sa-flow-list::before {
+            left: calc(25%);
+            right: calc(25%);
+        }
+}
+
+@media (max-width: 640px) {
+
+    .sa-flow-list {
+        grid-template-columns: 1fr;
+        padding-top: 24px;
+    }
+
+        /* na mobilce rezygnujemy z poziomej linii,
+       kroki po prostu pod sobą, dalej bez cardów */
+        .sa-flow-list::before {
+            display: none;
+        }
+
+    .sa-flow-step {
+        padding-top: 6px;
+        padding-left: 44px;
+    }
+
+    .sa-flow-marker {
+        left: 0;
+        transform: none;
+        top: 0;
+    }
+}
+
+
+
+
+/* =========================================
+   SEKCJA 3 – COLLAB (matrix)
+   ========================================= */
+
+.sa-collab {
+    position: relative;
+    background: radial-gradient(140% 200% at 100% 0%, rgba(79, 70, 229, 0.28), transparent 65%), #020617;
+    padding-top: clamp(52px, 7vh, 70px);
+    padding-bottom: clamp(52px, 7vh, 80px);
+}
+
+    /* lekka siatka w tle */
+    .sa-collab::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(15, 23, 42, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.20) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.25;
+        pointer-events: none;
+    }
+
+    .sa-collab .sa-section-head {
+        position: relative;
+        z-index: 1;
+        color: #e5e7eb;
+    }
+
+        .sa-collab .sa-section-head .lead {
+            color: var(--muted, #cbd5f5);
+        }
+
+/* ---------- MATRIX: nagłówki kolumn ---------- */
+
+.sa-collab-matrix {
+    position: relative;
+    z-index: 1;
+    margin: 28px auto 0;
+    max-width: 1100px;
+}
+
+.sa-collab-matrix-head {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 52px);
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.sa-collab-col-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold, #d6b46c);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+    /* delikatne podkreślenia pod nazwami kolumn */
+    .sa-collab-col-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 52%;
+        height: 2px;
+        border-radius: 999px;
+        background-image: linear-gradient( 90deg, rgba(214, 180, 108, 0.95), rgba(129, 140, 248, 0.95) );
+        opacity: 0.9;
+    }
+
+/* ---------- MATRIX: wiersze ---------- */
+
+.sa-collab-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 52px);
+    padding: 14px 0;
+}
+
+    /* linia łącząca wiersz – tylko przez środek, bez boxów */
+    .sa-collab-row::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: translateX(-0.5px);
+        background: linear-gradient( to bottom, rgba(148, 163, 184, 0.0), rgba(148, 163, 184, 0.45), rgba(148, 163, 184, 0.0) );
+        opacity: 0.7;
+    }
+
+    /* mała kropka w środku wiersza */
+    .sa-collab-row::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: radial-gradient(circle, #fef9c3 0%, #d6b46c 45%, transparent 70%);
+        box-shadow: 0 0 12px rgba(250, 250, 210, 0.55);
+    }
+
+/* komórki: lewa/prawa strona wiersza */
+
+.sa-collab-cell {
+    font-size: 0.95rem;
+    color: var(--muted, #d1d5db);
+    line-height: 1.6;
+}
+
+    /* lekka typografia: pierwsze słowo można wytłuścić ręcznie w HTML, jeśli chcesz */
+
+    .sa-collab-cell strong {
+        color: #e5e7eb;
+        font-weight: 600;
+    }
+
+/* mini-label wewnątrz komórki (używany głównie na mobile) */
+.sa-collab-cell-label {
+    display: none; /* na desktopie ukryte */
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold, #d6b46c);
+    margin-bottom: 4px;
+}
+
+
+/* separator między wierszami */
+
+.sa-collab-row + .sa-collab-row {
+    border-top: 1px solid rgba(30, 64, 175, 0.45);
+}
+
+/* subtelny hover na całym wierszu */
+
+.sa-collab-row:hover .sa-collab-cell {
+    color: #e5e7eb;
+}
+
+/* ---------- CTA ---------- */
+
+.sa-collab-cta {
+    position: relative;
+    z-index: 1;
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(148, 163, 184, 0.45);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--muted, #d1d5db);
+}
+
+/* =========================================
+   RESPONSYWNOŚĆ
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .sa-collab-matrix {
+        margin-top: 22px;
+    }
+
+    .sa-collab-matrix-head {
+        display: none; /* ukrywamy duże nagłówki kolumn na mobile */
+    }
+
+    .sa-collab-row {
+        grid-template-columns: 1fr;
+        padding: 14px 0 16px;
+    }
+
+        .sa-collab-row::before,
+        .sa-collab-row::after {
+            display: none; /* bez linii/kropki pośrodku na mobile */
+        }
+
+        .sa-collab-row + .sa-collab-row {
+            border-top: 1px solid rgba(30, 64, 175, 0.35);
+        }
+
+    .sa-collab-cell {
+        font-size: 0.95rem;
+    }
+
+        .sa-collab-cell + .sa-collab-cell {
+            margin-top: 8px;
+        }
+
+    /* teraz labelki w komórkach są widoczne i robią porządek */
+    .sa-collab-cell-label {
+        display: block;
+    }
+
+    .sa-collab-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

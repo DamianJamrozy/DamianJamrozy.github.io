@@ -50,22 +50,6 @@
     <link rel="preload" as="style" href="content/css/service_desigh.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/service_desigh.css"></noscript>
 
-
-    <!-- Preload LCP z responsywnym imagesrcset (działa lepiej niż pojedynczy href) -->
-    <link rel="preload"
-          as="image"
-          imagesrcset="
-            content/images/others/optimized/1-400.avif 400w,
-            content/images/others/optimized/1-600.avif 600w,
-            content/images/others/optimized/1-800.avif 800w,
-            content/images/others/optimized/1-1200.avif 1200w,
-            content/images/others/optimized/1-1600.avif 1600w,
-            content/images/others/optimized/1-2000.avif 2000w,
-            content/images/others/optimized/1-2560.avif 2560w,
-            content/images/others/optimized/1-3200.avif 3200w"
-          imagesizes="(max-width: 600px) 100vw, 50vw"
-          fetchpriority="high"
-          type="image/avif">
 </head>
 
 <body>
@@ -82,7 +66,11 @@
             <!-- desktop nav -->
             <nav aria-label="Projects" class="right-base-nav">
                 <ul>
-                    <li><a href="service_design.html" data-i18n="plat.nav.ui-ux">Redesign aplikacji</a></li>
+                    <li><a href="service_automation.html" data-i18n="plat.nav.platform">Automatyzacja</a></li>
+                    <li><a href="service_design.html" data-i18n="plat.nav.automation">Redesign</a></li>
+                    <li><a href="service_apps.html" data-i18n="plat.nav.redesign">Aplikacje</a></li>
+                    <li><a href="service_projectManagment.html" data-i18n="plat.nav.redesign">SE & PM</a></li>
+                    <li><a href="service_supportDatabase.html" data-i18n="plat.nav.redesign">Administracja</a></li>
                 </ul>
             </nav>
 
@@ -105,7 +93,11 @@
         </button>
 
         <a href="index.html" data-i18n="plat.nav.home">Home</a>
-        <a href="service_design.html" data-i18n="plat.nav.ui-ux">Redesign aplikacji</a>
+        <a href="service_automation.html" data-i18n="plat.nav.platform">Automatyzacja</a>
+        <a href="service_design.html" data-i18n="plat.nav.automation">Redesign</a>
+        <a href="service_apps.html" data-i18n="plat.nav.redesign">Aplikacje</a>
+        <a href="service_projectManagment.html" data-i18n="plat.nav.redesign">Inżynieria oprogramowania & Project managment</a>
+        <a href="service_supportDatabase.html" data-i18n="plat.nav.redesign">Administracja</a>
     </aside>
 
     <!-- language toggle (fixed) -->
@@ -120,132 +112,132 @@
     <main id="main">
 
         <!-- ===== HERO: Service / UI Design ===== -->
-<section class="sd-hero">
-    <div class="container sd-hero-inner">
+        <section class="sd-hero">
+            <div class="container sd-hero-inner">
 
-        <!-- LEWA KOLUMNA: Tekst -->
-        <div class="sd-hero-copy">
-            <span class="sd-tag" data-i18n="service.tag">
-                Projektowanie UX/UI
-            </span>
+                <!-- LEWA KOLUMNA: Tekst -->
+                <div class="sd-hero-copy">
+                    <span class="sd-tag" data-i18n="service.tag">
+                        Projektowanie UX/UI
+                    </span>
 
-            <h1 data-i18n="service.title">
-                Tworzę nowoczesne interfejsy i doświadczenia, które naprawdę działają
-            </h1>
+                    <h1 data-i18n="service.title">
+                        Tworzę nowoczesne interfejsy i doświadczenia, które naprawdę działają
+                    </h1>
 
-            <p class="sd-hero-lead" data-i18n="service.lead">
-                Od badań i prototypów, przez architekturę informacji, aż po gotowe projekty UI - pomagam budować
-                intuicyjne, piękne i skalowalne produkty cyfrowe.
-            </p>
+                    <p class="sd-hero-lead" data-i18n="service.lead">
+                        Od badań i prototypów, przez architekturę informacji, aż po gotowe projekty UI - pomagam budować
+                        intuicyjne, piękne i skalowalne produkty cyfrowe.
+                    </p>
 
-            <div class="sd-hero-actions">
-                <a href="#contact" class="btn btn-primary" data-i18n="service.cta_primary">
-                    Skontaktuj się
-                </a>
-                <a href="#flow" class="btn btn-ghost" data-i18n="service.cta_secondary">
-                    Zobacz jak pracuję
-                </a>
-            </div>
-
-            <div class="sd-hero-meta">
-                <span>
-                    <strong data-i18n="service.stats_1_value">2+</strong>
-                    <span data-i18n="service.stats_1_label">lat doświadczenia</span>
-                </span>
-                <span>
-                    <strong data-i18n="service.stats_2_value">10+</strong>
-                    <span data-i18n="service.stats_2_label">projektów</span>
-                </span>
-                <span>
-                    <strong data-i18n="service.stats_3_value">100%</strong>
-                    <span data-i18n="service.stats_3_label">zadowolonych klientów</span>
-                </span>
-            </div>
-        </div>
-
-        <!-- PRAWA KOLUMNA: Makieta UI -->
-        <div class="sd-hero-visual">
-
-            <div class="sd-mockup">
-
-                <div class="sd-mockup-bar">
-                    <div class="sd-mockup-dots">
-                        <span class="sd-mockup-dot"></span>
-                        <span class="sd-mockup-dot"></span>
-                        <span class="sd-mockup-dot"></span>
-                    </div>
-                    <span data-i18n="service.mockup_preview">Podgląd UI</span>
-                </div>
-
-                <div class="sd-mockup-body">
-
-                    <!-- Lewa nawigacja -->
-                    <div class="sd-mockup-nav">
-                        <div class="sd-mockup-nav-item">
-                            <span class="dots-ui"></span>
-                            <span class="dots-ui"></span>
-                            <span data-i18n="service.mockup_menu_1">Dashboard</span>
-                        </div>
-                        <div class="sd-mockup-nav-item">
-                            <span class="dots-ui"></span>
-                            <span class="dots-ui"></span>
-                            <span data-i18n="service.mockup_menu_2">Użytkownicy</span>
-                        </div>
-                        <div class="sd-mockup-nav-item">
-                            <span class="dots-ui"></span>
-                            <span class="dots-ui"></span>
-                            <span data-i18n="service.mockup_menu_3">Analityka</span>
-                        </div>
-                        <div class="sd-mockup-nav-item sd-mockup-nav-item--muted">
-                            <span class="dots-ux"></span>
-                            <span class="dots-ux"></span>
-                            <span data-i18n="service.mockup_menu_4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        </div>
+                    <div class="sd-hero-actions">
+                        <a href="#contact" class="btn btn-primary" data-i18n="service.cta_primary">
+                            Skontaktuj się
+                        </a>
+                        <a href="#flow" class="btn btn-ghost" data-i18n="service.cta_secondary">
+                            Zobacz jak pracuję
+                        </a>
                     </div>
 
-                    <!-- Prawa siatka kart -->
-                    <div class="sd-mockup-grid">
-
-                        <!-- Card 1 -->
-                        <div class="sd-mockup-card">
-                            <div class="sd-mockup-card-header"></div>
-                            <div class="sd-mockup-card-row"></div>
-                            <div class="sd-mockup-card-row"></div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="sd-mockup-card">
-                            <div class="sd-mockup-card-header"></div>
-                            <div class="sd-mockup-card-row"></div>
-                            <div class="sd-mockup-card-row"></div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="sd-mockup-card">
-                            <div class="sd-mockup-card-header"></div>
-                            <div class="sd-mockup-card-row"></div>
-                            <div class="sd-mockup-card-row"></div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="sd-mockup-card">
-                            <div class="sd-mockup-card-header"></div>
-                            <div class="sd-mockup-card-row"></div>
-                            <div class="sd-mockup-card-row"></div>
-                        </div>
-
+                    <div class="sd-hero-meta">
+                        <span>
+                            <strong data-i18n="service.stats_1_value">2+</strong>
+                            <span data-i18n="service.stats_1_label">lat doświadczenia</span>
+                        </span>
+                        <span>
+                            <strong data-i18n="service.stats_2_value">10+</strong>
+                            <span data-i18n="service.stats_2_label">projektów</span>
+                        </span>
+                        <span>
+                            <strong data-i18n="service.stats_3_value">100%</strong>
+                            <span data-i18n="service.stats_3_label">zadowolonych klientów</span>
+                        </span>
                     </div>
                 </div>
 
-                <div class="sd-mockup-chip" data-i18n="service.mockup_chip">
-                    UI Mockup
+                <!-- PRAWA KOLUMNA: Makieta UI -->
+                <div class="sd-hero-visual">
+
+                    <div class="sd-mockup">
+
+                        <div class="sd-mockup-bar">
+                            <div class="sd-mockup-dots">
+                                <span class="sd-mockup-dot"></span>
+                                <span class="sd-mockup-dot"></span>
+                                <span class="sd-mockup-dot"></span>
+                            </div>
+                            <span data-i18n="service.mockup_preview">Podgląd UI</span>
+                        </div>
+
+                        <div class="sd-mockup-body">
+
+                            <!-- Lewa nawigacja -->
+                            <div class="sd-mockup-nav">
+                                <div class="sd-mockup-nav-item">
+                                    <span class="dots-ui"></span>
+                                    <span class="dots-ui"></span>
+                                    <span data-i18n="service.mockup_menu_1">Dashboard</span>
+                                </div>
+                                <div class="sd-mockup-nav-item">
+                                    <span class="dots-ui"></span>
+                                    <span class="dots-ui"></span>
+                                    <span data-i18n="service.mockup_menu_2">Użytkownicy</span>
+                                </div>
+                                <div class="sd-mockup-nav-item">
+                                    <span class="dots-ui"></span>
+                                    <span class="dots-ui"></span>
+                                    <span data-i18n="service.mockup_menu_3">Analityka</span>
+                                </div>
+                                <div class="sd-mockup-nav-item sd-mockup-nav-item--muted">
+                                    <span class="dots-ux"></span>
+                                    <span class="dots-ux"></span>
+                                    <span data-i18n="service.mockup_menu_4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                </div>
+                            </div>
+
+                            <!-- Prawa siatka kart -->
+                            <div class="sd-mockup-grid">
+
+                                <!-- Card 1 -->
+                                <div class="sd-mockup-card">
+                                    <div class="sd-mockup-card-header"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="sd-mockup-card">
+                                    <div class="sd-mockup-card-header"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="sd-mockup-card">
+                                    <div class="sd-mockup-card-header"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                </div>
+
+                                <!-- Card 4 -->
+                                <div class="sd-mockup-card">
+                                    <div class="sd-mockup-card-header"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                    <div class="sd-mockup-card-row"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="sd-mockup-chip" data-i18n="service.mockup_chip">
+                            UI Mockup
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
-        </div>
-
-    </div>
-</section>
+        </section>
 
 
         <!-- 1. Krótkie „o usłudze” -->
@@ -274,7 +266,7 @@
                     </div>
                     <aside class="sd-overview-note">
                         <p data-i18n="sd.ov.note">
-                            W praktyce najczęściej pracuję nad systemami wewnętrznymi, złożonymi 
+                            W praktyce najczęściej pracuję nad systemami wewnętrznymi, złożonymi
                             portalami i high-tech narzędziami, które muszą być <strong>używalne codziennie</strong>,
                             a nie tylko „ładne na prezentacji”.
                         </p>

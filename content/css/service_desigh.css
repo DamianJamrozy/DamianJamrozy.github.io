@@ -74,12 +74,12 @@
     gap: 10px;
 }
 
-    .sd-hero-actions a {
+    /*.sd-hero-actions a {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: center;*/
 /*        padding: 7px 16px;*/
-        border-radius: 999px;
+        /*border-radius: 999px;
         font-size: 0.9rem;
         font-weight: 500;
         text-decoration: none;
@@ -87,7 +87,7 @@
         cursor: pointer;
         transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
         white-space: nowrap;
-    }
+    }*/
 
         .sd-hero-actions a:first-child {
             background: linear-gradient(135deg, #d6b46c, #fbbf77);
