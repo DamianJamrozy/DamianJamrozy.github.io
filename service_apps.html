@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="content/css/critical.css">
     <link rel="preload" as="style" href="content/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/style.css"></noscript>
+    <link rel="preload" as="style" href="content/css/service_apps.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="content/css/service_apps.css"></noscript>
 
 </head>
 
@@ -107,96 +109,275 @@
 
     <span class="side-label" data-i18n="plat.side.portfolio">PORTFOLIO</span>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-media">
-            <picture>
-                <!-- Desktop: AVIF/WebP duże, wysokiej jakości -->
-                <source type="image/avif"
-                        srcset="
-                          content/images/others/optimized/1-400.avif 400w,
-                          content/images/others/optimized/1-600.avif 600w,
-                          content/images/others/optimized/1-800.avif 800w,
-                          content/images/others/optimized/1-1200.avif 1200w,
-                          content/images/others/optimized/1-1600.avif 1600w,
-                          content/images/others/optimized/1-2000.avif 2000w,
-                          content/images/others/optimized/1-2560.avif 2560w,
-                          content/images/others/optimized/1-3200.avif 3200w"
-                        sizes="100vw">
-                <source type="image/webp"
-                        srcset="
-                          content/images/others/optimized/1-400.webp 400w,
-                          content/images/others/optimized/1-600.webp 600w,
-                          content/images/others/optimized/1-800.webp 800w,
-                          content/images/others/optimized/1-1200.webp 1200w,
-                          content/images/others/optimized/1-1600.webp 1600w,
-                          content/images/others/optimized/1-2000.webp 2000w,
-                          content/images/others/optimized/1-2560.webp 2560w,
-                          content/images/others/optimized/1-3200.webp 3200w"
-                        sizes="100vw">
-                <img src="content/images/others/optimized/1-1600.webp"
-                     alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
-                     width="1600" height="900"
-                     decoding="async" fetchpriority="high">
-            </picture>
+    <!-- ===== HERO: Aplikacje webowe i desktopowe ===== -->
+    <section id="home" class="apps-hero">
+        <div class="container apps-hero-inner">
 
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="social-rail rail">
-            <span class="rail-line"></span>
-            <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank" rel="noopener noreferrer">FB</a>
-            <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-            <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank" rel="noopener noreferrer">YT</a>
-            <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-            <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">IN</a>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-topline" data-i18n="plat.hero.top">Opis skrócony</div>
-            <h1><span class="hero-name" data-i18n="plat.hero.title">NAZWA USŁUGI</span></h1>
-            <p class="hero-sub" data-i18n="plat.hero.sub">Opis usługi.</p>
+            <!-- LEWA KOLUMNA: Tekst -->
+            <div class="apps-hero-copy">
+                <span class="apps-tag" data-i18n="apps.hero.tag">
+                    Aplikacje webowe &amp; desktopowe
+                </span>
+
+                <h1 data-i18n="apps.hero.title">
+                    Tworzę aplikacje, które odciążają ludzi z ich codziennych zadań
+                </h1>
+
+                <p class="apps-hero-lead" data-i18n="apps.hero.lead">
+                    Projektuję i wdrażam aplikacje webowe i desktopowe, które wspierają realne procesy:
+                    od prostych narzędzi dla kilku osób, po większe systemy z rolami użytkowników,
+                    integracjami i raportowaniem.
+                </p>
+
+                <div class="apps-hero-actions">
+                    <a href="#contact" class="btn btn-primary" data-i18n="apps.hero.cta_primary">
+                        Porozmawiajmy
+                    </a>
+                    <a href="#process" class="btn btn-ghost" data-i18n="apps.hero.cta_secondary">
+                        Jak wygląda proces
+                    </a>
+                </div>
+
+                <div class="apps-hero-meta">
+                    <span>
+                        <strong data-i18n="apps.hero.stats_1_value">Od prototypu</strong>
+                        <span data-i18n="apps.hero.stats_1_label">do działającego wdrożenia</span>
+                    </span>
+                    <span>
+                        <strong data-i18n="apps.hero.stats_2_value">Aplikacje</strong>
+                        <span data-i18n="apps.hero.stats_2_label">
+                            webowe, desktopowe, bazodanowe i integracje
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: „Widok aplikacji” zamiast terminala z automatyzacją -->
+            <div class="apps-hero-visual" aria-hidden="true">
+                <div class="apps-preview">
+                    <div class="apps-preview-header">
+                        <div class="apps-preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="apps-preview-title" data-i18n="apps.hero.preview_title">
+                            Widok aplikacji dla zespołu
+                        </span>
+                    </div>
+
+                    <div class="apps-preview-body">
+                        <div class="apps-preview-row">
+                            <div class="apps-preview-pill apps-preview-pill--primary">
+                                <span class="apps-pill-label" data-i18n="apps.hero.pill_1_label">
+                                    Panel pracownika
+                                </span>
+                                <span class="apps-pill-desc" data-i18n="apps.hero.pill_1_desc">
+                                    dodawanie zgłoszeń, zadań, wpisów
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="apps-preview-row">
+                            <div class="apps-preview-pill">
+                                <span class="apps-pill-label" data-i18n="apps.hero.pill_2_label">
+                                    Panel administratora
+                                </span>
+                                <span class="apps-pill-desc" data-i18n="apps.hero.pill_2_desc">
+                                    zarządzanie użytkownikami, uprawnieniami i ustawieniami
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="apps-preview-row">
+                            <div class="apps-preview-pill">
+                                <span class="apps-pill-label" data-i18n="apps.hero.pill_3_label">
+                                    Raporty &amp; integracje
+                                </span>
+                                <span class="apps-pill-desc" data-i18n="apps.hero.pill_3_desc">
+                                    przegląd danych, eksport, połączenia z innymi systemami
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECTIONS -->
-    <!-- In progress... -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-card reveal tilt" data-tilt>
-                <picture>
-                    <source type="image/avif"
-                            srcset="
-                            content/images/others/optimized/4-400.avif 400w,
-                            content/images/others/optimized/4-600.avif 600w,
-                            content/images/others/optimized/4-800.avif 800w,
-                            content/images/others/optimized/4-1200.avif 1200w,
-                            content/images/others/optimized/4-1600.avif 1600w,
-                            content/images/others/optimized/4-2000.avif 2000w,
-                            content/images/others/optimized/4-2560.avif 2560w,
-                            content/images/others/optimized/4-3200.avif 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <source type="image/webp"
-                            srcset="
-                            content/images/others/optimized/4-400.webp 400w,
-                            content/images/others/optimized/4-600.webp 600w,
-                            content/images/others/optimized/4-800.webp 800w,
-                            content/images/others/optimized/4-1200.webp 1200w,
-                            content/images/others/optimized/4-1600.webp 1600w,
-                            content/images/others/optimized/4-2000.webp 2000w,
-                            content/images/others/optimized/4-2560.webp 2560w,
-                            content/images/others/optimized/4-3200.webp 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <img src="content/images/others/optimized/4-800.webp"
-                         alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
-                         width="360" height="240" loading="lazy" decoding="async">
-                </picture>
 
-                <div>
-                    <h2 data-i18n="xabout.h2">W trakcie tworzenia</h2>
-                    <p data-i18n="xabout.p">Ta sekcja nie jest jeszczce gotowa. Wróć niebawem, a jestem pewien że zawartość ta będzie już gotowa.</p>
+
+
+    <!-- SEKCJA 1 – Jakie aplikacje tworzę -->
+    <section id="apps-overview" class="apps-section apps-overview">
+        <div class="container">
+            <header class="apps-section-head">
+                <span class="sa-tag sa-tag-soft" data-i18n="apps.overview.tag">Zakres aplikacji</span>
+                <h2 data-i18n="apps.overview.h2">
+                    Od prostych narzędzi po aplikacje wspierające całe zespoły
+                </h2>
+                <p class="apps-lead" data-i18n="apps.overview.lead">
+                    Nie zawsze potrzebny jest ogromny system. Często więcej daje dobrze zaprojektowana
+                    aplikacja do konkretnego procesu: raportowania, obsługi zgłoszeń, pracy na danych
+                    czy komunikacji w zespole.
+                </p>
+            </header>
+
+            <div class="apps-overview-grid">
+                <div class="apps-overview-copy">
+                    <p data-i18n="apps.overview.copy1">
+                        Pomagam przełożyć „zlepek Excela, maili i komunikatorów” na przejrzystą aplikację,
+                        która prowadzi użytkownika krok po kroku przez proces. Dzięki doświadczeniu w UX/UI
+                        dbam o to, żeby narzędzie było zrozumiałe także dla osób nietechnicznych.
+                    </p>
+                    <p data-i18n="apps.overview.copy2">
+                        Wspieram zarówno projekty komercyjne, jak i wewnętrzne narzędzia dla działów
+                        administracji, obsługi klienta, IT czy kadr.
+                    </p>
+                </div>
+
+                <ul class="apps-overview-list">
+                    <li>
+                        <h3 data-i18n="apps.overview.web.h3">Aplikacje webowe &amp; portale</h3>
+                        <p data-i18n="apps.overview.web.p">
+                            Panele administracyjne, systemy zgłoszeń, portale z logowaniem, moduły
+                            raportowe, lekkie CRM-y i narzędzia do zarządzania zadaniami.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="apps.overview.desktop.h3">Narzędzia desktopowe</h3>
+                        <p data-i18n="apps.overview.desktop.p">
+                            Aplikacje w C# /.NET lub Pythonie do pracy na danych, integracji systemów,
+                            generowania dokumentów, wsadowych operacji i zadań cyklicznych.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="apps.overview.integrations.h3">Integracje &amp; API</h3>
+                        <p data-i18n="apps.overview.integrations.p">
+                            Warstwa backendowa i integracje między systemami: REST API, bazy danych,
+                            kolejki zadań, wyzwalacze CRON – tak, żeby aplikacja nie była „wyspą”.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SEKCJA 2 – Od pomysłu do gotowej aplikacji -->
+    <section id="apps-stack" class="apps-section apps-stack">
+        <div class="container">
+            <header class="apps-section-head apps-section-head--center">
+                <span class="sa-tag sa-tag-soft" data-i18n="apps.stack.tag">Technologie</span>
+                <h2 data-i18n="apps.stack.h2">Stos technologiczny dobrany do wielkości projektu</h2>
+                <p class="apps-lead" data-i18n="apps.stack.lead">
+                    Zamiast „najmodniejszego frameworka” wybieram technologie, które pasują do Twojej
+                    organizacji: łatwe w utrzymaniu, bez zbędnego skomplikowania i z dobrą dokumentacją.
+                </p>
+            </header>
+
+            <div class="apps-stack-rail">
+                <div class="apps-stack-group">
+                    <h3 data-i18n="apps.stack.frontend.h3">Frontend &amp; UX</h3>
+                    <p data-i18n="apps.stack.frontend.p">
+                        Nowoczesny, responsywny interfejs bez przeładowania efektami – skupiony na
+                        czytelności i szybkości pracy.
+                    </p>
+                    <div class="apps-stack-tags">
+                        <span>HTML5</span>
+                        <span>CSS3 / SCSS</span>
+                        <span>JavaScript</span>
+                        <span>UI patterny</span>
+                    </div>
+                </div>
+
+                <div class="apps-stack-group">
+                    <h3 data-i18n="apps.stack.backend.h3">Backend &amp; integracje</h3>
+                    <p data-i18n="apps.stack.backend.p">
+                        Stabilna logika biznesowa, połączenia z bazami danych i zewnętrznymi systemami.
+                    </p>
+                    <div class="apps-stack-tags">
+                        <span>PHP</span>
+                        <span>Python</span>
+                        <span>REST API</span>
+                        <span>SQL / bazy danych</span>
+                    </div>
+                </div>
+
+                <div class="apps-stack-group">
+                    <h3 data-i18n="apps.stack.desktop.h3">Aplikacje desktopowe</h3>
+                    <p data-i18n="apps.stack.desktop.p">
+                        Narzędzia na Windows (C# / .NET / Python) tam, gdzie web nie jest wygodny
+                        lub potrzebny jest bezpośredni dostęp do zasobów.
+                    </p>
+                    <div class="apps-stack-tags">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+
+                <div class="apps-stack-group">
+                    <h3 data-i18n="apps.stack.ai.h3">Elementy AI</h3>
+                    <p data-i18n="apps.stack.ai.p">
+                        Proste modele AI jako część aplikacji – klasyfikacja, podsumowania, analiza tekstu,
+                        wsparcie w podejmowaniu decyzji.
+                    </p>
+                    <div class="apps-stack-tags">
+                        <span>Python</span>
+                        <span>API modeli AI</span>
+                        <span>Przetwarzanie tekstu</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- SEKCJA 3 – Technologia -->
+    <section id="apps-when" class="apps-section apps-when">
+        <div class="container">
+            <header class="apps-section-head">
+                <span class="sa-tag sa-tag-soft" data-i18n="apps.when.tag">Kiedy ma to sens</span>
+                <h2 data-i18n="apps.when.h2">
+                    Kiedy warto porozmawiać o dedykowanej aplikacji?
+                </h2>
+            </header>
+
+            <ol class="apps-when-list">
+                <li class="apps-when-item">
+                    <div class="apps-when-index">01</div>
+                    <div class="apps-when-body">
+                        <h3 data-i18n="apps.when.i1.h3">Excel i maile przestają wystarczać</h3>
+                        <p data-i18n="apps.when.i1.p">
+                            Gdy coraz trudniej ogarnąć proces w arkuszach i wiadomościach, a każdy
+                            zespół ma „swoją wersję prawdy” i brakuje jednego, spójnego narzędzia.
+                        </p>
+                    </div>
+                </li>
+                <li class="apps-when-item">
+                    <div class="apps-when-index">02</div>
+                    <div class="apps-when-body">
+                        <h3 data-i18n="apps.when.i2.h3">Masz proces, ale brakuje narzędzia</h3>
+                        <p data-i18n="apps.when.i2.p">
+                            Procedury są spisane, zespół wie co robić, ale systemy IT nie nadążają
+                            i wszystko finalnie ląduje w „ręcznych obejściach”.
+                        </p>
+                    </div>
+                </li>
+                <li class="apps-when-item">
+                    <div class="apps-when-index">03</div>
+                    <div class="apps-when-body">
+                        <h3 data-i18n="apps.when.i3.h3">Potrzebujesz przewidywalnego rozwoju</h3>
+                        <p data-i18n="apps.when.i3.p">
+                            Chcesz mieć wpływ na roadmapę aplikacji, dostęp do kodu i możliwość
+                            dalszej rozbudowy – zamiast być ograniczonym gotowym SaaS-em.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
 
 
 

@@ -1461,3 +1461,23 @@ header.nav::before {
         margin-right: 8vw;
     }
 }
+
+
+.sa-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(17, 24, 39, 0.9);
+    border: 1px solid rgba(214, 180, 108, 0.7);
+    color: #f9f5e9;
+}
+
+.sa-tag-soft {
+    background: rgba(148, 163, 184, 0.10);
+    border-color: rgba(148, 163, 184, 0.45);
+    color: #e5e7eb;
+}

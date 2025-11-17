@@ -1,0 +1,609 @@
+/* =========================================
+   SERVICE APPS – SPECYFICZNE STYLE
+   ========================================= */
+
+/* ---------- HERO: gradient + layout ---------- */
+
+.apps-hero {
+    position: relative;
+    color: #f9fafb;
+    background: radial-gradient(130% 180% at 0% 0%, rgba(214, 180, 108, 0.20), transparent 60%), radial-gradient(140% 200% at 100% 0%, rgba(79, 70, 229, 0.35), transparent 70%), #020617;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    padding-top: 10vh; /* jak .sd-hero */
+    padding-bottom: 8vh; /* jak .sd-hero */
+    min-height: 85vh;
+}
+
+.apps-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    /* identyczne marginesy jak .sd-hero-inner */
+    padding: clamp(72px, 12vh, 110px) 0 clamp(56px, 10vh, 80px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); /* możesz zostawić 1.3/1, to tylko proporcja */
+    gap: clamp(32px, 5vw, 56px);
+    align-items: center;
+}
+
+.apps-hero-code-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    background: radial-gradient(140% 200% at 0% 0%, rgba(56, 189, 248, 0.22), transparent 60%), radial-gradient(120% 160% at 100% 0%, rgba(214, 180, 108, 0.26), transparent 55%), rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.95), 0 0 0 1px rgba(15, 23, 42, 0.9);
+    padding: 12px 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.8rem;
+    color: #e5e7eb;
+}
+
+
+.apps-hero-code {
+    position: relative;
+    z-index: 0;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    /* dekoracja w tle – analogiczna jak w automation / design */
+    .apps-hero-code::before {
+        content: "";
+        position: absolute;
+        inset: -20%;
+        background: radial-gradient(circle at 0% 0%, rgba(214, 180, 108, 0.32), transparent 55%), radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.45), transparent 65%);
+        opacity: 0.8;
+        filter: blur(12px);
+        z-index: -1; /* żeby było za kartą z prawej */
+    }
+
+
+/* ---------- Lewa kolumna: tekst ---------- */
+
+.apps-hero-copy h1 {
+    margin-top: 12px;
+    max-width: 38rem;
+    font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.apps-hero-lead {
+    margin-top: 10px;
+    max-width: 38rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+/* tag nad nagłówkiem – analogiczny do .sa-tag */
+
+.apps-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(17, 24, 39, 0.9);
+    border: 1px solid rgba(214, 180, 108, 0.7);
+    color: #f9f5e9;
+}
+
+/* CTA + meta – ten sam klimat co w automation */
+
+.apps-hero-actions {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.apps-hero-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.86rem;
+    color: var(--muted, #9ca3af);
+}
+
+    .apps-hero-meta span {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .apps-hero-meta strong {
+        font-size: 0.9rem;
+        color: #e5e7eb;
+    }
+
+/* ---------- Prawa kolumna: „widok aplikacji” ---------- */
+
+.apps-hero-visual {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    /* poświata w tle – jak w automation / design */
+    .apps-hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: -16%;
+        background: radial-gradient(circle at 0% 0%, rgba(214, 180, 108, 0.28), transparent 55%), radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.38), transparent 60%);
+        opacity: 0.8;
+        filter: blur(12px);
+        z-index: -1; /* za kartą */
+    }
+
+
+.apps-preview {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    background: radial-gradient(140% 200% at 0% 0%, rgba(56, 189, 248, 0.22), transparent 60%), radial-gradient(120% 160% at 100% 0%, rgba(214, 180, 108, 0.26), transparent 55%), rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.95), 0 0 0 1px rgba(15, 23, 42, 0.9);
+    padding: 14px 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.8rem;
+    color: #e5e7eb;
+}
+
+
+/* nagłówek „okna” */
+
+.apps-preview-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.apps-preview-dots {
+    display: inline-flex;
+    gap: 4px;
+}
+
+    .apps-preview-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: radial-gradient(circle, #f97316, #b91c1c);
+    }
+
+        .apps-preview-dots span:nth-child(2) {
+            background: radial-gradient(circle, #facc15, #b45309);
+        }
+
+        .apps-preview-dots span:nth-child(3) {
+            background: radial-gradient(circle, #4ade80, #15803d);
+        }
+
+.apps-preview-title {
+    margin-left: auto;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(209, 213, 219, 0.9);
+}
+
+/* „kafle” z widokami aplikacji */
+
+.apps-preview-body {
+    display: grid;
+    gap: 8px;
+}
+
+.apps-preview-row {
+    display: flex;
+    align-items: stretch;
+}
+
+.apps-preview-pill {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.apps-preview-pill--primary {
+    background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.28), transparent 60%), rgba(15, 23, 42, 0.96);
+    border-color: rgba(56, 189, 248, 0.8);
+}
+
+.apps-pill-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.apps-pill-desc {
+    font-size: 0.74rem;
+    color: #cbd5f5;
+}
+
+/* =========================================
+   HERO – RESPONSYWNOŚĆ (jak w service_desigh.css)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .apps-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 88px;
+        padding-bottom: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        gap: 32px;
+    }
+
+    .apps-hero-copy {
+        order: 1;
+    }
+
+    .apps-hero-visual {
+        order: 2;
+        justify-content: flex-start;
+    }
+
+    .apps-preview {
+        width: min(440px, 100%);
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .apps-hero-inner {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .apps-hero-copy h1 {
+        font-size: 1.7rem;
+    }
+
+    .apps-hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .apps-hero-meta {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .apps-hero-inner {
+        padding-top: 72px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Opcjonalnie jeszcze zwężenie karty aplikacji: */
+    .apps-preview {
+        width: min(360px, 100%);
+    }
+}
+
+
+
+/* ---------- OGÓLNE DLA SEKCJI APPS ---------- */
+
+.apps-section {
+    position: relative;
+    padding-top: clamp(52px, 7vh, 70px);
+    padding-bottom: clamp(52px, 7vh, 70px);
+}
+
+.apps-section-head {
+    max-width: 720px;
+    margin-bottom: 26px;
+}
+
+.apps-section-head--center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .apps-section-head--center .apps-lead {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+.apps-section-head h2 {
+    margin-top: 12px;
+}
+
+.apps-lead {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--muted, #d1d5db);
+}
+
+/* ---------- SEKCJA: JAKIE APLIKACJE TWORZĘ ---------- */
+
+.apps-overview {
+    background: radial-gradient(140% 220% at 0% 0%, rgba(15, 23, 42, 0.92), #020617 60%);
+}
+
+.apps-overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+    gap: clamp(24px, 4vw, 40px);
+    align-items: flex-start;
+}
+
+.apps-overview-copy p + p {
+    margin-top: 10px;
+}
+
+.apps-overview-copy p {
+    font-size: 0.95rem;
+    color: var(--muted, #d1d5db);
+}
+
+.apps-overview-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0 0;
+    display: grid;
+    gap: 12px;
+}
+
+    .apps-overview-list li {
+        position: relative;
+        padding-left: 18px;
+    }
+
+        .apps-overview-list li::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: rgba(214, 180, 108, 0.95);
+            box-shadow: 0 0 8px rgba(214, 180, 108, 0.6);
+        }
+
+    .apps-overview-list h3 {
+        font-size: 0.96rem;
+        margin-bottom: 4px;
+    }
+
+    .apps-overview-list p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--muted, #d1d5db);
+    }
+
+/* ---------- SEKCJA: STOS TECHNOLOGICZNY ---------- */
+
+.apps-stack {
+    background: radial-gradient(140% 200% at 100% 0%, rgba(79, 70, 229, 0.32), transparent 65%), #020617;
+}
+
+.apps-stack-rail {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(18px, 3vw, 30px);
+    position: relative;
+}
+
+    .apps-stack-rail::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+.apps-stack-group {
+    position: relative;
+    padding: 14px 14px 12px;
+}
+
+    .apps-stack-group + .apps-stack-group {
+        border-left: 1px solid rgba(30, 64, 175, 0.4);
+    }
+
+    .apps-stack-group h3 {
+        font-size: 0.96rem;
+        margin-bottom: 6px;
+    }
+
+    .apps-stack-group p {
+        font-size: 0.9rem;
+        color: var(--muted, #d1d5db);
+        margin-bottom: 8px;
+    }
+
+.apps-stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+    .apps-stack-tags span {
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        font-size: 0.76rem;
+        color: #e5e7eb;
+        background: rgba(15, 23, 42, 0.9);
+    }
+
+/* ---------- SEKCJA: KIEDY WARTO ---------- */
+
+.apps-when {
+    background: radial-gradient(140% 220% at 0% 100%, rgba(56, 189, 248, 0.22), transparent 60%), #020617;
+}
+
+.apps-when-list {
+    list-style: none;
+    padding: 18px 0 0;
+    margin: 0;
+    max-width: 860px;
+}
+
+.apps-when-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 18px;
+    padding: 12px 0 14px;
+}
+
+    .apps-when-item + .apps-when-item {
+        border-top: 1px solid rgba(30, 64, 175, 0.5);
+    }
+
+.apps-when-index {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold, #d6b46c);
+    align-self: flex-start;
+    position: relative;
+    padding-top: 4px;
+}
+
+    .apps-when-index::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 28px;
+        height: 2px;
+        border-radius: 999px;
+        background-image: linear-gradient( 90deg, rgba(214, 180, 108, 0.9), rgba(129, 140, 248, 0.9) );
+    }
+
+.apps-when-body h3 {
+    font-size: 0.96rem;
+    margin-bottom: 4px;
+}
+
+.apps-when-body p {
+    font-size: 0.9rem;
+    color: var(--muted, #d1d5db);
+}
+
+/* ---------- RESPONSYWNOŚĆ ---------- */
+
+@media (max-width: 1024px) {
+    .apps-hero-grid {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+        gap: 32px;
+    }
+
+    .apps-stack-rail {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .apps-stack-group + .apps-stack-group {
+        border-left: none;
+    }
+
+    .apps-stack-group:nth-child(odd) {
+        border-right: 1px solid rgba(30, 64, 175, 0.4);
+    }
+
+    .apps-stack-rail::before {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .apps-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 88px;
+        padding-bottom: 64px;
+    }
+
+    .apps-hero-code {
+        justify-content: flex-start;
+    }
+
+    .apps-hero-code-inner {
+        max-width: 100%;
+    }
+
+    .apps-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .apps-stack-rail {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+        .apps-stack-rail::before {
+            display: none;
+        }
+
+    .apps-stack-group {
+        padding: 10px 0 8px;
+        border: none !important;
+        border-top: 1px solid rgba(30, 64, 175, 0.4) !important;
+    }
+
+        .apps-stack-group:first-child {
+            border-top: none !important;
+        }
+
+    .apps-when-list {
+        padding-top: 14px;
+    }
+
+    .apps-when-item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .apps-when-index::after {
+        width: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .apps-hero-chips span {
+        font-size: 0.72rem;
+    }
+
+    .apps-section {
+        padding-top: 44px;
+        padding-bottom: 48px;
+    }
+}

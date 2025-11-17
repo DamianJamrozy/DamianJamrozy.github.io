@@ -11,8 +11,9 @@
     background: radial-gradient(140% 200% at 0% 0%, rgba(214, 180, 108, 0.2), transparent 60%), radial-gradient(130% 180% at 100% 0%, rgba(79, 70, 229, 0.32), transparent 65%), linear-gradient(180deg, #020617, #020617 60%, #050816 100%);
     overflow: hidden;
     border-bottom: 1px solid rgba(15, 23, 42, 0.9);
-    padding-top: 10vh;
-    padding-bottom: 8vh;
+    padding-top: 10vh; /* tak jak .sd-hero */
+    padding-bottom: 8vh; /* tak jak .sd-hero */
+    min-height: 85vh;
 }
 
     .sa-hero::before {
@@ -30,6 +31,7 @@
     position: relative;
     max-width: 1180px;
     margin: 0 auto;
+    /* TAK JAK .sd-hero-inner: brak paddingu bocznego na dużych ekranach */
     padding: clamp(72px, 12vh, 110px) 0 clamp(56px, 10vh, 80px);
     display: grid;
     grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -41,25 +43,6 @@
 .sa-hero-copy {
     position: relative;
     z-index: 1;
-}
-
-.sa-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: rgba(17, 24, 39, 0.9);
-    border: 1px solid rgba(214, 180, 108, 0.7);
-    color: #f9f5e9;
-}
-
-.sa-tag-soft {
-    background: rgba(148, 163, 184, 0.10);
-    border-color: rgba(148, 163, 184, 0.45);
-    color: #e5e7eb;
 }
 
 .sa-hero-copy h1 {
@@ -209,6 +192,77 @@
         color: var(--gold, #d6b46c);
     }
 
+
+/* =========================================
+   HERO – RESPONSYWNOŚĆ
+   ========================================= */
+
+/* =========================================
+   HERO – RESPONSYWNOŚĆ (jak w service_desigh.css)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .sa-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        /* te same marginesy co .sd-hero-inner */
+        padding-top: 88px;
+        padding-bottom: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        gap: 32px;
+    }
+
+    .sa-hero-copy {
+        order: 1;
+    }
+
+    .sa-hero-visual {
+        order: 2;
+        justify-content: flex-start;
+    }
+
+    .sa-terminal {
+        width: min(440px, 100%);
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sa-hero-inner {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .sa-hero-copy h1 {
+        font-size: 1.7rem;
+    }
+
+    .sa-hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .sa-hero-meta {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .sa-hero-inner {
+        padding-top: 72px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* jeśli chcesz, możesz tu dodać np. mniejszy terminal,
+       ale nie jest to konieczne dla spójności wymiarów */
+}
+
+
 /* =========================================
    SEKCJA 1 – OVERVIEW
    - ciemna, szeroka taśma + 3 kolumny tekstu (bez kafelków)
@@ -223,7 +277,6 @@
 
 
 .sa-overview-band {
-    max-width: 1080px;
     margin: 0 auto;
     padding: 0 16px;
     /* ZERO BOXA: brak tła, brak obramowania, brak cienia */
@@ -237,9 +290,7 @@
 /* nagłówek sekcji */
 
 .sa-overview-head {
-    max-width: 56rem;
     margin: 0 auto 22px;
-/*    text-align: center;*/
 }
 
     .sa-overview-head .sa-tag {
