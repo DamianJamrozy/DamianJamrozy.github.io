@@ -5,3 +5,8 @@ Allow: /
 Sitemap: https://damianjamrozy.github.io/sitemap.xml
 Sitemap: https://damianjamrozy.github.io/sitemap.txt
 Sitemap: https://damianjamrozy.github.io/sitemap.html
+
+
+User-agent: Googlebot-Image
+Disallow: /content/images/cert/
+Disallow: /content/images/tech/
