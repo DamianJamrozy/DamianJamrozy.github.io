@@ -48,6 +48,9 @@
     <link rel="preload" as="style" href="content/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/style.css"></noscript>
 
+    <link rel="preload" as="style" href="content/css/service_supportDatabase.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="content/css/service_supportDatabase.css"></noscript>
+
 </head>
 
 <body>
@@ -108,95 +111,332 @@
     <span class="side-label" data-i18n="plat.side.portfolio">PORTFOLIO</span>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-media">
-            <picture>
-                <!-- Desktop: AVIF/WebP duże, wysokiej jakości -->
-                <source type="image/avif"
-                        srcset="
-                          content/images/others/optimized/1-400.avif 400w,
-                          content/images/others/optimized/1-600.avif 600w,
-                          content/images/others/optimized/1-800.avif 800w,
-                          content/images/others/optimized/1-1200.avif 1200w,
-                          content/images/others/optimized/1-1600.avif 1600w,
-                          content/images/others/optimized/1-2000.avif 2000w,
-                          content/images/others/optimized/1-2560.avif 2560w,
-                          content/images/others/optimized/1-3200.avif 3200w"
-                        sizes="100vw">
-                <source type="image/webp"
-                        srcset="
-                          content/images/others/optimized/1-400.webp 400w,
-                          content/images/others/optimized/1-600.webp 600w,
-                          content/images/others/optimized/1-800.webp 800w,
-                          content/images/others/optimized/1-1200.webp 1200w,
-                          content/images/others/optimized/1-1600.webp 1600w,
-                          content/images/others/optimized/1-2000.webp 2000w,
-                          content/images/others/optimized/1-2560.webp 2560w,
-                          content/images/others/optimized/1-3200.webp 3200w"
-                        sizes="100vw">
-                <img src="content/images/others/optimized/1-1600.webp"
-                     alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
-                     width="1600" height="900"
-                     decoding="async" fetchpriority="high">
-            </picture>
+    <section class="sdb-hero">
+        <div class="container sdb-hero-inner">
 
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="social-rail rail">
-            <span class="rail-line"></span>
-            <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank" rel="noopener noreferrer">FB</a>
-            <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-            <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank" rel="noopener noreferrer">YT</a>
-            <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-            <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">IN</a>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-topline" data-i18n="plat.hero.top">Opis skrócony</div>
-            <h1><span class="hero-name" data-i18n="plat.hero.title">NAZWA USŁUGI</span></h1>
-            <p class="hero-sub" data-i18n="plat.hero.sub">Opis usługi.</p>
+            <!-- LEWA KOLUMNA: tekst -->
+            <div class="sdb-hero-copy">
+                <span class="sdb-tag" data-i18n="sdb.hero.tag">
+                    Administracja baz danych &amp; systemów
+                </span>
+
+                <h1 data-i18n="sdb.hero.h1">
+                    Dbam o to, żeby Twoje dane były szybkie, bezpieczne i zawsze dostępne
+                </h1>
+
+                <p class="sdb-hero-lead" data-i18n="sdb.hero.lead">
+                    Jeśli Twoja aplikacja stoi na MSSQL lub innej bazie danych,
+                    mogę przejąć na siebie <strong>administrację instancjami</strong>,
+                    <strong>optymalizację zapytań</strong>, monitoring wydajności
+                    i <strong>bezpieczne kopie zapasowe</strong> – tak, żebyś Ty mógł
+                    skupić się na biznesie, a nie na problemach z bazą.
+                </p>
+
+                <div class="sdb-hero-actions">
+                    <a href="#contact" class="btn btn-primary" data-i18n="sdb.hero.cta.primary">
+                        Porozmawiajmy o Twojej bazie
+                    </a>
+                    <a href="#services" class="btn btn-ghost" data-i18n="sdb.hero.cta.secondary">
+                        Zobacz, w czym pomagam
+                    </a>
+                </div>
+
+                <div class="sdb-hero-meta">
+                    <span>
+                        <strong data-i18n="sdb.hero.meta1.value">MSSQL, MySQL, PostgreSQL</strong>
+                        <span data-i18n="sdb.hero.meta1.label">tworzenie, zarządzanie</span>
+                    </span>
+                    <span>
+                        <strong data-i18n="sdb.hero.meta2.value">Zestawienia &amp; Monitoring</strong>
+                        <span data-i18n="sdb.hero.meta2.label">raporty, korelacje</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: dekoracyjny panel DB -->
+            <div class="sdb-hero-visual" aria-hidden="true">
+                <div class="sdb-panel">
+                    <div class="sdb-panel-header">
+                        <div class="sdb-panel-title" data-i18n="sdb.hero.panel.title">
+                            <span class="sdb-status-dot"></span>
+                            DB Cluster · PROD-EU-1
+                        </div>
+                        <span class="sdb-panel-env" data-i18n="sdb.hero.panel.env">ONLINE</span>
+                    </div>
+
+                    <div class="sdb-panel-body">
+                        <div class="sdb-panel-metrics">
+                            <div class="sdb-metric">
+                                <div class="sdb-metric-label" data-i18n="sdb.hero.panel.metric.cpu.label">CPU</div>
+                                <div class="sdb-metric-bar">
+                                    <span style="--val:42"></span>
+                                </div>
+                                <div class="sdb-metric-value" data-i18n="sdb.hero.panel.metric.cpu.value">42%</div>
+                            </div>
+
+                            <div class="sdb-metric">
+                                <div class="sdb-metric-label" data-i18n="sdb.hero.panel.metric.ram.label">RAM</div>
+                                <div class="sdb-metric-bar">
+                                    <span style="--val:68"></span>
+                                </div>
+                                <div class="sdb-metric-value" data-i18n="sdb.hero.panel.metric.ram.value">68%</div>
+                            </div>
+
+                            <div class="sdb-metric">
+                                <div class="sdb-metric-label" data-i18n="sdb.hero.panel.metric.iops.label">IOPS</div>
+                                <div class="sdb-metric-bar">
+                                    <span style="--val:73"></span>
+                                </div>
+                                <div class="sdb-metric-value" data-i18n="sdb.hero.panel.metric.iops.value">7.3k</div>
+                            </div>
+
+                            <div class="sdb-metric">
+                                <div class="sdb-metric-label" data-i18n="sdb.hero.panel.metric.qps.label">Queries / s</div>
+                                <div class="sdb-metric-bar">
+                                    <span style="--val:56"></span>
+                                </div>
+                                <div class="sdb-metric-value" data-i18n="sdb.hero.panel.metric.qps.value">5.6k</div>
+                            </div>
+                        </div>
+
+                        <div class="sdb-panel-grid">
+                            <div class="sdb-db-node sdb-db-node--primary">
+                                <span class="sdb-db-label" data-i18n="sdb.hero.panel.node.primary.label">Primary</span>
+                                <span class="sdb-db-meta" data-i18n="sdb.hero.panel.node.primary.meta">MSSQL · 1,2 TB</span>
+                            </div>
+                            <div class="sdb-db-node">
+                                <span class="sdb-db-label" data-i18n="sdb.hero.panel.node.replica.label">Replica-EU</span>
+                                <span class="sdb-db-meta" data-i18n="sdb.hero.panel.node.replica.meta">Read-only</span>
+                            </div>
+                            <div class="sdb-db-node">
+                                <span class="sdb-db-label" data-i18n="sdb.hero.panel.node.reporting.label">Reporting</span>
+                                <span class="sdb-db-meta" data-i18n="sdb.hero.panel.node.reporting.meta">ETL &amp; raporty</span>
+                            </div>
+                        </div>
+
+                        <div class="sdb-panel-footer">
+                            <div>
+                                <span class="sdb-footer-label" data-i18n="sdb.hero.panel.footer.backup.label">Ostatni backup</span>
+                                <span class="sdb-footer-value" data-i18n="sdb.hero.panel.footer.backup.value">dziś · 02:15 · pełny</span>
+                            </div>
+                            <div>
+                                <span class="sdb-footer-label" data-i18n="sdb.hero.panel.footer.latency.label">Średni czas odpowiedzi</span>
+                                <span class="sdb-footer-value" data-i18n="sdb.hero.panel.footer.latency.value">&lt; 40 ms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECTIONS -->
-    <!-- In progress... -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-card reveal tilt" data-tilt>
-                <picture>
-                    <source type="image/avif"
-                            srcset="
-                            content/images/others/optimized/4-400.avif 400w,
-                            content/images/others/optimized/4-600.avif 600w,
-                            content/images/others/optimized/4-800.avif 800w,
-                            content/images/others/optimized/4-1200.avif 1200w,
-                            content/images/others/optimized/4-1600.avif 1600w,
-                            content/images/others/optimized/4-2000.avif 2000w,
-                            content/images/others/optimized/4-2560.avif 2560w,
-                            content/images/others/optimized/4-3200.avif 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <source type="image/webp"
-                            srcset="
-                            content/images/others/optimized/4-400.webp 400w,
-                            content/images/others/optimized/4-600.webp 600w,
-                            content/images/others/optimized/4-800.webp 800w,
-                            content/images/others/optimized/4-1200.webp 1200w,
-                            content/images/others/optimized/4-1600.webp 1600w,
-                            content/images/others/optimized/4-2000.webp 2000w,
-                            content/images/others/optimized/4-2560.webp 2560w,
-                            content/images/others/optimized/4-3200.webp 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <img src="content/images/others/optimized/4-800.webp"
-                         alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
-                         width="360" height="240" loading="lazy" decoding="async">
-                </picture>
 
-                <div>
-                    <h2 data-i18n="xabout.h2">W trakcie tworzenia</h2>
-                    <p data-i18n="xabout.p">Ta sekcja nie jest jeszczce gotowa. Wróć niebawem, a jestem pewien że zawartość ta będzie już gotowa.</p>
-                </div>
+
+    <!-- SECTIONS -->
+    <!-- ===== SEKCJA 1 – Zakres wsparcia ===== -->
+    <section id="services" class="sdb-section sdb-services">
+        <div class="container sdb-section-inner">
+            <header class="sdb-section-head">
+                <p class="sdb-kicker" data-i18n="sdb.services.kicker">Zakres wsparcia</p>
+                <h2 data-i18n="sdb.services.h2">Co mogę wziąć na siebie przy Twoich bazach danych</h2>
+                <p class="sdb-lead" data-i18n="sdb.services.lead">
+                    Od pojedynczej instancji MSSQL po rozbudowane środowiska z replikami
+                    i raportowaniem – mogę przejąć na siebie <strong>
+                        utrzymanie, optymalizację
+                        i bezpieczeństwo
+                    </strong> Twoich baz.
+                </p>
+            </header>
+
+            <div class="sdb-services-grid">
+                <article class="sdb-service">
+                    <h3 data-i18n="sdb.services.card1.h3">Administracja instancjami MSSQL</h3>
+                    <p data-i18n="sdb.services.card1.p">
+                        Konfiguracja serwerów, bazy systemowe, uprawnienia, plany utrzymania.
+                        Dbam o to, żeby środowisko było <strong>spójne i przewidywalne</strong>.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.services.card1.li1">konfiguracja instancji (Windows / Linux)</li>
+                        <li data-i18n="sdb.services.card1.li2">zarządzanie logami i plikami danych</li>
+                        <li data-i18n="sdb.services.card1.li3">role, loginy, uprawnienia</li>
+                    </ul>
+                </article>
+
+                <article class="sdb-service">
+                    <h3 data-i18n="sdb.services.card2.h3">Wydajność i zdrowie baz</h3>
+                    <p data-i18n="sdb.services.card2.p">
+                        Szukam wąskich gardeł i poprawiam to, co naprawdę spowalnia aplikację:
+                        <strong>indeksy, statystyki, zapytania, blokady</strong>.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.services.card2.li1">przegląd indeksów i statystyk</li>
+                        <li data-i18n="sdb.services.card2.li2">analiza najcięższych zapytań</li>
+                        <li data-i18n="sdb.services.card2.li3">monitoring blokad i deadlocków</li>
+                    </ul>
+                </article>
+
+                <article class="sdb-service">
+                    <h3 data-i18n="sdb.services.card3.h3">Backup, odzyskiwanie i bezpieczeństwo</h3>
+                    <p data-i18n="sdb.services.card3.p">
+                        Projektuję i testuję <strong>scenariusze awaryjne</strong> tak,
+                        żebyś wiedział, co się stanie gdy coś pójdzie nie tak.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.services.card3.li1">strategie kopii zapasowych (full / diff / log)</li>
+                        <li data-i18n="sdb.services.card3.li2">testy odtworzeniowe</li>
+                        <li data-i18n="sdb.services.card3.li3">podstawowa twarda konfiguracja bezpieczeństwa</li>
+                    </ul>
+                </article>
+
+                <article class="sdb-service">
+                    <h3 data-i18n="sdb.services.card4.h3">Raporty i dane pod analizy</h3>
+                    <p data-i18n="sdb.services.card4.p">
+                        Przygotowuję dane tak, żeby raporty były <strong>szybkie i powtarzalne</strong>,
+                        a nie „na szybko” odpalane zapytania z produkcji.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.services.card4.li1">widoki i procedury pod raporty</li>
+                        <li data-i18n="sdb.services.card4.li2">proste pipeline’y ETL / staging</li>
+                        <li data-i18n="sdb.services.card4.li3">dane pod Power BI / inne narzędzia BI</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
+
+    <!-- ===== SEKCJA 2 – Jak wygląda współpraca ===== -->
+    <section class="sdb-section sdb-flow">
+        <div class="container sdb-section-inner">
+            <header class="sdb-section-head">
+                <p class="sdb-kicker" data-i18n="sdb.flow.kicker">Jak to działa w praktyce</p>
+                <h2 data-i18n="sdb.flow.h2">Prosty proces, dzięki któremu baza przestaje być „czarną skrzynką”</h2>
+                <p class="sdb-lead" data-i18n="sdb.flow.lead">
+                    Nie potrzebujesz znać wszystkich DMV i widoków systemowych.
+                    <strong>Ja wchodzę w techniczne szczegóły</strong>, Ty dostajesz
+                    jasny obraz sytuacji i rekomendacje.
+                </p>
+            </header>
+
+            <div class="sdb-flow-steps">
+                <article class="sdb-flow-step">
+                    <span class="sdb-flow-number" data-i18n="sdb.flow.step1.num">01</span>
+                    <div class="sdb-flow-content">
+                        <h3 data-i18n="sdb.flow.step1.h3">Audyt bieżącego środowiska</h3>
+                        <p data-i18n="sdb.flow.step1.p">
+                            Sprawdzam konfigurację instancji, plany backupów, indeksy,
+                            najcięższe zapytania i ogólny stan „zdrowia” bazy.
+                        </p>
+                        <p class="sdb-flow-note" data-i18n="sdb.flow.step1.note">
+                            Efekt: krótki raport + lista problemów, które naprawdę bolą.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="sdb-flow-step">
+                    <span class="sdb-flow-number" data-i18n="sdb.flow.step2.num">02</span>
+                    <div class="sdb-flow-content">
+                        <h3 data-i18n="sdb.flow.step2.h3">Plan uporządkowania i optymalizacji</h3>
+                        <p data-i18n="sdb.flow.step2.p">
+                            Ustalamy priorytety: co robimy najpierw (np. backupy, indeksy),
+                            a co może poczekać. Rozbijam to na <strong>małe, zrozumiałe kroki</strong>.
+                        </p>
+                        <p class="sdb-flow-note" data-i18n="sdb.flow.step2.note">
+                            Efekt: roadmapa zmian technicznych + szacowany wpływ na system.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="sdb-flow-step">
+                    <span class="sdb-flow-number" data-i18n="sdb.flow.step3.num">03</span>
+                    <div class="sdb-flow-content">
+                        <h3 data-i18n="sdb.flow.step3.h3">Regularne utrzymanie i rozwój</h3>
+                        <p data-i18n="sdb.flow.step3.p">
+                            Wdrażamy zmiany, ustawiamy monitoring i cyklicznie
+                            sprawdzamy, czy baza dalej trzyma wydajność i bezpieczeństwo.
+                        </p>
+                        <p class="sdb-flow-note" data-i18n="sdb.flow.step3.note">
+                            Efekt: baza, o której <strong>
+                                przypominasz sobie dopiero,
+                                gdy ktoś ją pochwali, a nie gdy „wybuchnie”
+                            </strong>.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEKCJA 3 – Dla kogo to ma sens ===== -->
+    <section class="sdb-section sdb-scenarios">
+        <div class="container sdb-section-inner">
+            <header class="sdb-section-head">
+                <p class="sdb-kicker" data-i18n="sdb.scenarios.kicker">Dla kogo</p>
+                <h2 data-i18n="sdb.scenarios.h2">Wchodzę tam, gdzie baza zaczyna być krytyczna dla biznesu</h2>
+                <p class="sdb-lead" data-i18n="sdb.scenarios.lead">
+                    Niezależnie od tego, czy masz jedną instancję MSSQL na serwerze pod biurkiem,
+                    czy kilka środowisk z replikami – <strong>
+                        liczy się to, jak bardzo
+                        polegasz na danych
+                    </strong>.
+                </p>
+            </header>
+
+            <div class="sdb-scenarios-grid">
+                <article class="sdb-scenario">
+                    <h3 data-i18n="sdb.scenarios.card1.h3">Rosnąca aplikacja SaaS / wewnętrzny system</h3>
+                    <p data-i18n="sdb.scenarios.card1.p">
+                        Coraz więcej klientów, więcej danych, system zaczyna spowalniać
+                        w losowych momentach, a Ty nie chcesz, żeby baza była wąskim gardłem
+                        dla dalszego wzrostu.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.scenarios.card1.li1">pierwsze problemy z wydajnością / blokadami</li>
+                        <li data-i18n="sdb.scenarios.card1.li2">brak osoby odpowiedzialnej typowo za DB</li>
+                        <li data-i18n="sdb.scenarios.card1.li3">plany rozwoju produktu w najbliższych miesiącach</li>
+                    </ul>
+                </article>
+
+                <article class="sdb-scenario">
+                    <h3 data-i18n="sdb.scenarios.card2.h3">Raporty, które „mielą się” za długo</h3>
+                    <p data-i18n="sdb.scenarios.card2.p">
+                        Raporty dla zarządu, księgowości czy sprzedaży liczą się minutami,
+                        a każdy nowy arkusz w Excelu dokłada kolejną warstwę chaosu.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.scenarios.card2.li1">brak wydzielonej bazy/warstwy raportowej</li>
+                        <li data-i18n="sdb.scenarios.card2.li2">ad-hoc zapytania odpalane na produkcji</li>
+                        <li data-i18n="sdb.scenarios.card2.li3">brak spójnego modelu danych pod analizy</li>
+                    </ul>
+                </article>
+
+                <article class="sdb-scenario">
+                    <h3 data-i18n="sdb.scenarios.card3.h3">Środowisko, którego boisz się dotknąć</h3>
+                    <p data-i18n="sdb.scenarios.card3.p">
+                        „Działa, więc nie ruszamy” – brak wiedzy, co się stanie po aktualizacji,
+                        czy backupy na pewno się odtwarzają i co właściwie jest gdzie.
+                    </p>
+                    <ul>
+                        <li data-i18n="sdb.scenarios.card3.li1">niepewność co do backupów i odtworzeń</li>
+                        <li data-i18n="sdb.scenarios.card3.li2">stare instancje, stare wersje MSSQL</li>
+                        <li data-i18n="sdb.scenarios.card3.li3">brak dokumentacji i odpowiedzialnej osoby</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="sdb-scenarios-cta">
+                <p data-i18n="sdb.scenarios.cta.text">
+                    Jeśli w którymkolwiek z tych opisów widzisz swoją sytuację,
+                    <strong>nawet krótka rozmowa o bazie potrafi wiele wyjaśnić</strong>.
+                </p>
+                <a href="#contact" class="btn btn-primary" data-i18n="sdb.scenarios.cta.btn">
+                    Opowiedz mi o swoim środowisku
+                </a>
+            </div>
+        </div>
+    </section>
+
+
 
 
 

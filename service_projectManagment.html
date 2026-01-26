@@ -48,6 +48,9 @@
     <link rel="preload" as="style" href="content/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/style.css"></noscript>
 
+    <link rel="preload" as="style" href="content/css/service_projectManagment.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="content/css/service_projectManagment.css"></noscript>
+
 </head>
 
 <body>
@@ -107,98 +110,349 @@
 
     <span class="side-label" data-i18n="plat.side.portfolio">PORTFOLIO</span>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-media">
-            <picture>
-                <!-- Desktop: AVIF/WebP duże, wysokiej jakości -->
-                <source type="image/avif"
-                        srcset="
-                          content/images/others/optimized/1-400.avif 400w,
-                          content/images/others/optimized/1-600.avif 600w,
-                          content/images/others/optimized/1-800.avif 800w,
-                          content/images/others/optimized/1-1200.avif 1200w,
-                          content/images/others/optimized/1-1600.avif 1600w,
-                          content/images/others/optimized/1-2000.avif 2000w,
-                          content/images/others/optimized/1-2560.avif 2560w,
-                          content/images/others/optimized/1-3200.avif 3200w"
-                        sizes="100vw">
-                <source type="image/webp"
-                        srcset="
-                          content/images/others/optimized/1-400.webp 400w,
-                          content/images/others/optimized/1-600.webp 600w,
-                          content/images/others/optimized/1-800.webp 800w,
-                          content/images/others/optimized/1-1200.webp 1200w,
-                          content/images/others/optimized/1-1600.webp 1600w,
-                          content/images/others/optimized/1-2000.webp 2000w,
-                          content/images/others/optimized/1-2560.webp 2560w,
-                          content/images/others/optimized/1-3200.webp 3200w"
-                        sizes="100vw">
-                <img src="content/images/others/optimized/1-1600.webp"
-                     alt="Damian Jamroży - Junior IT Specialist, projektant UX/UI & software developer"
-                     width="1600" height="900"
-                     decoding="async" fetchpriority="high">
-            </picture>
+    <main id="main">
 
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="social-rail rail">
-            <span class="rail-line"></span>
-            <a href="https://www.facebook.com/damian.jamrozy.xD" aria-label="Facebook" target="_blank" rel="noopener noreferrer">FB</a>
-            <a href="https://www.instagram.com/skrrr_dj/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-            <a href="https://www.youtube.com/@djamrozy" aria-label="Youtube" target="_blank" rel="noopener noreferrer">YT</a>
-            <a href="https://github.com/damianjamrozy" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-            <a href="https://www.linkedin.com/in/djamrozy/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">IN</a>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-topline" data-i18n="plat.hero.top">Opis skrócony</div>
-            <h1><span class="hero-name" data-i18n="plat.hero.title">NAZWA USŁUGI</span></h1>
-            <p class="hero-sub" data-i18n="plat.hero.sub">Opis usługi.</p>
-        </div>
-    </section>
+        <!-- ===== HERO: Inżynieria oprogramowania & Project Management ===== -->
+        <section id="home" class="spm-hero">
+            <div class="container spm-hero-inner">
 
-    <!-- SECTIONS -->
-    <!-- In progress... -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-card reveal tilt" data-tilt>
-                <picture>
-                    <source type="image/avif"
-                            srcset="
-                            content/images/others/optimized/4-400.avif 400w,
-                            content/images/others/optimized/4-600.avif 600w,
-                            content/images/others/optimized/4-800.avif 800w,
-                            content/images/others/optimized/4-1200.avif 1200w,
-                            content/images/others/optimized/4-1600.avif 1600w,
-                            content/images/others/optimized/4-2000.avif 2000w,
-                            content/images/others/optimized/4-2560.avif 2560w,
-                            content/images/others/optimized/4-3200.avif 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <source type="image/webp"
-                            srcset="
-                            content/images/others/optimized/4-400.webp 400w,
-                            content/images/others/optimized/4-600.webp 600w,
-                            content/images/others/optimized/4-800.webp 800w,
-                            content/images/others/optimized/4-1200.webp 1200w,
-                            content/images/others/optimized/4-1600.webp 1600w,
-                            content/images/others/optimized/4-2000.webp 2000w,
-                            content/images/others/optimized/4-2560.webp 2560w,
-                            content/images/others/optimized/4-3200.webp 3200w"
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                    <img src="content/images/others/optimized/4-800.webp"
-                         alt="Redesign strony korporacyjnej (nowoczesny layout i CMS) - oferta Damiana Jamrożego"
-                         width="360" height="240" loading="lazy" decoding="async">
-                </picture>
+                <!-- LEWA KOLUMNA: tekst -->
+                <div class="spm-hero-copy">
+                    <span class="spm-tag" data-i18n="spm.hero.tag">
+                        Inżynieria oprogramowania &amp; Project Management
+                    </span>
 
-                <div>
-                    <h2 data-i18n="xabout.h2">W trakcie tworzenia</h2>
-                    <p data-i18n="xabout.p">Ta sekcja nie jest jeszczce gotowa. Wróć niebawem, a jestem pewien że zawartość ta będzie już gotowa.</p>
+                    <h1 data-i18n="spm.hero.h1">
+                        Przekuwam pomysł na aplikację w&nbsp;konkretną architekturę i&nbsp;plan działania
+                    </h1>
+
+                    <p class="spm-hero-lead" data-i18n="spm.hero.lead">
+                        Masz wizję produktu, ale nie chcesz gubić się w szczegółach technicznych?
+                        Pomogę Ci zaprojektować funkcjonalności, przepływy informacji, strukturę systemu
+                        oraz poprowadzę projekt tak, żeby zespół developerski dokładnie wiedział,
+                        co i w jakiej kolejności ma zbudować.
+                    </p>
+
+                    <div class="spm-hero-actions">
+                        <a href="#contact" class="btn btn-primary" data-i18n="spm.hero.cta.primary">
+                            Porozmawiajmy o Twojej aplikacji
+                        </a>
+                        <a href="#spm-flow" class="btn btn-ghost" data-i18n="spm.hero.cta.secondary">
+                            Zobacz jak poprowadzę projekt
+                        </a>
+                    </div>
+
+                    <div class="spm-hero-meta">
+                        <span>
+                            <strong data-i18n="spm.hero.meta1.value">2+</strong>
+                            <span data-i18n="spm.hero.meta1.label">lata doświadczenia komercyjnego</span>
+                        </span>
+                        <span>
+                            <strong data-i18n="spm.hero.meta2.value">5+</strong>
+                            <span data-i18n="spm.hero.meta2.label">zaprojektowanych systemów / modułów</span>
+                        </span>
+                        <span>
+                            <strong data-i18n="spm.hero.meta3.value">100%</strong>
+                            <span data-i18n="spm.hero.meta3.label">pracy zdalnej / asynchronicznej</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- PRAWA KOLUMNA: „tablica projektu” / diagram -->
+                <div class="spm-hero-visual" aria-hidden="true">
+                    <div class="spm-board">
+                        <div class="spm-board-header">
+                            <span class="spm-board-title" data-i18n="spm.hero.board.title">Mapa projektu</span>
+                            <span class="spm-board-badge" data-i18n="spm.hero.board.badge">SE &amp; PM</span>
+                        </div>
+
+                        <div class="spm-board-grid">
+                            <div class="spm-board-col">
+                                <h3 data-i18n="spm.hero.board.col1.title">Produkt</h3>
+                                <ul>
+                                    <li class="spm-pill is-active" data-i18n="spm.hero.board.col1.item1">User stories</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col1.item2">Backlog funkcjonalny</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col1.item3">Priorytety biznesowe</li>
+                                </ul>
+                            </div>
+                            <div class="spm-board-col">
+                                <h3 data-i18n="spm.hero.board.col2.title">Technika</h3>
+                                <ul>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col2.item1">Moduły i komponenty</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col2.item2">API &amp; integracje</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col2.item3">Baza danych / dane</li>
+                                </ul>
+                            </div>
+                            <div class="spm-board-col">
+                                <h3 data-i18n="spm.hero.board.col3.title">Przepływy</h3>
+                                <ul>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col3.item1">Logowanie &amp; onboarding</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col3.item2">Proces zakupu / zgłoszenia</li>
+                                    <li class="spm-pill" data-i18n="spm.hero.board.col3.item3">Panel admina</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="spm-board-footer">
+                            <div class="spm-node-row">
+                                <span class="spm-node is-active" data-i18n="spm.hero.board.nodes.user">Użytkownik</span>
+                                <span class="spm-node" data-i18n="spm.hero.board.nodes.frontend">Frontend</span>
+                                <span class="spm-node" data-i18n="spm.hero.board.nodes.backend">Backend</span>
+                                <span class="spm-node" data-i18n="spm.hero.board.nodes.db">Baza danych</span>
+                            </div>
+                            <p class="spm-board-caption" data-i18n="spm.hero.board.caption">
+                                Ja spinam całość – zespół dev dostaje jasny, uporządkowany plan.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ===== SEKCJA 1 – Od wizji do konkretów (3 story-bloki) ===== -->
+        <section id="spm-overview" class="spm-section spm-overview">
+            <div class="container spm-overview-inner">
+                <header class="spm-section-head">
+                    <p class="spm-kicker" data-i18n="spm.overview.kicker">Od wizji do konkretów</p>
+                    <h2 data-i18n="spm.overview.h2">Najpierw łapiemy pomysł, potem rysujemy system</h2>
+                    <p class="spm-lead" data-i18n="spm.overview.lead">
+                        Ty opowiadasz o produkcie i użytkownikach swoim językiem.
+                        Ja układam z tego <strong>logikę, przepływy i wymagania</strong>,
+                        z którymi zespół dev wie dokładnie, co ma zbudować.
+                    </p>
+                </header>
+
+                <div class="spm-story">
+                    <article class="spm-story-block">
+                        <span class="spm-story-number" data-i18n="spm.overview.story1.num">01</span>
+                        <h3 data-i18n="spm.overview.story1.h3">Rozmowa, w której łapiemy sedno produktu</h3>
+                        <p data-i18n="spm.overview.story1.p">
+                            Zamiast od razu mówić o technologiach, rozmawiamy o tym,
+                            <strong>co ma się zmienić dla Twoich użytkowników</strong>.
+                            Zbieram kontekst biznesowy, ograniczenia i to, co jest
+                            absolutnym „must have” w pierwszej wersji.
+                        </p>
+                    </article>
+
+                    <article class="spm-story-block">
+                        <span class="spm-story-number" data-i18n="spm.overview.story2.num">02</span>
+                        <h3 data-i18n="spm.overview.story2.h3">Przekładam pomysł na logikę systemu</h3>
+                        <p data-i18n="spm.overview.story2.p">
+                            Ustalamy role użytkowników, scenariusze i reguły.
+                            Na tej podstawie powstają <strong>
+                                diagramy systemu
+                                i przepływów
+                            </strong>, które pokazują jak dane i użytkownicy
+                            przechodzą przez aplikację.
+                        </p>
+                    </article>
+
+                    <article class="spm-story-block">
+                        <span class="spm-story-number" data-i18n="spm.overview.story3.num">03</span>
+                        <h3 data-i18n="spm.overview.story3.h3">Dostajesz materiały startowe dla devów</h3>
+                        <p data-i18n="spm.overview.story3.p">
+                            Zbieram całość w przejrzysty pakiet: opis modułów,
+                            ścieżki użytkownika, pierwszą wersję backlogu.
+                            Zespół dev dostaje <strong>konkretny plan, a nie luźne pomysły</strong>.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="spm-story-footer">
+                    <p class="spm-story-label" data-i18n="spm.overview.footer.label">Najczęściej wchodzę w projekt, gdy:</p>
+                    <ul class="spm-story-list">
+                        <li data-i18n="spm.overview.footer.li1">masz pomysł na aplikację, ale <strong>nie masz jeszcze sensownej specyfikacji</strong>,</li>
+                        <li data-i18n="spm.overview.footer.li2">chcesz przygotować <strong>zakres pod rozmowę z software house’em</strong> lub własnym zespołem,</li>
+                        <li data-i18n="spm.overview.footer.li3">potrzebujesz kogoś, kto <strong>poukłada wymagania i kolejność prac</strong> przed startem developmentu.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEKCJA 2 – Proces współpracy (liniowy, bez kafelków) ===== -->
+        <section id="spm-flow" class="spm-section spm-flow">
+            <div class="container spm-flow-inner">
+                <header class="spm-section-head">
+                    <p class="spm-kicker" data-i18n="spm.flow.kicker">Jak to wygląda w praktyce</p>
+                    <h2 data-i18n="spm.flow.h2">Ty opowiadasz o produkcie, ja układam z tego plan dla zespołu dev</h2>
+                    <p class="spm-lead" data-i18n="spm.flow.lead">
+                        Poniżej masz <strong>realny flow współpracy</strong> – bez buzzwordów.
+                        Od pierwszej rozmowy do dokumentacji i backlogu gotowego do wdrożenia.
+                    </p>
+                </header>
+
+                <ol class="spm-flow-list">
+                    <li class="spm-flow-step">
+                        <div class="spm-flow-number" data-i18n="spm.flow.step1.num">01</div>
+                        <div class="spm-flow-content">
+                            <h3 data-i18n="spm.flow.step1.h3">Discovery call / warsztat startowy</h3>
+                            <p data-i18n="spm.flow.step1.p">
+                                Zbieram wszystko, co wiesz o produkcie: kontekst biznesowy, użytkownicy,
+                                konkurencja, ograniczenia czasowe i budżetowe. Ustalamy, co absolutnie
+                                <strong>musi znaleźć się w pierwszej wersji (MVP)</strong>.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="spm-flow-step">
+                        <div class="spm-flow-number" data-i18n="spm.flow.step2.num">02</div>
+                        <div class="spm-flow-content">
+                            <h3 data-i18n="spm.flow.step2.h3">Mapa ról, modułów i ekranów</h3>
+                            <p data-i18n="spm.flow.step2.p">
+                                Rozpisuję system na role (np. klient, admin, partner) oraz moduły
+                                (panel klienta, panel admina, integracje). Powstaje mapa tego,
+                                <strong>co faktycznie budujemy</strong>.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="spm-flow-step">
+                        <div class="spm-flow-number" data-i18n="spm.flow.step3.num">03</div>
+                        <div class="spm-flow-content">
+                            <h3 data-i18n="spm.flow.step3.h3">Przepływy informacji i procesy</h3>
+                            <p data-i18n="spm.flow.step3.p">
+                                Projektuję, krok po kroku, jak użytkownik przechodzi przez procesy:
+                                rejestracja, logowanie, zakup, zgłoszenie, obsługa w panelu.
+                                To tutaj powstają <strong>diagramy systemu i przepływów</strong>.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="spm-flow-step">
+                        <div class="spm-flow-number" data-i18n="spm.flow.step4.num">04</div>
+                        <div class="spm-flow-content">
+                            <h3 data-i18n="spm.flow.step4.h3">Dokumentacja i backlog</h3>
+                            <p data-i18n="spm.flow.step4.p">
+                                Zbieram całość w <strong>zrozumiałe dla devów materiały</strong>:
+                                opis modułów, user stories, kryteria akceptacji, propozycja sprintów.
+                                Wszystko w narzędziu, którego używa Twój zespół (np. Jira, ClickUp, Trello).
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="spm-flow-step">
+                        <div class="spm-flow-number" data-i18n="spm.flow.step5.num">05</div>
+                        <div class="spm-flow-content">
+                            <h3 data-i18n="spm.flow.step5.h3">Nadzór nad realizacją (opcjonalnie)</h3>
+                            <p data-i18n="spm.flow.step5.p">
+                                Jeśli chcesz, zostaję w projekcie jako PM / Proxy PO:
+                                <strong>pilnuję zakresu, doprecyzowuję wymagania</strong>,
+                                odpowiadam devom, pomagam Ci decydować, co wchodzi do kolejnych iteracji.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== SEKCJA 3 – Forma współpracy (prosta, bez tabelek) ===== -->
+        <section id="spm-collab" class="spm-section spm-collab">
+            <div class="container spm-collab-inner">
+                <header class="spm-section-head">
+                    <p class="spm-kicker" data-i18n="spm.collab.kicker">Forma współpracy</p>
+                    <h2 data-i18n="spm.collab.h2">Na koniec masz jasny obraz systemu i konkrety dla devów</h2>
+                    <p class="spm-lead" data-i18n="spm.collab.lead">
+                        Zamiast „zobaczymy w trakcie” – dostajesz
+                        <strong>konkretny zestaw materiałów</strong>, na których można oprzeć development.
+                    </p>
+                </header>
+
+                <div class="spm-collab-body">
+                    <!-- co dostajesz -->
+                    <section class="spm-collab-block">
+                        <p class="spm-collab-eyebrow" data-i18n="spm.collab.outcomes.eyebrow">Po naszej współpracy masz:</p>
+                        <ul class="spm-outcomes-list">
+                            <li data-i18n="spm.collab.outcomes.li1">
+                                <span class="spm-outcome-dot"></span>
+                                <div>
+                                    <strong>Zakres funkcjonalny</strong>
+                                    <p>
+                                        Spójny opis ról użytkowników, modułów i głównych scenariuszy.
+                                        Wystarczająco konkretny, żeby wycenić i zaplanować projekt.
+                                    </p>
+                                </div>
+                            </li>
+                            <li data-i18n="spm.collab.outcomes.li2">
+                                <span class="spm-outcome-dot"></span>
+                                <div>
+                                    <strong>Diagramy i przepływy</strong>
+                                    <p>
+                                        Proste schematy pokazujące, jak użytkownicy i dane
+                                        „przechodzą” przez system – przydatne dla devów, biznesu i UX.
+                                    </p>
+                                </div>
+                            </li>
+                            <li data-i18n="spm.collab.outcomes.li3">
+                                <span class="spm-outcome-dot"></span>
+                                <div>
+                                    <strong>Backlog dla zespołu dev</strong>
+                                    <p>
+                                        User stories, kryteria akceptacji i priorytety –
+                                        tak opisane, żeby można je było od razu wrzucić w sprinty.
+                                    </p>
+                                </div>
+                            </li>
+                            <li data-i18n="spm.collab.outcomes.li4">
+                                <span class="spm-outcome-dot"></span>
+                                <div>
+                                    <strong>Plan iteracji / MVP</strong>
+                                    <p>
+                                        Propozycja pierwszych wydań: co musi być w MVP,
+                                        co później, a co można odłożyć bez utraty wartości.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- modele współpracy -->
+                    <section class="spm-collab-block">
+                        <p class="spm-collab-eyebrow" data-i18n="spm.collab.modes.eyebrow">W jakiej formule możemy to zrobić:</p>
+                        <ul class="spm-modes-list">
+                            <li data-i18n="spm.collab.modes.li1">
+                                <div class="spm-mode-header">
+                                    <span class="spm-mode-name">Project blueprint</span>
+                                    <span class="spm-mode-tag">najczęstsza opcja</span>
+                                </div>
+                                <p>
+                                    Kilka tygodni pracy nad zakresem, diagramami i backlogiem.
+                                    Kończymy, gdy masz <strong>komplet materiałów startowych</strong>
+                                    dla zespołu dev lub software house’u.
+                                </p>
+                            </li>
+                            <li data-i18n="spm.collab.modes.li2">
+                                <div class="spm-mode-header">
+                                    <span class="spm-mode-name">PM / Proxy PO przy wdrożeniu</span>
+                                </div>
+                                <p>
+                                    Dołączam do projektu, pomagam dowozić sprinty, doprecyzowywać
+                                    wymagania, odpowiadać devom i pilnować, żeby produkt
+                                    nie rozjechał się względem założeń.
+                                </p>
+                            </li>
+                            <li data-i18n="spm.collab.modes.li3">
+                                <div class="spm-mode-header">
+                                    <span class="spm-mode-name">Konsultacje „on demand”</span>
+                                </div>
+                                <p>
+                                    Dla projektów, które już trwają – gdy trzeba uporządkować
+                                    wymagania, kolejność prac albo przygotować projekt
+                                    pod rozmowę z zespołem dev / software house’em.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
 
 
+
+
+
+
+
+    </main>
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
@@ -309,6 +563,88 @@
             navigator.serviceWorker.register(swUrl, { scope: swUrl.pathname.replace(/[^/]+$/, '') })
                 .catch(console.error);
         }
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const prefersReducedMotion = window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Delikatna animacja aktywnych "pigułek" i węzłów w hero
+            if (!prefersReducedMotion) {
+                const pills = Array.from(document.querySelectorAll('.spm-pill'));
+                const nodes = Array.from(document.querySelectorAll('.spm-node'));
+
+                let pillIndex = 0;
+                let nodeIndex = 0;
+
+                function rotateActive(list, className, state) {
+                    if (!list.length) return;
+
+                    list.forEach(el => el.classList.remove(className));
+                    list[state.index].classList.add(className);
+
+                    state.index = (state.index + 1) % list.length;
+                }
+
+                const pillState = { index: 0 };
+                const nodeState = { index: 0 };
+
+                if (pills.length) {
+                    setInterval(function () {
+                        rotateActive(pills, 'is-active', pillState);
+                    }, 2600);
+                }
+
+                if (nodes.length) {
+                    setInterval(function () {
+                        rotateActive(nodes, 'is-active', nodeState);
+                    }, 3200);
+                }
+            }
+
+            // Wjazd kroków procesu (timeline) przy scrollu
+            const steps = document.querySelectorAll('.spm-flow-step');
+
+            if (!steps.length) return;
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.25
+                });
+
+                steps.forEach(function (step) {
+                    observer.observe(step);
+                });
+            } else {
+                // fallback – wszystko widoczne od razu
+                steps.forEach(function (step) {
+                    step.classList.add('is-visible');
+                });
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 
