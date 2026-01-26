@@ -188,6 +188,11 @@
 		padding-left:25px;
 		color: #9199a9;
 	}
+
+    .exp-edu-span a{
+        color: #9199a9;
+        text-decoration: none;
+    }
 	
 	.titem{
 		padding-bottom: 10px;
