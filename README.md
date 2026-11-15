@@ -69,3 +69,19 @@ Strona działa wyłącznie w oparciu o **HTML, CSS i JavaScript**.
 ---
 
 🧾 *Project maintained and designed by Damian Jamroży — all rights reserved.*
+
+## SEO i dane osoby
+
+Każda podstrona zawiera gotowe metadane PL i JSON-LD w HTML. Sekcja `seo-data` w jej `<head>` przechowuje tytuł i opis PL/EN. Skrypt `content/javascript/seo.js` aktualizuje metadane po zmianie języka przez istniejące tłumaczenia; nie zmienia treści ani stylów strony.
+
+Przy zmianie tytułu lub opisu zachowaj zgodność między domyślnym `<title>`, meta description, Open Graph, Twitter, węzłem strony w JSON-LD oraz polskim wpisem `seo-data`. Dane osoby mają wspólny identyfikator `https://damianjamrozy.github.io/#person` i powinny pozostać identyczne na wszystkich stronach. Adres kanoniczny PL to podstawowy adres podstrony, a EN dodaje `?lang=en`.
+
+Plik `lang_about.js` jest oznaczony jako wygenerowany i pozostaje bez ręcznych zmian; adapter SEO uwzględnia jego starszą obsługę opisu. Nowych metadanych nie dodawaj do słowników tłumaczeń interfejsu. `working_on.html` pozostaje poza indeksem i mapami. Nie dopisuj `lastmod`, jeśli nie znasz rzeczywistej daty zmiany treści.
+
+Kontrola bez dodatkowych zależności:
+
+```powershell
+node --test tests/seo.test.mjs
+```
+
+Publikacja nadal polega na przesłaniu statycznych plików na GitHub Pages. SEO nie wymaga serwera aplikacyjnego ani budowania strony.

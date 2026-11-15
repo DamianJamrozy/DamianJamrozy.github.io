@@ -3,7 +3,6 @@ const dict = {
     pl: {
         /* meta / nav / ui */
         "html.lang": "pl",
-        "meta.desc": "Damian Jamroży - wirtualna wizytówka / CV. Junior IT Specialist (UR), wykładowca U3W, programista PHP/JS/Python, projektant UX/UI. Magister inż. (2024).",
         "nav.work": "Produkty", "nav.services": "Usługi", "nav.skills": "Umiejętności", "nav.experience": "Doświadczenie", "nav.about": "O mnie", "nav.contact": "Kontakt",
         "side.portfolio": "PORTFOLIO",
         /* hero */
@@ -102,7 +101,6 @@ const dict = {
 
     en: {
         "html.lang": "en",
-        "meta.desc": "Damian Jamroży - portfolio / CV. Junior IT Specialist (UR), U3W lecturer, PHP/JS/Python developer, UX/UI designer. MSc Eng. (2024).",
         "nav.work": "PRODUCTS", "nav.services": "SERVICES", "nav.skills": "SKILLS", "nav.experience": "EXPERIENCE", "nav.about": "ABOUT", "nav.contact": "CONTACT",
         "side.portfolio": "PORTFOLIO",
         "hero.topline": "Software Engineer & Visual Thinker",
@@ -203,10 +201,8 @@ const dict = {
 function applyLang(lang) {
     const t = dict[lang] || dict.pl;
 
-    // <html lang> + meta description
+    // The translator owns the visible page language.
     document.documentElement.setAttribute('lang', t["html.lang"]);
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', t["meta.desc"]);
 
     // tłumacz wszystkie [data-i18n]
     document.querySelectorAll('[data-i18n]').forEach(el => {

@@ -1,17 +1,31 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { Script } from 'node:vm';
 
 const pageUrl = new URL('../career-drive/index.html', import.meta.url);
 const bundleUrl = new URL('../career-drive/app.bundle.js', import.meta.url);
+const stylesheetUrl = new URL('../career-drive/game.css', import.meta.url);
 
-test('the game loads a deferred classic bundle when opened as a local file', async () => {
-  const html = await readFile(pageUrl, 'utf8');
+function assetVersion(content) {
+  return createHash('sha256').update(content.replaceAll('\r\n','\n')).digest('hex').slice(0,12);
+}
+
+test('the game loads current versioned assets through a deferred classic script', async () => {
+  const [html,bundle,stylesheet] = await Promise.all([
+    readFile(pageUrl,'utf8'),readFile(bundleUrl,'utf8'),readFile(stylesheetUrl,'utf8'),
+  ]);
   const scripts = [...html.matchAll(/<script\b([^>]*)>/g)].map(match => match[1]);
-  const entry = scripts.find(attributes => /\bsrc=["']\.\/app\.bundle\.js["']/.test(attributes));
+  const entry = scripts.find(attributes => /\bsrc=["']\.\/app\.bundle\.js(?:\?[^"']*)?["']/.test(attributes));
 
   assert.ok(entry, 'the page must load the generated game bundle');
+  const bundleVersion = entry.match(/\bsrc=(["'])\.\/app\.bundle\.js\?v=([a-f0-9]{12})\1/);
+  assert.ok(bundleVersion, 'the bundle reference must have a twelve-digit content hash');
+  assert.equal(bundleVersion[2],assetVersion(bundle),'a changed bundle must use a new cache key');
+  const stylesheetVersion = html.match(/<link\b[^>]*\shref=(["'])\.\/game\.css\?v=([a-f0-9]{12})\1/);
+  assert.ok(stylesheetVersion,'the game stylesheet must have a twelve-digit content hash');
+  assert.equal(stylesheetVersion[2],assetVersion(stylesheet),'changed game styles must use a new cache key');
   assert.match(entry, /\bdefer\b/);
   assert.doesNotMatch(entry, /\btype=["']module["']/);
   assert.ok(scripts.every(attributes => !/\btype=["']module["']/.test(attributes)), 'local files cannot load ES module scripts');
@@ -47,6 +61,7 @@ test('a bundled startup failure replaces loading with a safe message and an exit
 
   script.runInNewContext({
     document,
+    window: { matchMedia: () => ({ matches: false }) },
     location: new URL(document.baseURI),
     localStorage: { getItem() { return null; } },
     URL,

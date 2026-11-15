@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -21,12 +22,32 @@ const result = await build({
 const [output] = result.outputFiles;
 if (!output) throw new Error('The game build did not produce a script.');
 
+const pageUrl = new URL('../career-drive/index.html', import.meta.url);
+const stylesheetUrl = new URL('../career-drive/game.css', import.meta.url);
+const [html,stylesheet] = await Promise.all([readFile(pageUrl,'utf8'),readFile(stylesheetUrl,'utf8')]);
+const bundleReference = /(<script\b[^>]*\ssrc=(["'])\.\/app\.bundle\.js)(?:\?[^"']*)?\2/g;
+const stylesheetReference = /(<link\b[^>]*\shref=(["'])\.\/game\.css)(?:\?[^"']*)?\2/g;
+
+if ([...html.matchAll(bundleReference)].length !== 1 || [...html.matchAll(stylesheetReference)].length !== 1) {
+  throw new Error('The entry page must reference exactly one game bundle and one game stylesheet.');
+}
+
+/** @param {string} content */
+function assetVersion(content) {
+  return createHash('sha256').update(content.replaceAll('\r\n','\n')).digest('hex').slice(0,12);
+}
+
+const versionedHtml = html
+  .replace(bundleReference,`$1?v=${assetVersion(output.text)}$2`)
+  .replace(stylesheetReference,`$1?v=${assetVersion(stylesheet)}$2`);
+
 if (process.argv.includes('--check')) {
   const current = await readFile(output.path, 'utf8');
-  if (current !== output.text) {
-    process.stderr.write('The game bundle is outdated. Run npm --prefix game run build.\n');
+  if (current.replaceAll('\r\n','\n') !== output.text.replaceAll('\r\n','\n') || html !== versionedHtml) {
+    process.stderr.write('The game bundle or asset versions are outdated. Run npm --prefix game run build.\n');
     process.exitCode = 1;
   }
 } else {
   await writeFile(output.path, output.contents);
+  if (html !== versionedHtml) await writeFile(pageUrl,versionedHtml);
 }

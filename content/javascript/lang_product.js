@@ -3,7 +3,6 @@ const dict = {
     pl: {
         /* meta / nav / ui */
         "html.lang": "pl",
-        "meta.desc": "Mgr inż. Damian Jamroży – Oprogramowanie UCI SoftHub to narzędzie dla organizacji, które ułatwia codzienną pracę na plikach w różnych formatach.",
         "plat.nav.home": "Strona główna",
         "plat.nav.platform": "UCISoftHub",
         "plat.side.portfolio": "PRODUKT",
@@ -102,7 +101,6 @@ const dict = {
     en: {
         /* meta / nav / ui */
         "html.lang": "en",
-        "meta.desc": "MSc Eng. Damian Jamroży – UCI SoftHub software solution designed for organizations to streamline daily work with multiple file formats.",
         "plat.nav.home": "Home",
         "plat.nav.platform": "UCISoftHub",
         "plat.side.portfolio": "PRODUCT",
@@ -203,10 +201,8 @@ const dict = {
 function applyLang(lang) {
     const t = dict[lang] || dict.pl;
 
-    // <html lang> + meta description
+    // The translator owns the visible page language.
     document.documentElement.setAttribute('lang', t["html.lang"]);
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', t["meta.desc"]);
 
     // tłumacz wszystkie [data-i18n]
     document.querySelectorAll('[data-i18n]').forEach(el => {

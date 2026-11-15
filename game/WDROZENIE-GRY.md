@@ -34,6 +34,14 @@ npm --prefix game test
 
 `npm run check` sprawdza typy oraz zgodność wygenerowanego skryptu ze źródłami. Nie edytuj `app.bundle.js` ręcznie. Do repozytorium i na GitHub Pages trafiają zarówno źródła, jak i gotowy skrypt. Esbuild jest zależnością wyłącznie deweloperską.
 
+## Widok telefonu
+
+Na telefonie pole jazdy zajmuje pozostałą wysokość ekranu. Drążek po lewej łączy gaz, hamowanie, cofanie i skręt, a puszczenie palca zwalnia sterowanie. Przycisk rozmowy pojawia się przy dostępnym spotkaniu. Na torze dostępny jest również hamulec ręczny. Mapa, autopilot, pauza, dźwięk, język, opcje auta i wyjście znajdują się w menu „Więcej”. W tym menu można też włączyć dotychczasowe przyciski jazdy.
+
+Otwarcie okna, utrata widoczności i zmiana rozmiaru ekranu zerują aktywne sterowanie. Układ komputerowy i obsługa klawiatury pozostają takie same. Zmiany mobilne dotyczą ekranów do 600 px oraz niskich ekranów dotykowych do 900 px, aby obsłużyć obrót telefonu.
+
+Po zmianie kodu gry **lub `game.css`** uruchom `npm --prefix game run build`. Builder aktualizuje odnośniki `?v=...` na podstawie zawartości skryptu i stylów. Zapobiega to mieszaniu nowego HTML ze starszymi plikami z cache strony. Nie poprawiaj numerów wersji ręcznie; gotowy HTML i bundle opublikuj razem.
+
 Po własnym commicie i pushu zachowaj obecny sposób publikacji GitHub Pages. Przy publikacji bezpośrednio z gałęzi katalogiem strony pozostaje `/ (root)`.
 
 Adresy po publikacji:

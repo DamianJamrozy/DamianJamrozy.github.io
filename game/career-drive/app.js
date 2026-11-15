@@ -11,6 +11,7 @@ import { VEHICLES, GARAGES } from './vehicles.js';
 import { SIDE_STORIES } from './side-stories.js';
 import { GARAGE_STORIES } from './garage-stories.js';
 import { festivalPresence } from './festival.js';
+import { createJoystickController } from './joystick.js';
 import { SAVE_KEY, PREVIOUS_SAVE_KEY, V2_SAVE_KEY, LEGACY_SAVE_KEY, parseSave, resolveLanguage, validateSave, nextUndiscoveredChapter } from './state.js';
 
 /** @typedef {import('./types.js').Language} Language */
@@ -54,6 +55,11 @@ let trackMode = false;
 let lastDriveHud = '';
 let audioPending = false;
 const input = {forward:false,backward:false,left:false,right:false,drift:false};
+const phoneViewport = window.matchMedia('(max-width: 600px), (max-width: 900px) and (max-height: 500px) and (pointer: coarse)');
+let buttonDriving = false;
+/** @type {ReturnType<typeof createJoystickController>|null} */
+let joystick = null;
+const joystickDirections = {forward:false,backward:false,left:false,right:false};
 const canvas = /** @type {HTMLCanvasElement} */ (el('world'));
 let animationsEnabled = readStorage('career-drive:animations') !== 'off';
 const portrait = new DialoguePortrait(/** @type {HTMLImageElement} */(el('character-portrait')),{animationsEnabled});
@@ -204,6 +210,7 @@ function updateFestivalAudio() {
 }
 function syncPause() {
   const paused = !save.started || document.hidden || !!document.querySelector('dialog[open]');
+  joystick?.setEnabled(phoneViewport.matches && !buttonDriving && !document.hidden && !document.querySelector('dialog[open]'));
   world.setPaused(paused || trackMode);
   track.setPaused(paused || !trackMode);
   updateFestivalAudio();
@@ -369,7 +376,7 @@ function applyLanguage() {
     if (key) { node.setAttribute('aria-label',t(key)); node.setAttribute('title',t(key)); }
   }
   for (const button of document.querySelectorAll('[data-lang]')) button.setAttribute('aria-pressed',String(button.getAttribute('data-lang') === language));
-  for (const id of ['cv-link','brand-link','complete-cv']) /** @type {HTMLAnchorElement} */(el(id)).href = `../../index.html?lang=${language}`;
+  for (const id of ['cv-link','brand-link','complete-cv','phone-cv-link']) /** @type {HTMLAnchorElement} */(el(id)).href = `../../index.html?lang=${language}`;
   el('character-portrait').setAttribute('alt',t('portraitAlt'));
   document.querySelector('.touch-controls')?.setAttribute('aria-label',t('mobileControls'));
   if (location.protocol !== 'file:') {
@@ -400,6 +407,7 @@ function applyLanguage() {
   lastDriveHud = '';
   updateDrivingHud();
   renderTrackStatus();
+  if (dialog('phone-options').open) refreshPhoneOptions();
 }
 function updateAnimationButton() {
   el('animation-toggle').setAttribute('aria-label',t('portraitAnimations'));
@@ -407,6 +415,7 @@ function updateAnimationButton() {
   el('animation-toggle').textContent = t(animationsEnabled ? 'portraitAnimationsOff':'portraitAnimationsOn');
 }
 function clearInput() {
+  joystick?.reset();
   Object.assign(input,{forward:false,backward:false,left:false,right:false,drift:false});
   world.setInput(input);
   track.setInput(input);
@@ -523,6 +532,7 @@ function updateDrivingHud() {
   const hud = `${language}:${trackMode}:${vehicle}:${state.lights}:${nearest}:${side?.id}:${garage?.id}:${garageAccess?.id}:${trackNearby}:${save.started}`;
   if (hud === lastDriveHud) return;
   lastDriveHud = hud;
+  document.querySelector('.touch-controls')?.classList.toggle('is-track',trackMode);
   el('vehicle-name').textContent = VEHICLES[vehicle].label[language];
   el('vehicle-detail').textContent = VEHICLES[vehicle].detail[language];
   el('lights-button').setAttribute('aria-pressed',String(state.lights));
@@ -676,11 +686,15 @@ for (const button of document.querySelectorAll('[data-close]')) button.addEventL
   const id = button.getAttribute('data-close'); if (id) dialog(id).close();
 });
 for (const modal of document.querySelectorAll('dialog')) modal.addEventListener('close',() => {
+  if (modal.id === 'phone-options') el('phone-more').setAttribute('aria-expanded','false');
   if (modal.id === 'story-dialog' && !modal.open) { portrait.setActive(false); scene.setActive(false); el('speech-skip').hidden = true; }
   if (modal.id === 'side-dialog' && !modal.open) sideScene.setActive(false);
   if (modal.id === 'garage-dialog' && !modal.open) garageScene.setActive(false);
   syncPause();
-  if (save.started && !document.querySelector('dialog[open]')) (trackMode ? trackCanvas : canvas).focus({preventScroll:true});
+  if (!document.querySelector('dialog[open]')) {
+    if (modal.id === 'phone-options' && phoneViewport.matches) el('phone-more').focus({preventScroll:true});
+    else if (save.started) (trackMode ? trackCanvas : canvas).focus({preventScroll:true});
+  }
 });
 el('start-button').addEventListener('click',() => { ensureStarted(); canvas.focus({preventScroll:true}); });
 el('drive-button').addEventListener('click',() => navigate(save.selected));
@@ -752,6 +766,65 @@ el('confirm-restart').addEventListener('click',() => {
 /** @type {Record<string,keyof typeof input>} */
 const keys = {KeyW:'forward',ArrowUp:'forward',KeyS:'backward',ArrowDown:'backward',KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',Space:'drift'};
 const heldKeys = new Set();
+joystick = createJoystickController(el('phone-joystick'),{
+  onStart() {
+    if (!phoneViewport.matches || document.querySelector('dialog[open]')) return false;
+    ensureStarted();
+    (trackMode ? trackCanvas : canvas).focus({preventScroll:true});
+    return true;
+  },
+  onInput(directions) {
+    Object.assign(joystickDirections,directions);
+    for (const direction of /** @type {const} */(['forward','backward','left','right'])) {
+      input[direction] = directions[direction] || Object.entries(keys).some(([key,value]) => value === direction && heldKeys.has(key));
+    }
+    (trackMode ? track : world).setInput(input);
+  }
+});
+joystick.setEnabled(phoneViewport.matches);
+phoneViewport.addEventListener('change',() => {
+  heldKeys.clear();
+  clearInput();
+  if (!phoneViewport.matches && dialog('phone-options').open) dialog('phone-options').close();
+  syncPause();
+});
+window.addEventListener('resize',() => {
+  if (phoneViewport.matches) clearInput();
+});
+function refreshPhoneOptions() {
+  const state = trackMode ? track.getState() : world.getState();
+  el('phone-vehicle-name').textContent = VEHICLES[state.vehicle].label[language];
+  el('phone-destination').textContent = trackMode ? t('trackDriveHint') : `${el('destination-title').textContent} · ${el('destination-year').textContent}`;
+  for (const id of ['phone-horn','phone-lights','phone-pause']) /** @type {HTMLButtonElement} */(el(id)).disabled = !save.started;
+  for (const id of ['phone-map','phone-drive']) /** @type {HTMLButtonElement} */(el(id)).disabled = trackMode;
+  el('phone-garage').hidden = trackMode || el('garage-drive').hidden;
+  el('phone-track-exit').hidden = !trackMode;
+  el('phone-track-stats').hidden = !trackMode;
+  const status = track.getState();
+  el('phone-track-stats').textContent = `${t('laps')}: ${status.lap} · ${t('driftScore')}: ${Math.floor(status.driftScore)}`;
+  el('phone-lights').setAttribute('aria-pressed',String(state.lights));
+}
+el('phone-more').addEventListener('click',() => {
+  if (!phoneViewport.matches) return;
+  refreshPhoneOptions();
+  openDialog('phone-options');
+  el('phone-more').setAttribute('aria-expanded','true');
+});
+for (const [phoneId,originalId] of [
+  ['phone-map','route-toggle'],['phone-pause','pause-button'],['phone-audio','sound-toggle'],
+  ['phone-help','help-button'],['phone-horn','horn-button'],['phone-lights','lights-button'],
+  ['phone-drive','drive-button'],['phone-garage','garage-drive'],['phone-track-exit','track-exit']
+]) el(phoneId).addEventListener('click',() => {
+  dialog('phone-options').close();
+  el(originalId).click();
+});
+el('phone-buttons-toggle').addEventListener('click',() => {
+  clearInput();
+  buttonDriving = !buttonDriving;
+  document.querySelector('.touch-controls')?.classList.toggle('is-buttons',buttonDriving);
+  el('phone-buttons-toggle').setAttribute('aria-pressed',String(buttonDriving));
+  syncPause();
+});
 window.addEventListener('keydown',event => {
   if (event.altKey || event.ctrlKey || event.metaKey) return;
   if (event.target instanceof Element && event.target.closest('input,select,textarea,[contenteditable=true]')) return;
@@ -786,12 +859,13 @@ window.addEventListener('keydown',event => {
 window.addEventListener('keyup',event => {
   heldKeys.delete(event.code);
   const direction = keys[event.code];
-  if (direction) { input[direction] = Object.entries(keys).some(([key,value]) => value === direction && heldKeys.has(key)); (trackMode ? track : world).setInput(input); }
+  if (direction) { input[direction] = (direction !== 'drift' && joystickDirections[direction]) || Object.entries(keys).some(([key,value]) => value === direction && heldKeys.has(key)); (trackMode ? track : world).setInput(input); }
 });
 for (const button of document.querySelectorAll('[data-input]')) {
   button.setAttribute('aria-pressed','false');
   /** @param {boolean} pressed */
   const update = pressed => {
+    if (pressed && document.querySelector('dialog[open]')) return;
     const direction = /** @type {keyof typeof input} */(button.getAttribute('data-input'));
     if (pressed) { ensureStarted(); (trackMode ? trackCanvas : canvas).focus({preventScroll:true}); }
     input[direction] = pressed;
@@ -817,7 +891,7 @@ window.addEventListener('pagehide',event => {
   scene.setActive(false);
   sideScene.setActive(false);
   garageScene.setActive(false);
-  if (!event.persisted) { world.destroy(); track.destroy(); portrait.destroy(); scene.destroy(); sideScene.destroy(); garageScene.destroy(); audio.destroy(); }
+  if (!event.persisted) { joystick?.destroy(); world.destroy(); track.destroy(); portrait.destroy(); scene.destroy(); sideScene.destroy(); garageScene.destroy(); audio.destroy(); }
 });
 window.addEventListener('pageshow',() => { syncPause(); if (dialog('story-dialog').open) portrait.setActive(true); });
 el('character-portrait').addEventListener('error',() => { const photo = /** @type {HTMLImageElement} */(el('character-portrait')); if (!photo.src.includes('/personal/')) photo.src = '../content/images/personal/optimized/1-800.webp'; });

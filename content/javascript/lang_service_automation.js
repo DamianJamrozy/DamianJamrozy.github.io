@@ -2,8 +2,6 @@
 const dict = {
     pl: {
         "html.lang": "pl",
-        "meta.desc":
-            "Mgr inż. Damian Jamroży - automatyzacje procesów biznesowych, integracje systemów i modele sztucznej inteligencji AI.",
 
         /* NAV / UI (wspólne) */
         "plat.nav.home": "Strona główna",
@@ -116,8 +114,6 @@ const dict = {
 
     en: {
         "html.lang": "en",
-        "meta.desc":
-            "MSc Eng. Damian Jamroży — business process automation, system integrations, and dedicated AI models.",
 
         /* NAV / UI (wspólne) */
         "plat.nav.home": "Home",
@@ -233,10 +229,8 @@ const dict = {
 function applyLang(lang) {
     const t = dict[lang] || dict.pl;
 
-    // <html lang> + meta description
+    // The translator owns the visible page language.
     document.documentElement.setAttribute("lang", t["html.lang"]);
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", t["meta.desc"]);
 
     // tłumacz wszystkie [data-i18n]
     document.querySelectorAll("[data-i18n]").forEach((el) => {

@@ -4,32 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Damian Jamroży — Portfolio / CV</title>
-    <meta name="description" content="Mgr inż. Damian Jamroży - aplikacje webowe i desktopowe, dedykowane narzędzia dla firm oraz integracje z istniejącymi systemami.">
+    <title>Aplikacje webowe i desktopowe | Damian Jamroży</title>
+    <meta name="description" content="Damian Jamroży - dedykowane aplikacje webowe i desktopowe, narzędzia dla firm oraz integracje z istniejącymi systemami. Poznaj zakres współpracy.">
 
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="Damian Jamroży — Portfolio / CV">
-    <meta property="og:description" content="Junior IT Specialist, UX/UI Designer, Software Developer. Portfolio i doświadczenie zawodowe.">
+    <meta property="og:title" content="Aplikacje webowe i desktopowe | Damian Jamroży">
+    <meta property="og:description" content="Damian Jamroży - dedykowane aplikacje webowe i desktopowe, narzędzia dla firm oraz integracje z istniejącymi systemami. Poznaj zakres współpracy.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://damianjamrozy.github.io/">
+    <meta property="og:url" content="https://damianjamrozy.github.io/service_apps.html">
     <meta property="og:image" content="https://damianjamrozy.github.io/content/images/others/optimized/1-1200.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:locale:alternate" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Damian Jamroży — Portfolio / CV">
-    <meta name="twitter:description" content="Junior IT Specialist, UX/UI Designer, Software Developer.">
+    <meta name="twitter:title" content="Aplikacje webowe i desktopowe | Damian Jamroży">
+    <meta name="twitter:description" content="Damian Jamroży - dedykowane aplikacje webowe i desktopowe, narzędzia dla firm oraz integracje z istniejącymi systemami. Poznaj zakres współpracy.">
     <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/others/optimized/1-1200.webp">
 
     <meta name="theme-color" content="#0a0c10">
 
     <!-- Canonical + hreflang -->
-    <link rel="canonical" href="https://damianjamrozy.github.io/">
-    <link rel="alternate" hreflang="x-default" href="https://damianjamrozy.github.io/">
-    <link rel="alternate" hreflang="pl" href="https://damianjamrozy.github.io/?lang=pl">
-    <link rel="alternate" hreflang="en" href="https://damianjamrozy.github.io/?lang=en">
+    <link rel="canonical" href="https://damianjamrozy.github.io/service_apps.html">
+    <link rel="alternate" hreflang="pl" href="https://damianjamrozy.github.io/service_apps.html">
+    <link rel="alternate" hreflang="en" href="https://damianjamrozy.github.io/service_apps.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://damianjamrozy.github.io/service_apps.html">
 
     <!-- Assets -->
     <link rel="icon" href="content/images/favicon.ico">
@@ -50,6 +48,21 @@
     <link rel="preload" as="style" href="content/css/service_apps.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="content/css/service_apps.css"></noscript>
 
+    <script id="seo-data" type="application/json">
+    {
+      "url": "https://damianjamrozy.github.io/service_apps.html",
+      "translations": {
+        "pl": {
+          "title": "Aplikacje webowe i desktopowe | Damian Jamroży",
+          "description": "Damian Jamroży - dedykowane aplikacje webowe i desktopowe, narzędzia dla firm oraz integracje z istniejącymi systemami. Poznaj zakres współpracy."
+        },
+        "en": {
+          "title": "Web and desktop applications | Damian Jamroży",
+          "description": "Damian Jamroży - custom web and desktop applications, business tools and integrations with existing systems. Explore the scope of collaboration."
+        }
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -429,25 +442,6 @@
         </svg>
     </button>
 
-    <!-- Canonical + lang (jedno źródło prawdy) -->
-    <script>
-        (function () {
-            const url = new URL(location.href);
-            const langParam = url.searchParams.get('lang');
-            const lang = (langParam === 'en' || langParam === 'pl') ? langParam : null;
-
-            const base = location.origin + location.pathname;
-            const canonicalHref = lang ? `${base}?lang=${lang}` : base;
-
-            // html lang — ustaw raz
-            document.documentElement.setAttribute('lang', lang || 'pl');
-
-            // canonical
-            const lc = document.getElementById('canonical');
-            if (lc) lc.href = canonicalHref;
-        })();
-    </script>
-
     <!-- Preferencja języka (bez nadpisywania <html lang>) -->
     <script>
         (function () {
@@ -456,32 +450,89 @@
             const saved = localStorage.getItem('lang');
             const initial = (urlLang === 'en' || urlLang === 'pl') ? urlLang : (saved || 'pl');
             localStorage.setItem('lang', initial);
-            // UWAGA: nie ustawiamy tu documentElement.lang — robi to skrypt powyżej
+            // The page translator sets the document language.
         })();
     </script>
 
     <script src="content/javascript/lang_service_apps.js" defer></script>
+    <script src="content/javascript/seo.js" defer></script>
     <script src="content/javascript/script.js" defer></script>
 
     <!-- Person schema -->
-    <script type="application/ld+json">
+    <script id="person-schema" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@context":"https://schema.org",
-          "@type":"Person",
-          "name":"Damian Jamroży",
-          "jobTitle":"Junior IT Specialist / UX-UI Designer",
-          "image":"https://damianjamrozy.github.io/content/images/others/optimized/1.png",
-          "url":"https://damianjamrozy.github.io/",
-          "address":{"@type":"PostalAddress","addressLocality":"Rzeszów","addressCountry":"PL"},
-          "email":"mailto:djamrozy.cv@gmail.com",
-          "sameAs":[
+          "@type": "Person",
+          "@id": "https://damianjamrozy.github.io/#person",
+          "name": "Damian Jamroży",
+          "url": "https://damianjamrozy.github.io/",
+          "image": "https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp",
+          "jobTitle": "Associate Technical Consultant Delivery",
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "Netwise"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Uniwersytet Rzeszowski"
+            }
+          ],
+          "knowsAbout": [
+            ".NET",
+            "TypeScript",
+            "Microsoft Dynamics 365 CRM",
+            "SQL",
+            "UX/UI"
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Uniwersytet Rzeszowski"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rzeszów",
+            "addressCountry": "PL"
+          },
+          "email": "mailto:djamrozy.cv@gmail.com",
+          "sameAs": [
             "https://www.linkedin.com/in/djamrozy/",
             "https://github.com/damianjamrozy",
             "https://www.instagram.com/skrrr_dj/",
             "https://www.youtube.com/@djamrozy"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://damianjamrozy.github.io/#website",
+          "url": "https://damianjamrozy.github.io/",
+          "name": "Damian Jamroży - Portfolio",
+          "inLanguage": [
+            "pl",
+            "en"
           ],
-          "alumniOf":"Uniwersytet Rzeszowski"
+          "publisher": {
+            "@id": "https://damianjamrozy.github.io/#person"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://damianjamrozy.github.io/service_apps.html#webpage",
+          "url": "https://damianjamrozy.github.io/service_apps.html",
+          "name": "Aplikacje webowe i desktopowe | Damian Jamroży",
+          "description": "Damian Jamroży - dedykowane aplikacje webowe i desktopowe, narzędzia dla firm oraz integracje z istniejącymi systemami. Poznaj zakres współpracy.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://damianjamrozy.github.io/#website"
+          },
+          "about": {
+            "@id": "https://damianjamrozy.github.io/#person"
+          }
         }
+      ]
+    }
     </script>
 
     <script>

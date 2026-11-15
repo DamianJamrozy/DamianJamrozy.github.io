@@ -5,8 +5,6 @@
 const dict = {
     pl: {
         "html.lang": "pl",
-        "meta.desc":
-            "Administracja baz danych MSSQL, MySQL i PostgreSQL. Wydajność, bezpieczeństwo, backupy, monitoring i warstwy raportowe.",
 
         /* NAV */
         "plat.nav.home": "Strona główna",
@@ -188,8 +186,6 @@ const dict = {
     /* ======================= EN ======================= */
     en: {
         "html.lang": "en",
-        "meta.desc":
-            "Database administration for MSSQL, MySQL and PostgreSQL. Performance, security, backups, monitoring and reporting layers.",
 
         "plat.nav.home": "Home",
         "plat.nav.automation": "Automation",
@@ -419,8 +415,6 @@ function applyLang(lang) {
     const t = dict[lang] || dict.pl;
 
     document.documentElement.setAttribute("lang", t["html.lang"]);
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t["meta.desc"]);
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");

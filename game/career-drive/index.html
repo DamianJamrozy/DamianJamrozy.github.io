@@ -9,11 +9,11 @@
   <link rel="icon" href="../content/images/favicon.ico">
   <link rel="stylesheet" href="../content/css/critical.css">
   <link rel="stylesheet" href="../content/css/style.css">
-  <link rel="stylesheet" href="./game.css">
+  <link rel="stylesheet" href="./game.css?v=33c65a37cf4b">
   <link rel="stylesheet" href="./portrait.css">
   <link rel="stylesheet" href="./story-scenes.css">
   <link rel="stylesheet" href="./route-map.css">
-  <script src="./app.bundle.js" defer></script>
+  <script src="./app.bundle.js?v=dfcee7adb6d7" defer></script>
 </head>
 <body>
   <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -40,6 +40,7 @@
       <button class="btn btn-ghost icon-btn" id="help-button" data-label="controls"><svg class="icon"><use href="#i-help"/></svg></button>
       <div class="language-switch" role="group" data-label="language"><button class="btn btn-ghost" data-lang="pl" aria-pressed="true">PL</button><button class="btn btn-ghost" data-lang="en" aria-pressed="false">EN</button></div>
     </div>
+    <button class="btn btn-ghost phone-only" id="phone-more" aria-haspopup="dialog" aria-controls="phone-options" aria-expanded="false"><span aria-hidden="true">•••</span><span data-i18n="moreOptions">Więcej</span></button>
   </header>
   <div class="game-shell">
     <main id="game-content" class="game-main" tabindex="-1">
@@ -80,9 +81,13 @@
         <div class="speedometer"><strong id="speed-value">00</strong><span>KM/H</span></div>
       </div>
       <div class="touch-controls" data-label="mobileControls">
+        <div class="phone-only phone-joystick" id="phone-joystick" role="group" tabindex="0" data-label="joystick" aria-describedby="joystick-instructions"><span class="joystick-axis" aria-hidden="true">✛</span><span class="joystick-thumb" aria-hidden="true"></span></div>
+        <span class="sr-only" id="joystick-instructions" data-i18n="joystickInstructions">Przesuń drążek w górę, aby jechać, w dół, aby hamować lub cofać, i na boki, aby skręcać. Puść, aby zwolnić. Możesz też używać strzałek na klawiaturze.</span>
         <div class="steering-controls"><button class="btn btn-ghost touch-key" data-input="left" data-label="turnLeft">←</button><button class="btn btn-ghost touch-key" data-input="right" data-label="turnRight">→</button></div>
+        <div class="touch-primary-actions">
         <button class="btn btn-ghost" id="touch-talk" data-i18n="talk">Rozmowa</button>
         <button class="btn btn-ghost touch-key touch-drift" data-input="drift" data-label="drift">DRIFT</button>
+        </div>
         <div class="pedal-controls"><button class="btn btn-ghost touch-key" data-input="backward" data-label="reverse">↓</button><button class="btn btn-primary touch-key" data-input="forward" data-label="accelerate">↑</button></div>
       </div>
     </main>
@@ -96,12 +101,42 @@
   <div class="story-scene-stage"><canvas id="story-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div>
   <figcaption><strong id="story-scene-title" class="story-scene-title"></strong></figcaption>
 </figure><p id="story-text" class="story-text" aria-hidden="true"></p><p id="story-accessible" class="sr-only"></p><button class="btn btn-ghost speech-skip" id="speech-skip" data-i18n="showFullText" hidden>Pokaż cały tekst</button><div id="story-questions" class="story-questions"></div><div class="story-answer" id="story-answer" hidden><p id="answer-text" aria-hidden="true"></p><p id="answer-accessible" class="sr-only"></p><button class="btn btn-ghost" id="answer-back" data-i18n="answerBack">Zadaj inne pytanie</button></div><div class="story-footer"><span id="story-page"></span><button class="btn btn-primary" id="finish-chapter"><span data-i18n="finishChapter">Odkryj rozdział</span><svg class="icon"><use href="#i-arrow"/></svg></button></div></div></dialog>
-  <dialog id="help-dialog" class="utility-dialog" aria-labelledby="help-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="help-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="howToPlay">JAK GRAĆ</span><h2 id="help-title" data-i18n="controlsTitle">Twoja trasa. Twoje tempo.</h2><p data-i18n="controlsIntro"></p><ul class="help-list"><li><span><kbd>WASD</kbd> / <kbd>↑ ↓ ← →</kbd></span><span data-i18n="controlsDrive"></span></li><li><kbd>M</kbd><span data-i18n="controlsMap"></span></li><li><kbd>← →</kbd><span data-i18n="controlsSteer"></span></li><li><span><kbd>E</kbd> / <kbd>Enter</kbd></span><span data-i18n="controlsInteract"></span></li><li><kbd>H</kbd><span data-i18n="horn"></span></li><li><kbd>L</kbd><span data-i18n="lights"></span></li><li><kbd>Space</kbd><span data-i18n="controlsDrift"></span></li><li><kbd>Esc</kbd><span data-i18n="controlsPause"></span></li></ul><p data-i18n="controlsMobile"></p><p data-i18n="controlsAutopilot"></p><button class="btn btn-ghost" id="animation-toggle" aria-pressed="true" data-i18n="portraitAnimationsOn">Animacje postaci włączone</button><p class="source-note" data-i18n="sourceNote"></p></div></dialog>
+  <dialog id="help-dialog" class="utility-dialog" aria-labelledby="help-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="help-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="howToPlay">JAK GRAĆ</span><h2 id="help-title" data-i18n="controlsTitle">Twoja trasa. Twoje tempo.</h2><p data-i18n="controlsIntro"></p><ul class="help-list"><li><span><kbd>WASD</kbd> / <kbd>↑ ↓ ← →</kbd></span><span data-i18n="controlsDrive"></span></li><li><kbd>M</kbd><span data-i18n="controlsMap"></span></li><li><kbd>← →</kbd><span data-i18n="controlsSteer"></span></li><li><span><kbd>E</kbd> / <kbd>Enter</kbd></span><span data-i18n="controlsInteract"></span></li><li><kbd>H</kbd><span data-i18n="horn"></span></li><li><kbd>L</kbd><span data-i18n="lights"></span></li><li><kbd>Space</kbd><span data-i18n="controlsDrift"></span></li><li><kbd>Esc</kbd><span data-i18n="controlsPause"></span></li></ul><p class="phone-only" data-i18n="joystickHelp"></p><p class="tablet-controls-help" data-i18n="controlsMobile"></p><p data-i18n="controlsAutopilot"></p><button class="btn btn-ghost" id="animation-toggle" aria-pressed="true" data-i18n="portraitAnimationsOn">Animacje postaci włączone</button><p class="source-note" data-i18n="sourceNote"></p></div></dialog>
   <dialog id="audio-dialog" class="utility-dialog" aria-labelledby="audio-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="audio-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="audioKicker">DOBRE BRZMIENIE PODRÓŻY</span><h2 id="audio-title" data-i18n="audioSettings">Dźwięk i muzyka</h2><p data-i18n="audioIntro"></p><div class="dialog-actions"><button class="btn btn-primary" id="audio-all" data-i18n="audioEnableAll">Włącz dźwięki i muzykę</button><button class="btn btn-ghost" id="effects-toggle" aria-pressed="false"></button><button class="btn btn-ghost" id="music-toggle" aria-pressed="false"></button></div><p id="audio-status" role="status"></p><p class="source-note" data-i18n="audioNote"></p></div></dialog>
   <dialog id="side-dialog" class="utility-dialog side-dialog" aria-labelledby="side-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="side-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="sideKicker">SPOTKANIE PO DRODZE</span><h2 id="side-title"></h2><span id="side-speaker" class="side-speaker"></span><figure class="story-scene"><div class="story-scene-stage"><canvas id="side-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="side-scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div><figcaption><strong id="side-scene-title" class="story-scene-title"></strong></figcaption></figure><div class="side-conversation"><p class="side-turn"><strong id="side-partner"></strong><span id="side-prompt"></span></p><p class="side-turn side-response" aria-live="polite" aria-atomic="true"><strong data-i18n="dialogueDamian">Damian Jamroży</strong><span id="side-text"></span></p></div><div id="side-questions" class="story-questions"></div><button class="btn btn-ghost" id="side-answer-back" data-i18n="answerBack" hidden>Inne pytanie</button><a id="side-source" class="side-source" target="_blank" rel="noopener noreferrer" hidden></a></div></dialog>
   <dialog id="garage-dialog" class="utility-dialog side-dialog" aria-labelledby="garage-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="garage-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="garageKicker">CZTERY KÓŁKA, WŁASNA HISTORIA</span><h2 id="garage-title"></h2><figure class="story-scene"><div class="story-scene-stage"><canvas id="garage-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="garage-scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div><figcaption><strong id="garage-scene-title" class="story-scene-title"></strong></figcaption></figure><p id="garage-intro"></p><p id="garage-details"></p><h3 class="eyebrow" data-i18n="garageChoose">Wybierz auto</h3><div id="garage-cars" class="garage-cars"></div></div></dialog>
   <dialog id="pause-dialog" class="utility-dialog" aria-labelledby="pause-title"><div class="dialog-scroll"><span class="eyebrow">PIT STOP</span><h2 id="pause-title" data-i18n="paused">Chwila postoju.</h2><p data-i18n="pausedHint"></p><div class="dialog-actions"><button class="btn btn-primary" id="resume-button" data-i18n="resume">Wracamy na trasę</button><button class="btn btn-ghost" id="pause-help-button" data-i18n="controls">Sterowanie</button><button class="btn btn-ghost" id="restart-button" data-i18n="restart">Zacznij od nowa</button></div><div id="reset-confirmation" hidden><p data-i18n="restartConfirm"></p><button class="btn btn-ghost" id="confirm-restart" data-i18n="restart">Zacznij od nowa</button></div></div></dialog>
   <dialog id="complete-dialog" class="utility-dialog complete-dialog" aria-labelledby="complete-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="complete-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="journeyComplete">PODRÓŻ UKOŃCZONA</span><h2 id="complete-title" data-i18n="allComplete"></h2><p data-i18n="allCompleteText"></p><div id="complete-skills" class="story-skills"></div><div class="dialog-actions"><a class="btn btn-primary" href="mailto:djamrozy.cv@gmail.com" data-i18n="contact">Porozmawiajmy</a><a class="btn btn-ghost" id="complete-cv" href="../../index.html?lang=pl" data-i18n="viewCv">Zakończ podróż</a></div><p class="source-note" data-i18n="sourceNote"></p></div></dialog>
+  <dialog id="phone-options" class="utility-dialog phone-options" aria-labelledby="phone-options-title">
+    <button class="btn btn-ghost icon-btn dialog-close" data-close="phone-options" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button>
+    <div class="dialog-scroll">
+      <h2 id="phone-options-title" data-i18n="journeyOptions">Opcje podróży</h2>
+      <div class="phone-menu-grid">
+        <button class="btn btn-ghost" id="phone-map"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg><span data-i18n="map">Mapa</span></button>
+        <button class="btn btn-ghost" id="phone-pause"><svg class="icon" aria-hidden="true"><use href="#i-pause"/></svg><span data-i18n="pause">Pauza</span></button>
+        <button class="btn btn-ghost" id="phone-audio"><svg class="icon" aria-hidden="true"><use href="#i-sound"/></svg><span data-i18n="audioSettings">Dźwięk i muzyka</span></button>
+        <button class="btn btn-ghost" id="phone-help"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg><span data-i18n="controls">Sterowanie</span></button>
+        <button class="btn btn-ghost" id="phone-drive" data-i18n="driveTo">Jedź tutaj</button>
+        <button class="btn btn-ghost" id="phone-garage" data-i18n="driveGarage" hidden>Podjedź do parkingu</button>
+        <button class="btn btn-ghost" id="phone-track-exit" data-i18n="leaveTrack" hidden>Wróć na trasę</button>
+      </div>
+      <p id="phone-destination"></p>
+      <p id="phone-track-stats" hidden></p>
+      <details class="phone-vehicle-options">
+        <summary><span data-i18n="yourVehicle">TWOJE AUTO</span> · <span id="phone-vehicle-name"></span></summary>
+        <div class="dialog-actions">
+          <button class="btn btn-ghost" id="phone-horn" data-i18n="horn">Klakson</button>
+          <button class="btn btn-ghost" id="phone-lights" data-i18n="lights" aria-pressed="false">Światła</button>
+        </div>
+      </details>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost" id="phone-buttons-toggle" aria-pressed="false" data-i18n="buttonDriving">Sterowanie przyciskami</button>
+        <div class="language-switch" role="group" data-label="language"><button class="btn btn-ghost" data-lang="pl" aria-pressed="true">PL</button><button class="btn btn-ghost" data-lang="en" aria-pressed="false">EN</button></div>
+      </div>
+      <p data-i18n="joystickHelp">Drążek: góra - gaz, dół - hamulec i cofanie, boki - skręt. Po puszczeniu auto zwalnia.</p>
+      <a class="btn btn-ghost" id="phone-cv-link" href="../../index.html?lang=pl" data-i18n="backCv">Wyjdź z podróży</a>
+    </div>
+  </dialog>
   <div class="sr-only" id="announcer" role="status" aria-live="polite"></div>
   <noscript><div class="noscript-note">Do uruchomienia podróży potrzebny jest JavaScript. / This journey needs JavaScript. <a href="../../index.html">Wyjście / Exit</a></div></noscript>
 </body>

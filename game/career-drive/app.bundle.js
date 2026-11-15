@@ -404,6 +404,12 @@
           accelerate: "Przyspiesz",
           chapterVisited: "Odkryty rozdział",
           mobileControls: "Dotykowe sterowanie samochodem",
+          moreOptions: "Więcej",
+          journeyOptions: "Opcje podróży",
+          joystick: "Drążek sterowania samochodem",
+          joystickInstructions: "Przesuń drążek w górę, aby jechać, w dół, aby hamować lub cofać, i na boki, aby skręcać. Puść, aby zwolnić. Możesz też używać strzałek na klawiaturze.",
+          joystickHelp: "Drążek: góra - gaz, dół - hamulec i cofanie, boki - skręt. Po puszczeniu auto zwalnia. Przyciski jazdy włączysz w menu „Więcej”.",
+          buttonDriving: "Sterowanie przyciskami",
           noStop: "Podjedź bliżej przystanku lub otwórz mapę i wybierz datę.",
           yourVehicle: "TWOJE AUTO",
           driveGarage: "Podjedź do parkingu",
@@ -578,6 +584,12 @@
           accelerate: "Accelerate",
           chapterVisited: "Discovered chapter",
           mobileControls: "Touch driving controls",
+          moreOptions: "More",
+          journeyOptions: "Journey options",
+          joystick: "Driving joystick",
+          joystickInstructions: "Move the joystick up to accelerate, down to brake or reverse, and sideways to steer. Release to slow down. You can also use the keyboard arrow keys.",
+          joystickHelp: "Joystick: up to accelerate, down to brake or reverse, sideways to steer. Release to slow down. Enable driving buttons in the More menu.",
+          buttonDriving: "Driving buttons",
           noStop: "Drive closer to a stop or open the map and choose a date.",
           yourVehicle: "YOUR CAR",
           driveGarage: "Drive to the parking area",
@@ -6760,6 +6772,106 @@
     }
   });
 
+  // career-drive/joystick.js
+  function releasedInput() {
+    return { forward: false, backward: false, left: false, right: false };
+  }
+  function joystickSample(x, y, radius) {
+    if (!Number.isFinite(x) || !Number.isFinite(y) || !Number.isFinite(radius) || radius <= 0) {
+      return { x: 0, y: 0, input: releasedInput() };
+    }
+    const distance = Math.hypot(x, y);
+    const scale = distance > radius ? radius / distance : 1;
+    const offsetX = x * scale, offsetY = y * scale;
+    return {
+      x: offsetX,
+      y: offsetY,
+      input: {
+        forward: offsetY / radius < -DEAD_ZONE,
+        backward: offsetY / radius > DEAD_ZONE,
+        left: offsetX / radius < -DEAD_ZONE,
+        right: offsetX / radius > DEAD_ZONE
+      }
+    };
+  }
+  function createJoystickController(element, options) {
+    let enabled = true, destroyed = false;
+    let pointerId = null;
+    let centerX = 0, centerY = 0, radius = 1;
+    let previousInput = releasedInput();
+    function publish(next) {
+      if (next.forward === previousInput.forward && next.backward === previousInput.backward && next.left === previousInput.left && next.right === previousInput.right) return;
+      previousInput = next;
+      options.onInput({ ...next });
+    }
+    function move(x, y) {
+      const sample = joystickSample(x - centerX, y - centerY, radius);
+      element.style.setProperty("--stick-x", `${sample.x}px`);
+      element.style.setProperty("--stick-y", `${sample.y}px`);
+      publish(sample.input);
+    }
+    function reset() {
+      const captured = pointerId;
+      pointerId = null;
+      if (captured !== null && element.hasPointerCapture(captured)) element.releasePointerCapture(captured);
+      element.classList.remove("is-active");
+      element.style.setProperty("--stick-x", "0px");
+      element.style.setProperty("--stick-y", "0px");
+      publish(releasedInput());
+    }
+    function pointerDown(event) {
+      if (!enabled || destroyed || pointerId !== null || event.button !== 0) return;
+      const bounds = element.getBoundingClientRect();
+      if (bounds.width <= 0 || bounds.height <= 0 || options.onStart?.() === false) return;
+      event.preventDefault();
+      pointerId = event.pointerId;
+      centerX = bounds.left + bounds.width / 2;
+      centerY = bounds.top + bounds.height / 2;
+      radius = Math.min(bounds.width, bounds.height) * 0.32;
+      element.setPointerCapture(pointerId);
+      element.classList.add("is-active");
+      move(event.clientX, event.clientY);
+    }
+    function pointerMove(event) {
+      if (event.pointerId !== pointerId) return;
+      event.preventDefault();
+      move(event.clientX, event.clientY);
+    }
+    function pointerEnd(event) {
+      if (event.pointerId === pointerId) reset();
+    }
+    element.addEventListener("pointerdown", pointerDown);
+    element.addEventListener("pointermove", pointerMove);
+    element.addEventListener("pointerup", pointerEnd);
+    element.addEventListener("pointercancel", pointerEnd);
+    element.addEventListener("lostpointercapture", pointerEnd);
+    return {
+      reset,
+      /** @param {boolean} next */
+      setEnabled(next) {
+        enabled = next;
+        if (!next) reset();
+      },
+      destroy() {
+        if (destroyed) return;
+        destroyed = true;
+        reset();
+        element.removeEventListener("pointerdown", pointerDown);
+        element.removeEventListener("pointermove", pointerMove);
+        element.removeEventListener("pointerup", pointerEnd);
+        element.removeEventListener("pointercancel", pointerEnd);
+        element.removeEventListener("lostpointercapture", pointerEnd);
+      }
+    };
+  }
+  var DEAD_ZONE;
+  var init_joystick = __esm({
+    "career-drive/joystick.js"() {
+      "use strict";
+      DEAD_ZONE = 0.24;
+    }
+  });
+
   // career-drive/state.js
   function validateSave(input2) {
     const empty = (
@@ -6985,6 +7097,7 @@
   }
   function syncPause() {
     const paused = !save.started || document.hidden || !!document.querySelector("dialog[open]");
+    joystick?.setEnabled(phoneViewport.matches && !buttonDriving && !document.hidden && !document.querySelector("dialog[open]"));
     world.setPaused(paused || trackMode);
     track.setPaused(paused || !trackMode);
     updateFestivalAudio();
@@ -7160,7 +7273,7 @@
       }
     }
     for (const button of document.querySelectorAll("[data-lang]")) button.setAttribute("aria-pressed", String(button.getAttribute("data-lang") === language));
-    for (const id of ["cv-link", "brand-link", "complete-cv"]) el(id).href = `../../index.html?lang=${language}`;
+    for (const id of ["cv-link", "brand-link", "complete-cv", "phone-cv-link"]) el(id).href = `../../index.html?lang=${language}`;
     el("character-portrait").setAttribute("alt", t("portraitAlt"));
     document.querySelector(".touch-controls")?.setAttribute("aria-label", t("mobileControls"));
     if (location.protocol !== "file:") {
@@ -7198,6 +7311,7 @@
     lastDriveHud = "";
     updateDrivingHud();
     renderTrackStatus();
+    if (dialog("phone-options").open) refreshPhoneOptions();
   }
   function updateAnimationButton() {
     el("animation-toggle").setAttribute("aria-label", t("portraitAnimations"));
@@ -7205,6 +7319,7 @@
     el("animation-toggle").textContent = t(animationsEnabled ? "portraitAnimationsOff" : "portraitAnimationsOn");
   }
   function clearInput() {
+    joystick?.reset();
     Object.assign(input, { forward: false, backward: false, left: false, right: false, drift: false });
     world.setInput(input);
     track.setInput(input);
@@ -7348,6 +7463,7 @@
     const hud = `${language}:${trackMode}:${vehicle}:${state.lights}:${nearest}:${side?.id}:${garage2?.id}:${garageAccess2?.id}:${trackNearby}:${save.started}`;
     if (hud === lastDriveHud) return;
     lastDriveHud = hud;
+    document.querySelector(".touch-controls")?.classList.toggle("is-track", trackMode);
     el("vehicle-name").textContent = VEHICLES[vehicle].label[language];
     el("vehicle-detail").textContent = VEHICLES[vehicle].detail[language];
     el("lights-button").setAttribute("aria-pressed", String(state.lights));
@@ -7493,7 +7609,20 @@
     if (event instanceof KeyboardEvent && (event.repeat || event.altKey || event.ctrlKey || event.metaKey)) return;
     void audio.unlock().then(updateSoundButton);
   }
-  var UI, AUDIO_EFFECTS_KEY, AUDIO_MUSIC_KEY, storageAvailable, language, save, restoredDistance, activeChapter, activeQuestion, activeSideStory, sideQuestion, activeGarage, travelSpeed, audio, trackMode, lastDriveHud, audioPending, input, canvas, animationsEnabled, portrait, scene, sideScene, garageScene, journeyMap, world, trackCanvas, track, keys, heldKeys;
+  function refreshPhoneOptions() {
+    const state = trackMode ? track.getState() : world.getState();
+    el("phone-vehicle-name").textContent = VEHICLES[state.vehicle].label[language];
+    el("phone-destination").textContent = trackMode ? t("trackDriveHint") : `${el("destination-title").textContent} · ${el("destination-year").textContent}`;
+    for (const id of ["phone-horn", "phone-lights", "phone-pause"]) el(id).disabled = !save.started;
+    for (const id of ["phone-map", "phone-drive"]) el(id).disabled = trackMode;
+    el("phone-garage").hidden = trackMode || el("garage-drive").hidden;
+    el("phone-track-exit").hidden = !trackMode;
+    el("phone-track-stats").hidden = !trackMode;
+    const status = track.getState();
+    el("phone-track-stats").textContent = `${t("laps")}: ${status.lap} · ${t("driftScore")}: ${Math.floor(status.driftScore)}`;
+    el("phone-lights").setAttribute("aria-pressed", String(state.lights));
+  }
+  var UI, AUDIO_EFFECTS_KEY, AUDIO_MUSIC_KEY, storageAvailable, language, save, restoredDistance, activeChapter, activeQuestion, activeSideStory, sideQuestion, activeGarage, travelSpeed, audio, trackMode, lastDriveHud, audioPending, input, phoneViewport, buttonDriving, joystick, joystickDirections, canvas, animationsEnabled, portrait, scene, sideScene, garageScene, journeyMap, world, trackCanvas, track, keys, heldKeys;
   var init_app = __esm({
     "career-drive/app.js"() {
       "use strict";
@@ -7509,6 +7638,7 @@
       init_side_stories();
       init_garage_stories();
       init_festival();
+      init_joystick();
       init_state();
       UI = COPY;
       AUDIO_EFFECTS_KEY = "career-drive:effects";
@@ -7528,6 +7658,10 @@
       lastDriveHud = "";
       audioPending = false;
       input = { forward: false, backward: false, left: false, right: false, drift: false };
+      phoneViewport = window.matchMedia("(max-width: 600px), (max-width: 900px) and (max-height: 500px) and (pointer: coarse)");
+      buttonDriving = false;
+      joystick = null;
+      joystickDirections = { forward: false, backward: false, left: false, right: false };
       canvas = /** @type {HTMLCanvasElement} */
       el("world");
       animationsEnabled = readStorage("career-drive:animations") !== "off";
@@ -7649,6 +7783,7 @@
         if (id) dialog(id).close();
       });
       for (const modal of document.querySelectorAll("dialog")) modal.addEventListener("close", () => {
+        if (modal.id === "phone-options") el("phone-more").setAttribute("aria-expanded", "false");
         if (modal.id === "story-dialog" && !modal.open) {
           portrait.setActive(false);
           scene.setActive(false);
@@ -7657,7 +7792,10 @@
         if (modal.id === "side-dialog" && !modal.open) sideScene.setActive(false);
         if (modal.id === "garage-dialog" && !modal.open) garageScene.setActive(false);
         syncPause();
-        if (save.started && !document.querySelector("dialog[open]")) (trackMode ? trackCanvas : canvas).focus({ preventScroll: true });
+        if (!document.querySelector("dialog[open]")) {
+          if (modal.id === "phone-options" && phoneViewport.matches) el("phone-more").focus({ preventScroll: true });
+          else if (save.started) (trackMode ? trackCanvas : canvas).focus({ preventScroll: true });
+        }
       });
       el("start-button").addEventListener("click", () => {
         ensureStarted();
@@ -7754,6 +7892,62 @@
       });
       keys = { KeyW: "forward", ArrowUp: "forward", KeyS: "backward", ArrowDown: "backward", KeyA: "left", ArrowLeft: "left", KeyD: "right", ArrowRight: "right", Space: "drift" };
       heldKeys = /* @__PURE__ */ new Set();
+      joystick = createJoystickController(el("phone-joystick"), {
+        onStart() {
+          if (!phoneViewport.matches || document.querySelector("dialog[open]")) return false;
+          ensureStarted();
+          (trackMode ? trackCanvas : canvas).focus({ preventScroll: true });
+          return true;
+        },
+        onInput(directions) {
+          Object.assign(joystickDirections, directions);
+          for (
+            const direction of
+            /** @type {const} */
+            ["forward", "backward", "left", "right"]
+          ) {
+            input[direction] = directions[direction] || Object.entries(keys).some(([key, value]) => value === direction && heldKeys.has(key));
+          }
+          (trackMode ? track : world).setInput(input);
+        }
+      });
+      joystick.setEnabled(phoneViewport.matches);
+      phoneViewport.addEventListener("change", () => {
+        heldKeys.clear();
+        clearInput();
+        if (!phoneViewport.matches && dialog("phone-options").open) dialog("phone-options").close();
+        syncPause();
+      });
+      window.addEventListener("resize", () => {
+        if (phoneViewport.matches) clearInput();
+      });
+      el("phone-more").addEventListener("click", () => {
+        if (!phoneViewport.matches) return;
+        refreshPhoneOptions();
+        openDialog("phone-options");
+        el("phone-more").setAttribute("aria-expanded", "true");
+      });
+      for (const [phoneId, originalId] of [
+        ["phone-map", "route-toggle"],
+        ["phone-pause", "pause-button"],
+        ["phone-audio", "sound-toggle"],
+        ["phone-help", "help-button"],
+        ["phone-horn", "horn-button"],
+        ["phone-lights", "lights-button"],
+        ["phone-drive", "drive-button"],
+        ["phone-garage", "garage-drive"],
+        ["phone-track-exit", "track-exit"]
+      ]) el(phoneId).addEventListener("click", () => {
+        dialog("phone-options").close();
+        el(originalId).click();
+      });
+      el("phone-buttons-toggle").addEventListener("click", () => {
+        clearInput();
+        buttonDriving = !buttonDriving;
+        document.querySelector(".touch-controls")?.classList.toggle("is-buttons", buttonDriving);
+        el("phone-buttons-toggle").setAttribute("aria-pressed", String(buttonDriving));
+        syncPause();
+      });
       window.addEventListener("keydown", (event) => {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
         if (event.target instanceof Element && event.target.closest("input,select,textarea,[contenteditable=true]")) return;
@@ -7807,13 +8001,14 @@
         heldKeys.delete(event.code);
         const direction = keys[event.code];
         if (direction) {
-          input[direction] = Object.entries(keys).some(([key, value]) => value === direction && heldKeys.has(key));
+          input[direction] = direction !== "drift" && joystickDirections[direction] || Object.entries(keys).some(([key, value]) => value === direction && heldKeys.has(key));
           (trackMode ? track : world).setInput(input);
         }
       });
       for (const button of document.querySelectorAll("[data-input]")) {
         button.setAttribute("aria-pressed", "false");
         const update = (pressed) => {
+          if (pressed && document.querySelector("dialog[open]")) return;
           const direction = (
             /** @type {keyof typeof input} */
             button.getAttribute("data-input")
@@ -7860,6 +8055,7 @@
         sideScene.setActive(false);
         garageScene.setActive(false);
         if (!event.persisted) {
+          joystick?.destroy();
           world.destroy();
           track.destroy();
           portrait.destroy();

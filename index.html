@@ -4,32 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Damian Jamroży — Portfolio / CV</title>
-    <meta name="description" content="Damian Jamroży - inżynier informatyki i specjalista IT. Tworzę nowoczesne aplikacje webowe, automatyzacje i rozwiązania oparte o AI. Zobacz moje portfolio.">
+    <title>Damian Jamroży - programista .NET i TypeScript | Portfolio</title>
+    <meta name="description" content="Damian Jamroży - programista .NET, TypeScript i Dynamics 365 CRM w Netwise. Absolwent informatyki Uniwersytetu Rzeszowskiego. Portfolio i kontakt.">
     <meta name="keywords" content="Damian Jamroży,portfolio IT,programista,web developer,AI developer,inżynier informatyki,automatyzacje IT,projekty webowe,PHP developer,JavaScript developer,Python developer,UX UI designer,tworzenie stron internetowych,systemy AI,automatyzacja procesów,rozwiązania IT,developer Rzeszów">
 
 
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="Damian Jamroży — Portfolio / CV">
-    <meta property="og:description" content="Junior IT Specialist, UX/UI Designer, Software Developer. Portfolio i doświadczenie zawodowe.">
+    <meta property="og:title" content="Damian Jamroży - programista .NET i TypeScript | Portfolio">
+    <meta property="og:description" content="Damian Jamroży - programista .NET, TypeScript i Dynamics 365 CRM w Netwise. Absolwent informatyki Uniwersytetu Rzeszowskiego. Portfolio i kontakt.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://damianjamrozy.github.io/">
     <meta property="og:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:locale:alternate" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Damian Jamroży — Portfolio / CV">
-    <meta name="twitter:description" content="Junior IT Specialist, UX/UI Designer, Software Developer.">
+    <meta name="twitter:title" content="Damian Jamroży - programista .NET i TypeScript | Portfolio">
+    <meta name="twitter:description" content="Damian Jamroży - programista .NET, TypeScript i Dynamics 365 CRM w Netwise. Absolwent informatyki Uniwersytetu Rzeszowskiego. Portfolio i kontakt.">
     <meta name="twitter:image" content="https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp">
 
     <meta name="theme-color" content="#0a0c10">
 
     <!-- Canonical + hreflang -->
     <link rel="canonical" href="https://damianjamrozy.github.io/">
-    <link rel="alternate" hreflang="pl" href="https://damianjamrozy.github.io/?lang=pl">
+    <link rel="alternate" hreflang="pl" href="https://damianjamrozy.github.io/">
     <link rel="alternate" hreflang="en" href="https://damianjamrozy.github.io/?lang=en">
     <link rel="alternate" hreflang="x-default" href="https://damianjamrozy.github.io/">
 
@@ -65,6 +63,21 @@
           imagesizes="(max-width: 600px) 100vw, 50vw"
           fetchpriority="high"
           type="image/avif">
+    <script id="seo-data" type="application/json">
+    {
+      "url": "https://damianjamrozy.github.io/",
+      "translations": {
+        "pl": {
+          "title": "Damian Jamroży - programista .NET i TypeScript | Portfolio",
+          "description": "Damian Jamroży - programista .NET, TypeScript i Dynamics 365 CRM w Netwise. Absolwent informatyki Uniwersytetu Rzeszowskiego. Portfolio i kontakt."
+        },
+        "en": {
+          "title": "Damian Jamroży - .NET and TypeScript Developer | Portfolio",
+          "description": "Damian Jamroży - .NET, TypeScript and Dynamics 365 CRM developer at Netwise. Computer science graduate of the University of Rzeszów. Portfolio and contact."
+        }
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -688,25 +701,6 @@
         </svg>
     </button>
 
-    <!-- Canonical + lang (jedno źródło prawdy) -->
-    <script>
-        (function () {
-            const url = new URL(location.href);
-            const langParam = url.searchParams.get('lang');
-            const lang = (langParam === 'en' || langParam === 'pl') ? langParam : null;
-
-            const base = location.origin + location.pathname;
-            const canonicalHref = lang ? `${base}?lang=${lang}` : base;
-
-            // html lang — ustaw raz
-            document.documentElement.setAttribute('lang', lang || 'pl');
-
-            // canonical
-            const lc = document.getElementById('canonical');
-            if (lc) lc.href = canonicalHref;
-        })();
-    </script>
-
     <!-- Preferencja języka (bez nadpisywania <html lang>) -->
     <script>
         (function () {
@@ -715,32 +709,89 @@
             const saved = localStorage.getItem('lang');
             const initial = (urlLang === 'en' || urlLang === 'pl') ? urlLang : (saved || 'pl');
             localStorage.setItem('lang', initial);
-            // UWAGA: nie ustawiamy tu documentElement.lang — robi to skrypt powyżej
+            // The page translator sets the document language.
         })();
     </script>
 
     <script src="content/javascript/lang.js" defer></script>
+    <script src="content/javascript/seo.js" defer></script>
     <script src="content/javascript/script.js" defer></script>
 
     <!-- Person schema -->
-    <script type="application/ld+json">
+    <script id="person-schema" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@context":"https://schema.org",
-          "@type":"Person",
-          "name":"Damian Jamroży",
-          "jobTitle":"Junior IT Specialist / UX-UI Designer",
-          "image":"https://damianjamrozy.github.io/content/images/personal/optimized/1.png",
-          "url":"https://damianjamrozy.github.io/",
-          "address":{"@type":"PostalAddress","addressLocality":"Rzeszów","addressCountry":"PL"},
-          "email":"mailto:djamrozy.cv@gmail.com",
-          "sameAs":[
+          "@type": "Person",
+          "@id": "https://damianjamrozy.github.io/#person",
+          "name": "Damian Jamroży",
+          "url": "https://damianjamrozy.github.io/",
+          "image": "https://damianjamrozy.github.io/content/images/personal/optimized/1-1200.webp",
+          "jobTitle": "Associate Technical Consultant Delivery",
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "Netwise"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Uniwersytet Rzeszowski"
+            }
+          ],
+          "knowsAbout": [
+            ".NET",
+            "TypeScript",
+            "Microsoft Dynamics 365 CRM",
+            "SQL",
+            "UX/UI"
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Uniwersytet Rzeszowski"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rzeszów",
+            "addressCountry": "PL"
+          },
+          "email": "mailto:djamrozy.cv@gmail.com",
+          "sameAs": [
             "https://www.linkedin.com/in/djamrozy/",
             "https://github.com/damianjamrozy",
             "https://www.instagram.com/skrrr_dj/",
             "https://www.youtube.com/@djamrozy"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://damianjamrozy.github.io/#website",
+          "url": "https://damianjamrozy.github.io/",
+          "name": "Damian Jamroży - Portfolio",
+          "inLanguage": [
+            "pl",
+            "en"
           ],
-          "alumniOf":"Uniwersytet Rzeszowski"
+          "publisher": {
+            "@id": "https://damianjamrozy.github.io/#person"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://damianjamrozy.github.io/#webpage",
+          "url": "https://damianjamrozy.github.io/",
+          "name": "Damian Jamroży - programista .NET i TypeScript | Portfolio",
+          "description": "Damian Jamroży - programista .NET, TypeScript i Dynamics 365 CRM w Netwise. Absolwent informatyki Uniwersytetu Rzeszowskiego. Portfolio i kontakt.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://damianjamrozy.github.io/#website"
+          },
+          "about": {
+            "@id": "https://damianjamrozy.github.io/#person"
+          }
         }
+      ]
+    }
     </script>
 
     <script>
