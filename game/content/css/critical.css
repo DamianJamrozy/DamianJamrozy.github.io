@@ -1,0 +1,32 @@
+/* === LOCAL FONTS === */
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-500.woff2")    format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-600.woff2")    format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-700.woff2")    format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Inter"; src:url("../fonts/Inter/inter-v20-latin-ext-800.woff2")    format("woff2"); font-weight:800; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Fraunces"; src:url("../fonts/Fraunces/fraunces-v38-latin-ext-900.woff2") format("woff2"); font-weight:900; font-style:normal; font-display:swap; }
+
+:root { --bg:#0a0c10; --paper:#10131a; --ink:#f5f6f8; --muted:#9ba4b5; --accent:#7c5dfa; --gold:#d6b46c; --radius:18px; --container:1180px; --navH:64px; }
+    *{box-sizing:border-box}
+    html,body{scroll-behavior:smooth;overflow-x: hidden}
+    body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,system-ui,Roboto,sans-serif;line-height:1.6}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--container),92vw);margin-inline:auto}
+    h1{ margin: 0}
+
+    /* === HEADER === */
+    header.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:linear-gradient(180deg,rgba(10,12,16,.92),rgba(10,12,16,.35),rgba(10,12,16,0));border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+    header .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0;min-height:var(--navH)}
+    .brand{display:flex;gap:.6rem;align-items:center;text-decoration:none;color:var(--ink);font-weight:900;letter-spacing:.2px;white-space:nowrap}
+    .brand small{font-weight:700;color:var(--muted);letter-spacing:.12em}
+    /* desktop nav */
+    nav { position:relative; }
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.3rem}
+    nav a{color:var(--ink);text-decoration:none;font-weight:700;padding:.35rem .2rem;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+    nav a:hover::after{transform:scaleX(1)}
+
+
+/* Nagłówki nadal Fraunces jak masz teraz */
+.section h2, .work h2, .services h2, .about h2, .hero-name {font-feature-settings: "liga" 1, "dlig" 1; }

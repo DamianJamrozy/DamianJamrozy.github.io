@@ -1,0 +1,51 @@
+.story-scene {
+  margin: 18px 0 4px;
+  overflow: hidden;
+  border: 1px solid var(--game-line);
+  border-radius: 11px;
+  background: #101914;
+}
+
+.story-scene canvas {
+  display: block;
+  width: 100%;
+  height: var(--story-scene-height, 180px);
+}
+
+.story-scene canvas[data-supported="false"] {
+  display: none;
+}
+
+.story-scene figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--game-line);
+  color: var(--game-dim);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.story-scene-title {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .story-scene {
+    margin-top: 14px;
+  }
+
+  .story-scene canvas {
+    height: var(--story-scene-height, 145px);
+  }
+
+  .story-scene figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 8px;
+  }
+}

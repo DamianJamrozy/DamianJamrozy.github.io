@@ -1,0 +1,45 @@
+.route-map {
+  background: #24392c;
+}
+
+.route-map:before,.route-map:after {
+  display: none;
+}
+
+#route-map-road,#route-map-line {
+  stroke: none;
+}
+
+.map-circuit-caption {
+  fill: #dfd5ae;
+  font: 600 7px Inter,system-ui,sans-serif;
+  letter-spacing: .7px;
+}
+
+.map-npc-icon {
+  fill: #e4bf78;
+  font: 600 9px Inter,system-ui,sans-serif;
+}
+
+.map-year {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #14231bd6;
+}
+
+#map-car {
+  margin-top: 0;
+  font-size: 12px;
+  filter: drop-shadow(0 0 2px #0b130d);
+}
+
+@media (max-width:600px) {
+  .map-year {
+    width: 102px;
+    font-size: 9px;
+  }
+
+  .map-stop-name {
+    max-width: 97px;
+  }
+}

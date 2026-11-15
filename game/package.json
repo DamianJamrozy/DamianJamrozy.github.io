@@ -1,0 +1,21 @@
+{
+  "name": "damian-jamrozy-career-drive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static bilingual portfolio and Career Drive game for GitHub Pages",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check:build": "node scripts/build.mjs --check",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "tsc --noEmit && npm run check:build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pl" class="drive-theme">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="description" content="Career Drive - moja historia, od Staszowa po Warszawę. Wsiądź i poznaj mnie po drodze. Damian Jamroży.">
+  <title>Career Drive - Damian Jamroży</title>
+  <link rel="icon" href="../content/images/favicon.ico">
+  <link rel="stylesheet" href="../content/css/critical.css">
+  <link rel="stylesheet" href="../content/css/style.css">
+  <link rel="stylesheet" href="./game.css">
+  <link rel="stylesheet" href="./portrait.css">
+  <link rel="stylesheet" href="./story-scenes.css">
+  <link rel="stylesheet" href="./route-map.css">
+  <script src="./app.bundle.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 7 2-4h10l2 4 2 3v8H3v-8zM3 10h18M6 14h2m8 0h2M6 18v3m12-3v3"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2zM9 3v16m6-14v16"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C8 2 3 4 3 4v15s5-2 9 1c4-3 9-1 9-1V4s-5-2-9 1zm0 0v15"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 9M4 4v6h6"/></symbol>
+    <symbol id="i-light" viewBox="0 0 24 24"><path d="M13 5c-6 0-9 3-9 7s3 7 9 7zm4 1 4-2m-4 5 5-1m-5 4h5m-5 3 5 1m-5 2 4 2"/></symbol>
+    <symbol id="i-horn" viewBox="0 0 24 24"><path d="M4 9h5l8-5v16l-8-5H4zM6 15v5h4v-4m10-8a7 7 0 0 1 0 8"/></symbol>
+  </defs></svg>
+  <a class="skip-link btn btn-primary" href="#game-content" data-i18n="skipToGame">Przejdź do gry</a>
+  <header class="drive-header">
+    <a id="brand-link" class="drive-brand" href="../../index.html?lang=pl"><span class="monogram">DJ<span>.</span></span><span class="brand-rule"></span><span>CAREER<span class="brand-drive">DRIVE</span><small data-i18n="subtitle">INTERAKTYWNA PODRÓŻ</small></span></a>
+    <div class="header-tools">
+      <a class="cv-return" id="cv-link" href="../../index.html?lang=pl"><span aria-hidden="true">↖</span> <span data-i18n="backCv">Wyjdź z podróży</span></a>
+      <span class="tool-divider"></span>
+      <button class="btn btn-ghost icon-btn" id="sound-toggle" data-label="audioSettings"><svg class="icon"><use href="#i-sound"/></svg><span class="sound-strike" aria-hidden="true">/</span></button>
+      <button class="btn btn-ghost icon-btn" id="help-button" data-label="controls"><svg class="icon"><use href="#i-help"/></svg></button>
+      <div class="language-switch" role="group" data-label="language"><button class="btn btn-ghost" data-lang="pl" aria-pressed="true">PL</button><button class="btn btn-ghost" data-lang="en" aria-pressed="false">EN</button></div>
+    </div>
+  </header>
+  <div class="game-shell">
+    <main id="game-content" class="game-main" tabindex="-1">
+      <section class="world-stage" aria-labelledby="scene-title">
+        <canvas id="world" tabindex="0" data-label="mapAlt" aria-describedby="keyboard-instructions"></canvas>
+        <canvas id="track-canvas" tabindex="0" data-label="trackAlt" aria-describedby="keyboard-instructions" hidden></canvas>
+        <div class="scene-vignette" aria-hidden="true"></div>
+        <div class="scene-heading">
+          <span class="eyebrow" data-i18n="timeRoad">DROGA PRZEZ HISTORIĘ</span>
+          <h1 id="scene-title"><span id="location-year">2015</span><span class="place-divider" aria-hidden="true"> / </span><span id="location-title">Staszów</span></h1>
+          <p id="location-description"></p>
+        </div>
+        <div class="map-actions">
+          <button class="btn btn-ghost" id="route-toggle" data-label="openMap"><svg class="icon"><use href="#i-map"/></svg><span data-i18n="map">Mapa</span><kbd>M</kbd></button>
+          <button class="btn btn-ghost icon-btn" id="pause-button" data-label="pause"><svg class="icon"><use href="#i-pause"/></svg></button>
+        </div>
+        <div class="journey-meter"><span id="road-start">2015</span><progress id="road-progress" max="12300" value="0" data-label="progress"></progress><span data-i18n="routeEnd">Dalej</span></div>
+        <div class="vehicle-hud"><span class="eyebrow" data-i18n="yourVehicle">TWOJE AUTO</span><strong id="vehicle-name">Taxi</strong><span id="vehicle-detail"></span><div class="vehicle-actions"><button class="btn btn-ghost icon-btn" id="horn-button" data-label="horn"><svg class="icon"><use href="#i-horn"/></svg></button><button class="btn btn-ghost icon-btn" id="lights-button" data-label="lights" aria-pressed="false"><svg class="icon"><use href="#i-light"/></svg></button></div></div>
+        <div id="interaction-zone" class="interaction-zone" hidden><span id="interaction-hint"></span><button class="btn btn-primary" id="interact-button" data-i18n="talk">Porozmawiaj</button></div>
+        <div id="track-hud" class="track-hud" hidden><div><span data-i18n="laps">Okrążenia</span><strong id="lap-count">0</strong></div><div><span data-i18n="driftScore">Punkty driftu</span><strong id="drift-score">0</strong></div><span id="drift-status" data-i18n="trackDriveHint"></span><button class="btn btn-ghost" id="track-exit" data-i18n="leaveTrack">Wróć na trasę</button></div>
+        <div id="welcome-card" class="welcome-card">
+          <div class="welcome-car"><svg class="icon"><use href="#i-car"/></svg></div>
+          <div class="welcome-copy"><span class="eyebrow" data-i18n="welcomeKicker">TY PROWADZISZ</span><h2 data-i18n="welcomeTitle">Poznaj mnie po drodze.</h2><p data-i18n="welcomeText"></p></div>
+          <button class="btn btn-primary" id="start-button"><span data-i18n="start">Ruszajmy</span><svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div id="drive-card" class="drive-card" hidden>
+          <span class="destination-icon"><svg class="icon"><use href="#i-map"/></svg></span>
+          <div class="destination-copy"><span class="eyebrow" id="drive-mode" data-i18n="nextMilestone">NASTĘPNY PRZYSTANEK</span><strong id="destination-title"></strong><small id="destination-year"></small></div>
+          <button class="btn btn-primary" id="drive-button"><span data-i18n="driveTo">Jedź tutaj</span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn-ghost" id="read-button" data-i18n="talk" disabled>Porozmawiaj</button>
+          <button class="btn btn-ghost" id="garage-drive" data-i18n="driveGarage" hidden>Podjedź do parkingu</button>
+        </div>
+        <div id="loading-state" class="loading-state" role="status">Uruchamianie drogi / Loading the road…</div>
+      </section>
+      <div class="dashboard">
+        <div class="dashboard-left"><span class="gold-label" data-i18n="timeRoad">DROGA PRZEZ HISTORIĘ</span><span id="play-state" data-i18n="welcomeHint"></span></div>
+        <div class="keyboard-hint" id="keyboard-instructions"><span class="key-group"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span><span data-i18n="driveLabel">jazda</span><span id="road-keyboard-hint"><kbd>M</kbd><span data-i18n="map">Mapa</span><kbd>E</kbd><span data-i18n="talk">Rozmowa</span></span><span id="track-keyboard-hint" hidden><kbd>Space</kbd><span data-i18n="drift">Drift</span></span><kbd>H</kbd><kbd>L</kbd></div>
+        <div class="speedometer"><strong id="speed-value">00</strong><span>KM/H</span></div>
+      </div>
+      <div class="touch-controls" data-label="mobileControls">
+        <div class="steering-controls"><button class="btn btn-ghost touch-key" data-input="left" data-label="turnLeft">←</button><button class="btn btn-ghost touch-key" data-input="right" data-label="turnRight">→</button></div>
+        <button class="btn btn-ghost" id="touch-talk" data-i18n="talk">Rozmowa</button>
+        <button class="btn btn-ghost touch-key touch-drift" data-input="drift" data-label="drift">DRIFT</button>
+        <div class="pedal-controls"><button class="btn btn-ghost touch-key" data-input="backward" data-label="reverse">↓</button><button class="btn btn-primary touch-key" data-input="forward" data-label="accelerate">↑</button></div>
+      </div>
+    </main>
+  </div>
+  <dialog id="route-dialog" class="route-dialog" aria-labelledby="mobile-route-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="route-dialog" data-label="closeMap"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><div class="route-heading"><span class="eyebrow" data-i18n="mapKicker">OD PIERWSZEGO KROKU</span><h2 id="mobile-route-title" data-i18n="mapTitle">Mapa podróży</h2><p data-i18n="mapHint"></p><div class="travel-tools" role="group" data-label="travelSpeed"><span data-i18n="travelSpeed">Tempo podróży</span><button class="btn btn-ghost" id="travel-normal" aria-pressed="true" data-i18n="travelNormal">Spokojnie · 1×</button><button class="btn btn-ghost" id="travel-fast" aria-pressed="false" data-i18n="travelFast">Szybki przejazd · 3×</button></div><p class="source-note" data-i18n="trackMapHint"></p></div>
+    <div class="route-layout">
+      <div id="route-map" class="route-map"><svg viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true"><path id="route-map-road" fill="none"/><path id="route-map-line" fill="none"/></svg><div id="map-points"></div><span id="map-car" aria-hidden="true">◆</span></div>
+      <div class="route-list"><div class="progress-heading"><span data-i18n="discovered">Odkryte rozdziały</span><span id="progress-count">0 / 10</span></div><progress id="journey-progress" max="10" value="0" data-label="progress"></progress><ol class="chapter-list" id="chapter-list"></ol><p id="save-status" data-i18n="saved"></p></div>
+    </div></div></dialog>
+  <dialog id="story-dialog" class="story-dialog" aria-labelledby="story-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="story-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="portrait-panel"><img id="character-portrait" src="./assets/damian-character-hazel.png" alt="Damian Jamroży" width="1086" height="1448"><div class="portrait-caption"><span class="eyebrow" data-i18n="yourGuide">TWÓJ PRZEWODNIK</span><strong>Damian Jamroży<span>.</span></strong><small>Software Engineer & Visual Thinker</small></div></div><div class="dialogue-panel dialog-scroll"><div class="story-meta"><span class="eyebrow" id="story-kicker"></span><span id="story-tag"></span></div><h2 id="story-title"></h2><div class="story-skills" id="story-skills"></div><figure class="story-scene" aria-labelledby="story-scene-title">
+  <div class="story-scene-stage"><canvas id="story-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div>
+  <figcaption><strong id="story-scene-title" class="story-scene-title"></strong></figcaption>
+</figure><p id="story-text" class="story-text" aria-hidden="true"></p><p id="story-accessible" class="sr-only"></p><button class="btn btn-ghost speech-skip" id="speech-skip" data-i18n="showFullText" hidden>Pokaż cały tekst</button><div id="story-questions" class="story-questions"></div><div class="story-answer" id="story-answer" hidden><p id="answer-text" aria-hidden="true"></p><p id="answer-accessible" class="sr-only"></p><button class="btn btn-ghost" id="answer-back" data-i18n="answerBack">Zadaj inne pytanie</button></div><div class="story-footer"><span id="story-page"></span><button class="btn btn-primary" id="finish-chapter"><span data-i18n="finishChapter">Odkryj rozdział</span><svg class="icon"><use href="#i-arrow"/></svg></button></div></div></dialog>
+  <dialog id="help-dialog" class="utility-dialog" aria-labelledby="help-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="help-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="howToPlay">JAK GRAĆ</span><h2 id="help-title" data-i18n="controlsTitle">Twoja trasa. Twoje tempo.</h2><p data-i18n="controlsIntro"></p><ul class="help-list"><li><span><kbd>WASD</kbd> / <kbd>↑ ↓ ← →</kbd></span><span data-i18n="controlsDrive"></span></li><li><kbd>M</kbd><span data-i18n="controlsMap"></span></li><li><kbd>← →</kbd><span data-i18n="controlsSteer"></span></li><li><span><kbd>E</kbd> / <kbd>Enter</kbd></span><span data-i18n="controlsInteract"></span></li><li><kbd>H</kbd><span data-i18n="horn"></span></li><li><kbd>L</kbd><span data-i18n="lights"></span></li><li><kbd>Space</kbd><span data-i18n="controlsDrift"></span></li><li><kbd>Esc</kbd><span data-i18n="controlsPause"></span></li></ul><p data-i18n="controlsMobile"></p><p data-i18n="controlsAutopilot"></p><button class="btn btn-ghost" id="animation-toggle" aria-pressed="true" data-i18n="portraitAnimationsOn">Animacje postaci włączone</button><p class="source-note" data-i18n="sourceNote"></p></div></dialog>
+  <dialog id="audio-dialog" class="utility-dialog" aria-labelledby="audio-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="audio-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="audioKicker">DOBRE BRZMIENIE PODRÓŻY</span><h2 id="audio-title" data-i18n="audioSettings">Dźwięk i muzyka</h2><p data-i18n="audioIntro"></p><div class="dialog-actions"><button class="btn btn-primary" id="audio-all" data-i18n="audioEnableAll">Włącz dźwięki i muzykę</button><button class="btn btn-ghost" id="effects-toggle" aria-pressed="false"></button><button class="btn btn-ghost" id="music-toggle" aria-pressed="false"></button></div><p id="audio-status" role="status"></p><p class="source-note" data-i18n="audioNote"></p></div></dialog>
+  <dialog id="side-dialog" class="utility-dialog side-dialog" aria-labelledby="side-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="side-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="sideKicker">SPOTKANIE PO DRODZE</span><h2 id="side-title"></h2><span id="side-speaker" class="side-speaker"></span><figure class="story-scene"><div class="story-scene-stage"><canvas id="side-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="side-scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div><figcaption><strong id="side-scene-title" class="story-scene-title"></strong></figcaption></figure><div class="side-conversation"><p class="side-turn"><strong id="side-partner"></strong><span id="side-prompt"></span></p><p class="side-turn side-response" aria-live="polite" aria-atomic="true"><strong data-i18n="dialogueDamian">Damian Jamroży</strong><span id="side-text"></span></p></div><div id="side-questions" class="story-questions"></div><button class="btn btn-ghost" id="side-answer-back" data-i18n="answerBack" hidden>Inne pytanie</button><a id="side-source" class="side-source" target="_blank" rel="noopener noreferrer" hidden></a></div></dialog>
+  <dialog id="garage-dialog" class="utility-dialog side-dialog" aria-labelledby="garage-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="garage-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="garageKicker">CZTERY KÓŁKA, WŁASNA HISTORIA</span><h2 id="garage-title"></h2><figure class="story-scene"><div class="story-scene-stage"><canvas id="garage-scene-canvas" aria-hidden="true"></canvas><button class="btn btn-ghost icon-btn scene-replay" id="garage-scene-replay" data-label="sceneReplay"><svg class="icon"><use href="#i-replay"/></svg></button></div><figcaption><strong id="garage-scene-title" class="story-scene-title"></strong></figcaption></figure><p id="garage-intro"></p><p id="garage-details"></p><h3 class="eyebrow" data-i18n="garageChoose">Wybierz auto</h3><div id="garage-cars" class="garage-cars"></div></div></dialog>
+  <dialog id="pause-dialog" class="utility-dialog" aria-labelledby="pause-title"><div class="dialog-scroll"><span class="eyebrow">PIT STOP</span><h2 id="pause-title" data-i18n="paused">Chwila postoju.</h2><p data-i18n="pausedHint"></p><div class="dialog-actions"><button class="btn btn-primary" id="resume-button" data-i18n="resume">Wracamy na trasę</button><button class="btn btn-ghost" id="pause-help-button" data-i18n="controls">Sterowanie</button><button class="btn btn-ghost" id="restart-button" data-i18n="restart">Zacznij od nowa</button></div><div id="reset-confirmation" hidden><p data-i18n="restartConfirm"></p><button class="btn btn-ghost" id="confirm-restart" data-i18n="restart">Zacznij od nowa</button></div></div></dialog>
+  <dialog id="complete-dialog" class="utility-dialog complete-dialog" aria-labelledby="complete-title"><button class="btn btn-ghost icon-btn dialog-close" data-close="complete-dialog" data-label="close"><svg class="icon"><use href="#i-close"/></svg></button><div class="dialog-scroll"><span class="eyebrow" data-i18n="journeyComplete">PODRÓŻ UKOŃCZONA</span><h2 id="complete-title" data-i18n="allComplete"></h2><p data-i18n="allCompleteText"></p><div id="complete-skills" class="story-skills"></div><div class="dialog-actions"><a class="btn btn-primary" href="mailto:djamrozy.cv@gmail.com" data-i18n="contact">Porozmawiajmy</a><a class="btn btn-ghost" id="complete-cv" href="../../index.html?lang=pl" data-i18n="viewCv">Zakończ podróż</a></div><p class="source-note" data-i18n="sourceNote"></p></div></dialog>
+  <div class="sr-only" id="announcer" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript-note">Do uruchomienia podróży potrzebny jest JavaScript. / This journey needs JavaScript. <a href="../../index.html">Wyjście / Exit</a></div></noscript>
+</body>
+</html>
